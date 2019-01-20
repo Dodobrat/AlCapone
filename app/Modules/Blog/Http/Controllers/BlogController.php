@@ -20,7 +20,7 @@ use Venturecraft\Revisionable\Revision;
 
 class BlogController extends Controller {
 
-    public function index($slug = null) {
+    public function index() {
         //Set SEO
         SEO::setTitle(Settings::getLocale('blog_meta_title'));
         SEO::setDescription(Settings::getLocale('blog_meta_description'));
@@ -40,23 +40,9 @@ class BlogController extends Controller {
             SEO::metatags()->addMeta('robots', 'noindex, follow');
         }
 
-        $news_categories = BlogCategories::active()->reversed()
-            ->whereHas('news')->get();
 
-        $news = Blog::active()->reversed()->with(['media', 'category']);
-        $category = null;
 
-        if (!empty($slug)) {
-            $category = BlogCategories::whereTranslation('slug', $slug)->active()->first();
-            $news = $news->whereHas('category', function ($q) use ($slug) {
-                return $q->whereTranslation('slug', $slug)->active();
-            });
-        } else {
-            $news = $news->whereHas('category', function ($q) use ($slug) {
-                return $q->active();
-            });
-        }
-        $news = $news->paginate();
+        $news = Blog::active()->reversed()->with(['media'])->paginate();
 
 
         \Breadcrumbs::register('index', function ($breadcrumbs) {
@@ -65,7 +51,7 @@ class BlogController extends Controller {
         });
 
 
-        return view('blog::front.index', compact('news_categories', 'news', 'category'));
+        return view('blog::front.index', compact( 'news'));
     }
 
     public function view($slug) {
@@ -76,7 +62,6 @@ class BlogController extends Controller {
         })->with([
                 'media',
                 'header_media',
-                'category',
             ]
         )
             ->active()
@@ -85,36 +70,6 @@ class BlogController extends Controller {
 
 
         if (empty($blog)) {
-            /**
-             * Има ли създаден РЪЧЕН редирект ?
-             * @var Redirector $redirector
-             */
-            $redirector = new Redirector(Request::getRequestUri());
-            if ($redirector->hasRedirect()) {
-                return $redirector->doRedirect();
-            }
-
-            /*
-             * Дали няма сменян slug?
-             */
-            $fallback = Revision::with(['revisionable'])
-                ->where('revisionable_type', BlogTranslation::class)
-                ->where('key', 'slug')
-                ->whereNotNull('old_value')
-                ->where(function ($q) use ($slug) {
-                    $q->where('old_value', $slug)->orWhere('new_value', $slug);
-                })
-                ->orderBy('id', 'desc')
-                ->first();
-
-            if ($fallback && $fallback->revisionable) {
-                $red_model = Blog::whereTranslation('slug', $fallback->revisionable->slug)->first();
-
-                if ($red_model) {
-                    return redirect()->route('blog.view', $red_model->slug, 301);
-                }
-            }
-
             return redirect()
                 ->route('blog.index')
                 ->withErrors([
@@ -142,10 +97,6 @@ class BlogController extends Controller {
             SEO::opengraph()->addImage($image, ['height' => 1200, 'width' => 630]);
         }
 
-        $similar_article = Blog::inRandomOrder()->active()->whereHas('category', function ($q) use ($slug) {
-            return $q->active();
-        })->where('id', '!=', $blog->id)->first();
-
         SEO::opengraph()->setTitle($blog->title)
             ->setDescription($blog->meta_description);
 
@@ -155,7 +106,7 @@ class BlogController extends Controller {
             $breadcrumbs->push($blog->title, route('blog.view', ['slug' => $blog->slug]));
         });
 
-        return view('blog::front.view', compact('blog', 'similar_article'));
+        return view('blog::front.view', compact('blog'));
     }
 
 }
