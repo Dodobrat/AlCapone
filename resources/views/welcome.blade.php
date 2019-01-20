@@ -3,51 +3,35 @@
 
     <div class="site-wrap">
 
-        <nav class="site-menu">
-            <div class="site-menu-inner">
-                <ul class="list-unstyled">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="menu.html">Our Menu</a></li>
-                    <li><a href="blog.html">Our Blog</a></li>
-                    <li><a href="reservation.html">Reserve A Table</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+        <nav class="navigation">
+            <input type="checkbox" id="nav" class="hidden">
+            <label for="nav" class="nav-btn">
+                <i></i>
+                <i></i>
+                <i></i>
+            </label>
+            <div class="logo">
+                <a href="#">BRAND</a>
+            </div>
+            <div class="nav-wrapper">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#"><i class="fa fa-shopping-basket"><span class="badge">4</span></i></a></li>
                 </ul>
             </div>
         </nav>
 
-        <header class="site-header">
-            <div class="row align-items-center">
-                <div class="col-5 col-md-3">
-                    <ul class="list-unstyled social">
-                        <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                        <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                        <li><a href="#"><span class="fa fa-instagram"></span></a></li>
-                    </ul>
-                </div>
-                <div class="col-2 col-md-6 text-center">
-                    <a href="index.html" class="site-logo">D</a>
-                </div>
-                <div class="col-5 col-md-3 text-right menu-burger-wrap">
-                    <a href="#" class="site-nav-toggle js-site-nav-toggle"><i></i></a>
 
-                </div>
-            </div>
 
-        </header> <!-- site-header -->
 
         <div class="main-wrap">
-            <div class="cover_1">
-                <div class="img_bg" style="background-image: url('{{asset("img/slider-1.jpg")}}');" data-stellar-background-ratio="0.5">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-md-12" data-aos="fade-up">
-                                <h2 class="heading">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit ipsa sint amet aliquam velit minima tenetur quisquam beatae molestiae possimus dicta.</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- .cover_1 -->
+            <div class="land-container">
+                <img class="landing-img" src="{{ asset('img/chef_1.jpg') }}" alt="">
+                <h1 class="landing-h">Lorem Lorem ipsum</h1>
+            </div>
 
             <div class="section services-section">
                 <div class="container">
@@ -100,6 +84,9 @@
                     </div>
                 </div>
             </div> <!-- .section -->
+
+            <img class="inbetween-divider" src="{{ asset('img/curve_line.svg') }}" alt="">
+
 
             <div class="section">
                 <div class="container">
@@ -535,13 +522,13 @@
             <div class="site-footer">
                 <div class="container">
                     <div class="row small-gutters mb-5">
-                        <div class="col-md-6 col-lg-3 mb-5" data-aos="fade" data-aos-delay="100">
+                        <div class="col-md-6 col-lg-3 mb-5">
                             <div class="footer-widget">
                                 <h3>Diner Restaurant</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel neque, odio illum. Est minima sint minus sunt ducimus.</p>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-3 mb-5" data-aos="fade" data-aos-delay="200">
+                        <div class="col-md-6 col-lg-3 mb-5">
                             <div class="footer-widget">
                                 <h3>Lunch Service</h3>
                                 <p>Booking from 12:00pm - 1:30pm</p>
@@ -549,7 +536,7 @@
                                 <p>Everyday: <br> Booking from 6:00pm - 9:00pm</p>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-3 mb-5" data-aos="fade" data-aos-delay="300">
+                        <div class="col-md-6 col-lg-3 mb-5">
                             <div class="footer-widget">
                                 <h3>Quick Links</h3>
                                 <ul>
@@ -560,7 +547,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-3 mb-5" data-aos="fade" data-aos-delay="400">
+                        <div class="col-md-6 col-lg-3 mb-5">
                             <div class="footer-widget footer-contact-widget">
 
                                 <h3>Subscribe</h3>

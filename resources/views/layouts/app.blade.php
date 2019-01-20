@@ -13,7 +13,12 @@
     <link rel="stylesheet" href="{{ asset('fonts/fontawesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('fonts/flaticon/font/flaticon.css') }}">
 
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+
     <link href="{{ mix('css/theme.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+
+    <link rel="icon" href="{{ asset('img/img_2.jpg') }}">
 </head>
 <body>
 <div id="app"></div>

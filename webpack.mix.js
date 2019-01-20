@@ -22,7 +22,6 @@ mix.js([
     ], 'public/js/theme.js')
 
     .styles([
-        'resources/assets/sass/app.scss',
         'resources/assets/css/bootstrap.css',
         'resources/assets/css/animate.css',
         'resources/assets/css/owl.carousel.min.css',
@@ -32,6 +31,8 @@ mix.js([
         'resources/assets/css/jquery.timepicker.css',
         'resources/assets/css/style.css',
     ],'public/css/theme.css')
+
+    .sass('resources/assets/sass/app.scss', 'public/css/app.css')
 
     .copy('resources/assets/images', 'public/img', true)
     .copy('resources/assets/fonts', 'public/fonts', true)
