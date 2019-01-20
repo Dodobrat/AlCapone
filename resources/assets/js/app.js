@@ -1,3 +1,5 @@
 window.Popper = require('popper.js');
-require('bootstrap/dist/js/bootstrap.js');
-var $ =require('jquery');
+global.$ = global.jQuery = require('jquery');
+global.AOS = require('aos');
+// AOS.init();
+// require('jquery-ui');
