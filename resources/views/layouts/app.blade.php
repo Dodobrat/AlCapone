@@ -31,14 +31,14 @@
         <i></i>
     </label>
     <div class="logo">
-        <a href="#">BRAND</a>
+        <a href="{{ route('index') }}">BRAND</a>
     </div>
     <div class="nav-wrapper">
         <ul>
-            <li><a href="#">{{ trans('front.home') }}</a></li>
+            <li><a href="{{ route('index') }}">{{ trans('front.home') }}</a></li>
             <li><a href="#">{{ trans('front.menu') }}</a></li>
             <li><a href="{{ route('blog.index') }}">{{ trans('front.blog') }}</a></li>
-            <li><a href="#">{{ trans('front.contacts') }}</a></li>
+            <li><a href="{{ route('contacts.index') }}">{{ trans('front.contacts') }}</a></li>
             <li><a href="#"><i class="fa fa-shopping-basket"><span class="badge">4</span></i></a></li>
         </ul>
     </div>
@@ -104,7 +104,7 @@
     <div class="container">
         <div class="row">
 
-            <p class="footer-text col-md-12">Copyright &copy;</p>
+            <p class="footer-text col-md-12">{{ trans('front.copyright') }} &copy;</p>
         </div>
     </div>
 </div>
