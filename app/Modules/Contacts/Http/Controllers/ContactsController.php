@@ -41,22 +41,14 @@ class ContactsController extends Controller {
         SEO::metatags()->addMeta('author', 'ProVision.BG');
         SEO::opengraph()->addImage(asset('assets/images/facebook_share.jpg'), ['height' => 630, 'width' => 1200]);
 
-        $header_image = Settings::getFile('contacts_header_image');
 
         \Breadcrumbs::register('index', function ($breadcrumbs) {
             $breadcrumbs->parent('index_home');
             $breadcrumbs->push(Settings::getLocale('contacts_title', $default = false), route('contacts.index'));
         });
 
-        $cities = Fitness::active()->reversed()->whereHas('translations', function ($query) {
-            $query->where('city', '!=', null);
-        })->get()->pluck('city')->unique();
 
-        $fitnesses = Fitness::reversed()
-            ->active()
-            ->get();
-
-        return view('contacts::front.index', compact('contacts', 'header_image', 'cities', 'fitnesses'));
+        return view('contacts::front.index', compact('contacts'));
     }
 
     /**
