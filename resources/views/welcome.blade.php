@@ -3,34 +3,22 @@
 
     <div class="site-wrap">
 
-        <nav class="navigation">
-            <input type="checkbox" id="nav" class="hidden">
-            <label for="nav" class="nav-btn">
-                <i></i>
-                <i></i>
-                <i></i>
-            </label>
-            <div class="logo">
-                <a href="#">BRAND</a>
-            </div>
-            <div class="nav-wrapper">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Menu</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contacts</a></li>
-                    <li><a href="#"><i class="fa fa-shopping-basket"><span class="badge">4</span></i></a></li>
-                </ul>
-            </div>
-        </nav>
+
 
 
 
 
         <div class="main-wrap">
-            <div class="land-container">
-                <img class="landing-img" src="{{ asset('img/chef_1.jpg') }}" alt="">
-                <h1 class="landing-h">Lorem Lorem ipsum</h1>
+            <div class="cover_1">
+                <div class="img_bg" style="background-image: url('{{ asset('img/slider-1.jpg') }}');">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-12">
+                                <h2 class="heading">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit ipsa sint amet aliquam velit minima tenetur quisquam beatae molestiae possimus dicta.</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="section services-section">
@@ -518,72 +506,9 @@
         </div> <!-- .main-wrap -->
 
 
-        <footer>
-            <div class="site-footer">
-                <div class="container">
-                    <div class="row small-gutters mb-5">
-                        <div class="col-md-6 col-lg-3 mb-5">
-                            <div class="footer-widget">
-                                <h3>Diner Restaurant</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel neque, odio illum. Est minima sint minus sunt ducimus.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3 mb-5">
-                            <div class="footer-widget">
-                                <h3>Lunch Service</h3>
-                                <p>Booking from 12:00pm - 1:30pm</p>
-                                <h3>Dinner Service</h3>
-                                <p>Everyday: <br> Booking from 6:00pm - 9:00pm</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3 mb-5">
-                            <div class="footer-widget">
-                                <h3>Quick Links</h3>
-                                <ul>
-                                    <li><a href="#">Help &amp; Support</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Get in Touch</a></li>
-                                    <li><a href="#">Testimonials</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3 mb-5">
-                            <div class="footer-widget footer-contact-widget">
 
-                                <h3>Subscribe</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <form action="" class="form-subscribe mb-5">
-                                    <div class="form-group form-field">
-                                        <input type="submit" value="Send" class="btn btn-primary">
-                                        <input type="text" class="form-control" placeholder="Email">
-                                    </div>
-                                </form>
-
-                                <h3>Contact Us</h3>
-                                <p class="contact-email">info@yourdomain.com</p>
-                                <p class="contact-phone">1-444-123-9829</p>
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </footer>
-
-        <div class="site-footer-copyright">
-            <div class="container">
-                <div class="row">
-
-                    <p class="footer-text col-md-12">Copyright &copy;</p>
-                </div>
-            </div>
-        </div>
 
     </div>
 
-    <!-- loader -->
-    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
 
 @endsection

@@ -1030,12 +1030,12 @@ textarea.form-control {
 
 .cover_1 .img_bg, .cover_1 .img_bg > .container > .row {
   min-height: 700px;
-  height: 100vh;
+  height: 80vh;
 }
 
 .cover_1.cover_sm .img_bg, .cover_1.cover_sm .img_bg > .container > .row {
   min-height: 600px;
-  height: 80vh;
+  height: 60vh;
 }
 
 .cover_1 .sub-heading {
