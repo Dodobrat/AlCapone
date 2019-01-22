@@ -44,6 +44,74 @@
     </div>
 </nav>
 
+<div class="shopping-cart-wrapper">
+    <div class="shopping-cart-container">
+        <ul class="shopping-items">
+            <li class="shopping-item">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img class="asking-food-img" src="{{ asset('img/img_6.jpg') }}" alt="">
+                    </div>
+                    <div class="col-md-8 px-0">
+                        <p class="asking-food-desc">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur corporis incidunt laboriosam numquam sint velit voluptatem! Commodi delectus dolorem eos fugit laborum, minus nam natus, sapiente sit sunt vel voluptatum.
+                        </p>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="asking-food-remove">
+                            &#10005;
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="asking-food-price">
+
+                        </p>
+                    </div>
+                </div>
+
+            </li><li class="shopping-item">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img class="asking-food-img" src="{{ asset('img/img_6.jpg') }}" alt="">
+                    </div>
+                    <div class="col-md-8 px-0">
+                        <p class="asking-food-desc">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur corporis incidunt laboriosam numquam sint velit voluptatem! Commodi delectus dolorem eos fugit laborum, minus nam natus, sapiente sit sunt vel voluptatum.
+                        </p>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="asking-food-remove">
+                            &#10005;
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="asking-food-price">
+
+                        </p>
+                    </div>
+                </div>
+
+            </li>
+        </ul>
+        <div class="shopping-bottom-section">
+            <div class="row">
+                <div class="col">
+                    <span class="total-txt">Общо: </span><span class="total-price">123.53 lv.</span>
+                </div>
+                <div class="col text-right">
+                    <a href="#" class="go-to-checkout">
+                        Go to checkout
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 @yield('content')
 
 <footer>
