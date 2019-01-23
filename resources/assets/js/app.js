@@ -16,4 +16,32 @@ function scrollFunction() {
     }
 }
 
-// PARALLAX EFFECT
+// BASKET TRIGGER
+let basket = document.getElementById('basket');
+let basketM = document.getElementById('basket-m');
+let shoppingCart = document.querySelector('.shopping-cart-wrapper');
+let opened = false;
+
+function triggerBasket() {
+    basket.addEventListener('click', function () {
+        if (opened == false){
+            shoppingCart.classList.add('shopping-cart-show');
+            opened = true;
+        }else{
+            shoppingCart.classList.remove('shopping-cart-show');
+            opened = false;
+        }
+
+    });
+    basketM.addEventListener('click', function () {
+        if (opened == false){
+            shoppingCart.classList.add('shopping-cart-show');
+            opened = true;
+        }else{
+            shoppingCart.classList.remove('shopping-cart-show');
+            opened = false;
+        }
+
+    });
+}
+triggerBasket();

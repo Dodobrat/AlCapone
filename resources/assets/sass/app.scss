@@ -87,70 +87,138 @@ body{
 
 //SHOPPING BASKET STYLE
 .shopping-cart-wrapper{
-  transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out, right 0.3s ease-in-out;
   z-index: 10000;
   position: fixed;
   top: 65px;
-  right: 0;
+  right: -100vw;
   padding: 0;
   margin: 0;
-  min-width: 350px;
-  max-width: 400px;
+  min-width: 450px;
+  max-width: 500px;
+  box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.2);
   .shopping-cart-container{
     background-color: #ffffff;
     padding: 10px 15px;
+    .shopping-cart-title{
+      padding: 10px 0;
+      margin: 0 0 10px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    #basket-m{
+      background-color: rgba(0,0,0,0);
+      color: #000000;
+      border: none;
+      width: 100%;
+      font-size: 25px;
+      padding: 0 5px 12px 0;
+      font-weight: 900;
+      &:focus{
+        outline: none;
+      }
+    }
     .shopping-items{
       list-style-type: none;
       padding: 0;
-      margin: 0;
+      margin: 10px 0 10px 0;
+      max-height: 60vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      &::-webkit-scrollbar {
+        display: none;
+      }
       .shopping-item{
         color: #000;
         border-bottom: 1px dotted rgba(0,0,0,0.2);
-        margin: 0 0 15px 0;
+        margin: 0 0 10px 0;
         .asking-food-img{
           width: 100%;
-          max-height: 50px;
+          max-height: 75px;
           object-fit: contain;
         }
         .asking-food-desc{
-
+          color: #000000;
+          &:hover{
+            color: #FDB44B;
+          }
+        }
+        .asking-food-price{
+          margin: 0;
+          padding: 10px 0;
+          text-transform: capitalize;
+          span{
+            text-transform: none;
+            font-weight: 900;
+            color: #333333;
+          }
+        }
+        .asking-food-qty{
+          transition: width 0.2s ease-in-out;
+          max-width: 60px;
+          min-width: 55px;
+          background-color: rgba(0,0,0,0);
+          border: 1px solid rgba(0,0,0,0.2);
+          border-radius: 5px;
+          padding: 0 0 0 5px;
+          float: right;
+          &:focus{
+            outline: none;
+          }
         }
         .asking-food-remove{
-          background-color: rgba(0,0,0,0);
+          transition: 0.2s ease-in-out;
+          width: 100%;
+          background-color: #d9534f;
           border: none;
+          border-radius: 5px;
+          color: #ffffff;
           &:hover{
+            transition: 0.2s ease-in-out;
             cursor: pointer;
+            background-color: #c9302c;
           }
           &:focus{
             outline: none;
           }
-          &:active{
-            text-shadow: 0px 0px 2px rgba(0,0,0,0.2);
-          }
-        }
-        .asking-food-price{
-
         }
       }
     }
     .shopping-bottom-section{
       padding: 0 0 5px 0;
        .total-txt{
-
+         color: #333333;
        }
       .total-price{
-
+        color: rgba(223,150,45,1);;
+        font-weight: 900;
       }
       .go-to-checkout{
-        background-color: #FDB44B;
-        padding: 5px 10px;
-        color: #ffffff;
+        button{
+          transition: 0.2s ease-in-out;
+          border: none;
+          border-radius: 5px;
+          width: 100%;
+          background-color: #FDB44B;
+          padding: 5px 10px;
+          color: #ffffff;
+          &:hover{
+            transition: 0.2s ease-in-out;
+            background-color: rgba(223,150,45,1);
+            cursor: pointer;
+          }
+          &:focus{
+            outline: none;
+          }
+        }
       }
     }
   }
 }
 
-
+.shopping-cart-show{
+  transition: right 0.3s ease-in-out;
+  right: 0;
+}
 
 //HOME PAGE STYLE
 .land-container{

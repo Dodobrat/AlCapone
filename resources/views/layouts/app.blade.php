@@ -39,72 +39,395 @@
             <li><a href="#">{{ trans('front.menu') }}</a></li>
             <li><a href="{{ route('blog.index') }}">{{ trans('front.blog') }}</a></li>
             <li><a href="{{ route('contacts.index') }}">{{ trans('front.contacts') }}</a></li>
-            <li><a href="#"><i class="fa fa-shopping-basket"><span class="badge">4</span></i></a></li>
+            <li><a href="#" id="basket"><i class="fa fa-shopping-basket"><span class="badge">4</span></i></a></li>
         </ul>
     </div>
 </nav>
 
 <div class="shopping-cart-wrapper">
     <div class="shopping-cart-container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-12 col-md-12 col-sm-10 col-10">
+                <h4 class="shopping-cart-title">{{ trans('front.order') }}:</h4>
+            </div>
+            <div class="col-sm-2 col-2 d-sm-block d-md-none">
+                <button id="basket-m">&#10230;</button>
+            </div>
+        </div>
+
         <ul class="shopping-items">
+
+
             <li class="shopping-item">
-                <div class="row">
-                    <div class="col-md-2">
+
+
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-3">
                         <img class="asking-food-img" src="{{ asset('img/img_6.jpg') }}" alt="">
                     </div>
-                    <div class="col-md-8 px-0">
-                        <p class="asking-food-desc">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur corporis incidunt laboriosam numquam sint velit voluptatem! Commodi delectus dolorem eos fugit laborum, minus nam natus, sapiente sit sunt vel voluptatum.
-                        </p>
-                    </div>
-                    <div class="col-md-2">
-                        <button class="asking-food-remove">
-                            &#10005;
-                        </button>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-9">
+                        <a href="#" class="asking-food-desc">
+                            Lorem ipsum dolor sit amet, consectetur dumi koito ne zanam
+                        </a>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-7 col-md-7 col-sm-6 col-6">
                         <p class="asking-food-price">
-
+                            {{ trans('front.price') }}
+                            <span>20.00 лв.</span>
                         </p>
                     </div>
-                </div>
-
-            </li><li class="shopping-item">
-                <div class="row">
-                    <div class="col-md-2">
-                        <img class="asking-food-img" src="{{ asset('img/img_6.jpg') }}" alt="">
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-4">
+                        <input type="number" class="asking-food-qty" placeholder="{{ trans('front.qty') }}" value="">
                     </div>
-                    <div class="col-md-8 px-0">
-                        <p class="asking-food-desc">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur corporis incidunt laboriosam numquam sint velit voluptatem! Commodi delectus dolorem eos fugit laborum, minus nam natus, sapiente sit sunt vel voluptatum.
-                        </p>
-                    </div>
-                    <div class="col-md-2">
-                        <button class="asking-food-remove">
-                            &#10005;
-                        </button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <p class="asking-food-price">
-
-                        </p>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-2">
+                        <button class="asking-food-remove">&#10005;</button>
                     </div>
                 </div>
 
             </li>
+
+<li class="shopping-item">
+
+
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-3">
+                        <img class="asking-food-img" src="{{ asset('img/img_6.jpg') }}" alt="">
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-9">
+                        <a href="#" class="asking-food-desc">
+                            Lorem ipsum dolor sit amet, consectetur dumi koito ne zanam
+                        </a>
+                    </div>
+                </div>
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-7 col-md-7 col-sm-6 col-6">
+                        <p class="asking-food-price">
+                            {{ trans('front.price') }}
+                            <span>20.00 лв.</span>
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-4">
+                        <input type="number" class="asking-food-qty" placeholder="{{ trans('front.qty') }}" value="">
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-2">
+                        <button class="asking-food-remove">&#10005;</button>
+                    </div>
+                </div>
+
+            </li>
+
+<li class="shopping-item">
+
+
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-3">
+                        <img class="asking-food-img" src="{{ asset('img/img_6.jpg') }}" alt="">
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-9">
+                        <a href="#" class="asking-food-desc">
+                            Lorem ipsum dolor sit amet, consectetur dumi koito ne zanam
+                        </a>
+                    </div>
+                </div>
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-7 col-md-7 col-sm-6 col-6">
+                        <p class="asking-food-price">
+                            {{ trans('front.price') }}
+                            <span>20.00 лв.</span>
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-4">
+                        <input type="number" class="asking-food-qty" placeholder="{{ trans('front.qty') }}" value="">
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-2">
+                        <button class="asking-food-remove">&#10005;</button>
+                    </div>
+                </div>
+
+            </li>
+
+<li class="shopping-item">
+
+
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-3">
+                        <img class="asking-food-img" src="{{ asset('img/img_6.jpg') }}" alt="">
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-9">
+                        <a href="#" class="asking-food-desc">
+                            Lorem ipsum dolor sit amet, consectetur dumi koito ne zanam
+                        </a>
+                    </div>
+                </div>
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-7 col-md-7 col-sm-6 col-6">
+                        <p class="asking-food-price">
+                            {{ trans('front.price') }}
+                            <span>20.00 лв.</span>
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-4">
+                        <input type="number" class="asking-food-qty" placeholder="{{ trans('front.qty') }}" value="">
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-2">
+                        <button class="asking-food-remove">&#10005;</button>
+                    </div>
+                </div>
+
+            </li>
+
+<li class="shopping-item">
+
+
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-3">
+                        <img class="asking-food-img" src="{{ asset('img/img_6.jpg') }}" alt="">
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-9">
+                        <a href="#" class="asking-food-desc">
+                            Lorem ipsum dolor sit amet, consectetur dumi koito ne zanam
+                        </a>
+                    </div>
+                </div>
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-7 col-md-7 col-sm-6 col-6">
+                        <p class="asking-food-price">
+                            {{ trans('front.price') }}
+                            <span>20.00 лв.</span>
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-4">
+                        <input type="number" class="asking-food-qty" placeholder="{{ trans('front.qty') }}" value="">
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-2">
+                        <button class="asking-food-remove">&#10005;</button>
+                    </div>
+                </div>
+
+            </li>
+
+<li class="shopping-item">
+
+
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-3">
+                        <img class="asking-food-img" src="{{ asset('img/img_6.jpg') }}" alt="">
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-9">
+                        <a href="#" class="asking-food-desc">
+                            Lorem ipsum dolor sit amet, consectetur dumi koito ne zanam
+                        </a>
+                    </div>
+                </div>
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-7 col-md-7 col-sm-6 col-6">
+                        <p class="asking-food-price">
+                            {{ trans('front.price') }}
+                            <span>20.00 лв.</span>
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-4">
+                        <input type="number" class="asking-food-qty" placeholder="{{ trans('front.qty') }}" value="">
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-2">
+                        <button class="asking-food-remove">&#10005;</button>
+                    </div>
+                </div>
+
+            </li>
+
+<li class="shopping-item">
+
+
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-3">
+                        <img class="asking-food-img" src="{{ asset('img/img_6.jpg') }}" alt="">
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-9">
+                        <a href="#" class="asking-food-desc">
+                            Lorem ipsum dolor sit amet, consectetur dumi koito ne zanam
+                        </a>
+                    </div>
+                </div>
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-7 col-md-7 col-sm-6 col-6">
+                        <p class="asking-food-price">
+                            {{ trans('front.price') }}
+                            <span>20.00 лв.</span>
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-4">
+                        <input type="number" class="asking-food-qty" placeholder="{{ trans('front.qty') }}" value="">
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-2">
+                        <button class="asking-food-remove">&#10005;</button>
+                    </div>
+                </div>
+
+            </li>
+
+<li class="shopping-item">
+
+
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-3">
+                        <img class="asking-food-img" src="{{ asset('img/img_6.jpg') }}" alt="">
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-9">
+                        <a href="#" class="asking-food-desc">
+                            Lorem ipsum dolor sit amet, consectetur dumi koito ne zanam
+                        </a>
+                    </div>
+                </div>
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-7 col-md-7 col-sm-6 col-6">
+                        <p class="asking-food-price">
+                            {{ trans('front.price') }}
+                            <span>20.00 лв.</span>
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-4">
+                        <input type="number" class="asking-food-qty" placeholder="{{ trans('front.qty') }}" value="">
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-2">
+                        <button class="asking-food-remove">&#10005;</button>
+                    </div>
+                </div>
+
+            </li>
+
+<li class="shopping-item">
+
+
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-3">
+                        <img class="asking-food-img" src="{{ asset('img/img_6.jpg') }}" alt="">
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-9">
+                        <a href="#" class="asking-food-desc">
+                            Lorem ipsum dolor sit amet, consectetur dumi koito ne zanam
+                        </a>
+                    </div>
+                </div>
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-7 col-md-7 col-sm-6 col-6">
+                        <p class="asking-food-price">
+                            {{ trans('front.price') }}
+                            <span>20.00 лв.</span>
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-4">
+                        <input type="number" class="asking-food-qty" placeholder="{{ trans('front.qty') }}" value="">
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-2">
+                        <button class="asking-food-remove">&#10005;</button>
+                    </div>
+                </div>
+
+            </li>
+
+<li class="shopping-item">
+
+
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-3">
+                        <img class="asking-food-img" src="{{ asset('img/img_6.jpg') }}" alt="">
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-9">
+                        <a href="#" class="asking-food-desc">
+                            Lorem ipsum dolor sit amet, consectetur dumi koito ne zanam
+                        </a>
+                    </div>
+                </div>
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-7 col-md-7 col-sm-6 col-6">
+                        <p class="asking-food-price">
+                            {{ trans('front.price') }}
+                            <span>20.00 лв.</span>
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-4">
+                        <input type="number" class="asking-food-qty" placeholder="{{ trans('front.qty') }}" value="">
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-2">
+                        <button class="asking-food-remove">&#10005;</button>
+                    </div>
+                </div>
+
+            </li>
+
+<li class="shopping-item">
+
+
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-3">
+                        <img class="asking-food-img" src="{{ asset('img/img_6.jpg') }}" alt="">
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-9">
+                        <a href="#" class="asking-food-desc">
+                            Lorem ipsum dolor sit amet, consectetur dumi koito ne zanam
+                        </a>
+                    </div>
+                </div>
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-7 col-md-7 col-sm-6 col-6">
+                        <p class="asking-food-price">
+                            {{ trans('front.price') }}
+                            <span>20.00 лв.</span>
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-4">
+                        <input type="number" class="asking-food-qty" placeholder="{{ trans('front.qty') }}" value="">
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-2">
+                        <button class="asking-food-remove">&#10005;</button>
+                    </div>
+                </div>
+
+            </li>
+
+<li class="shopping-item">
+
+
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-3">
+                        <img class="asking-food-img" src="{{ asset('img/img_6.jpg') }}" alt="">
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-9">
+                        <a href="#" class="asking-food-desc">
+                            Lorem ipsum dolor sit amet, consectetur dumi koito ne zanam
+                        </a>
+                    </div>
+                </div>
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-7 col-md-7 col-sm-6 col-6">
+                        <p class="asking-food-price">
+                            {{ trans('front.price') }}
+                            <span>20.00 лв.</span>
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-4">
+                        <input type="number" class="asking-food-qty" placeholder="{{ trans('front.qty') }}" value="">
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-2">
+                        <button class="asking-food-remove">&#10005;</button>
+                    </div>
+                </div>
+
+            </li>
+
+
         </ul>
         <div class="shopping-bottom-section">
-            <div class="row">
-                <div class="col">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-7 col-md-7 col-sm-7 col-6">
                     <span class="total-txt">Общо: </span><span class="total-price">123.53 lv.</span>
                 </div>
-                <div class="col text-right">
+                <div class="col-lg-5 col-md-5 col-sm-5 col-6">
                     <a href="#" class="go-to-checkout">
-                        Go to checkout
+                        <button>{{ trans('front.checkout') }}</button>
                     </a>
                 </div>
             </div>
