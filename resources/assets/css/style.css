@@ -1029,13 +1029,13 @@ textarea.form-control {
 }
 
 .cover_1 .img_bg, .cover_1 .img_bg > .container > .row {
-  min-height: 700px;
-  height: 80vh;
+  margin-top: 65px;
+  min-height: 50vh;
 }
 
 .cover_1.cover_sm .img_bg, .cover_1.cover_sm .img_bg > .container > .row {
-  min-height: 600px;
-  height: 60vh;
+  margin-top: 49px;
+  min-height: 40vh;
 }
 
 .cover_1 .sub-heading {

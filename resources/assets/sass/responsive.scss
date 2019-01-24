@@ -1,4 +1,4 @@
-@media screen and (max-width: 864px) {
+@media screen and (max-width: 768px) {
   .navigation{
     background-color: #ffffff;
     .logo {
@@ -113,9 +113,6 @@
   .shopping-cart-wrapper{
     top: 49px;
   }
-}
-
-@media screen and (max-width: 768px){
   .shopping-cart-wrapper{
     transition: all 0.2s ease-in-out;
     position: fixed;
@@ -152,3 +149,7 @@
     right: 0;
   }
 }
+
+//@media screen and (max-width: 768px){
+//
+//}

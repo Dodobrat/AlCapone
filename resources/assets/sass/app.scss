@@ -68,6 +68,11 @@ body{
           font-size: 14px;
           letter-spacing: 1.2px;
           font-weight: 600;
+          &:hover{
+            transition: 0.2s ease-in-out;
+            color: #777777;
+            cursor: pointer;
+          }
           i{
             .badge{
               background-color: #ffffff;
