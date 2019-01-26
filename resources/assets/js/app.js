@@ -45,3 +45,5 @@ function triggerBasket() {
     });
 }
 triggerBasket();
+
+// MENU CATEGORIES

@@ -6,4 +6,6 @@ return [
     'friendly-staff' => 'Дружелюбен състав',
     'easy-reservation' => 'Лесна резервация',
     'specials' => 'Нашите Специалитети',
+    'browse-menu-categories' => 'Разгледай категории',
+    'browse' => 'Разгледай',
 ];

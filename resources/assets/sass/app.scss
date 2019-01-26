@@ -22,10 +22,10 @@
 }
 
 h1,h2,h3,h4,h5,h6{
-  font-family: $font-family-serif;
+  font-family: $font-family-serif-r;
 }
 body{
-  font-family: $font-family-serif;
+  font-family: $font-family-serif-r;
   overflow-x: hidden;
 }
 .hidden {
@@ -49,7 +49,7 @@ body{
     a{
       color: #000;
       text-transform: uppercase;
-      font-weight: 700;
+      font-weight: 400;
       font-size: 18px;
       letter-spacing: 0px;
       text-decoration: none;
@@ -71,18 +71,26 @@ body{
           text-decoration: none;
           font-size: 14px;
           letter-spacing: 1.2px;
-          font-weight: 600;
+          font-weight: 400;
           &:hover{
             transition: 0.2s ease-in-out;
             color: #777777;
             cursor: pointer;
           }
           i{
+            font-size: 16px;
             .badge{
-              background-color: #ffffff;
+              color: #ffffff;
+              background-color: #FDB44B;
               border: 1px solid #f1f1f1;
               padding: 3px 5px;
+              font-size: 16px;
+              font-weight: 100;
             }
+          }
+          &:active{
+            transition: 0.1s ease-in-out;
+            transform: scale(0.9);
           }
         }
       }
@@ -111,15 +119,19 @@ body{
     background-color: #ffffff;
     padding: 10px 15px;
     .shopping-cart-title{
+      width: 100%;
       padding: 10px 0;
       margin: 0 0 10px 0;
       border-bottom: 1px solid rgba(0,0,0,0.1);
     }
     #basket-m{
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 10px;
       background-color: rgba(0,0,0,0);
       color: #000000;
       border: none;
-      width: 100%;
       font-size: 25px;
       padding: 0 5px 12px 0;
       font-weight: 900;
@@ -190,6 +202,10 @@ body{
           &:focus{
             outline: none;
           }
+          &:active{
+            transition: 0.1s ease-in-out;
+            transform: scale(0.9);
+          }
         }
       }
     }
@@ -219,6 +235,10 @@ body{
           &:focus{
             outline: none;
           }
+          &:active{
+            transition: 0.1s ease-in-out;
+            transform: scale(0.9);
+          }
         }
       }
     }
@@ -242,7 +262,8 @@ body{
   .special-item{
     background-color: rgba(255,255,255,0.5);
     .special-item-img-container{
-      padding: 5px;
+      transition: transform 0.2s ease-in-out;
+      transform: scale(0.9);
       .special-item-img{
         width: 100%;
         max-height: 300px;
@@ -257,7 +278,7 @@ body{
       left: 0;
       width: 0;
       height: 100%;
-      background-color: rgba(0,0,0,0.85);
+      background-color: rgba(0,0,0,0.6);
       color: #ffffff;
       .special-item-overlay{
         opacity: 0;
@@ -316,6 +337,10 @@ body{
       }
     }
     &:hover{
+      .special-item-img-container{
+        transition: transform 0.2s ease-in-out;
+        transform: scale(1);
+      }
       .special-item-overlay-container{
         transition: 0.2s ease-in-out;
         width: 100%;
@@ -335,7 +360,11 @@ body{
 
 //----------------------------------------------//
 
+.menu-categories-section{
+  .menu-category-item{
 
+  }
+}
 
 
 

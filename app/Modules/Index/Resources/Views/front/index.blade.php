@@ -84,14 +84,15 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- .service-section -->
+            </div>
+            {{--SERVICE SECTION--}}
 
             <div class="container">
                 <hr>
             </div>
 
 
-            <div class="section">
+            <div class="section specials-section-heading">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-md-7 text-center"  data-aos="fade-up">
@@ -104,12 +105,12 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- .section -->
-
+            </div>
+            {{--SPECIALS SECTION HEADING--}}
 
             <div class="section specials-section pb-5 mb-5 pt-5 px-sm-5 px-3 px-md-0 px-lg-0 px-xl-0" style="background: url('{{ asset('img/pizza_patern.png') }}')">
                 <div class="row justify-content-center align-items-center mx-0">
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-0">
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
                         <div class="special-item-img-container">
                             <img src="{{ asset('/img/img_1.jpg') }}" alt="" class="special-item-img">
                         </div>
@@ -127,7 +128,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-0">
+                    </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
                         <div class="special-item-img-container">
                             <img src="{{ asset('/img/img_2.jpg') }}" alt="" class="special-item-img">
                         </div>
@@ -145,7 +146,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-0">
+                    </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
                         <div class="special-item-img-container">
                             <img src="{{ asset('/img/img_3.jpg') }}" alt="" class="special-item-img">
                         </div>
@@ -163,7 +164,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-0">
+                    </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
                         <div class="special-item-img-container">
                             <img src="{{ asset('/img/img_4.jpg') }}" alt="" class="special-item-img">
                         </div>
@@ -181,7 +182,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-0">
+                    </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
                         <div class="special-item-img-container">
                             <img src="{{ asset('/img/img_5.jpg') }}" alt="" class="special-item-img">
                         </div>
@@ -199,7 +200,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-0">
+                    </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
                         <div class="special-item-img-container">
                             <img src="{{ asset('/img/img_1.jpg') }}" alt="" class="special-item-img">
                         </div>
@@ -217,7 +218,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-0">
+                    </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
                         <div class="special-item-img-container">
                             <img src="{{ asset('/img/img_2.jpg') }}" alt="" class="special-item-img">
                         </div>
@@ -237,6 +238,33 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            {{--SPECIALS SECTION--}}
+
+            <div class="menu-categories-section-heading my-5 py-5">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-7 text-center"  data-aos="fade-down">
+                            <h2 class="mb-4">{{ trans('index::front.browse-menu-categories') }}</h2>
+                            <div class="service-block">
+                                @if(!empty(Administration::getStaticBlock('categories')))
+                                    {!! Administration::getStaticBlock('categories') !!}
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-categories-section mb-5">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
 

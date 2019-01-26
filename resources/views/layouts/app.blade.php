@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ asset('fonts/flaticon/font/flaticon.css') }}">
 
     <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
 
     <link href="{{ mix('css/theme.css') }}" rel="stylesheet">
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
@@ -47,10 +48,8 @@
 <div class="shopping-cart-wrapper">
     <div class="shopping-cart-container">
         <div class="row justify-content-center align-items-center">
-            <div class="col-lg-12 col-md-12 col-sm-10 col-10">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                 <h4 class="shopping-cart-title">{{ trans('front.order') }}:</h4>
-            </div>
-            <div class="col-sm-2 col-2 d-sm-block d-md-none">
                 <button id="basket-m">&#10230;</button>
             </div>
         </div>
@@ -124,7 +123,6 @@
 
 <!-- loader -->
 <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
-
 
 <script src="{{ mix('js/theme.js') }}"></script>
 </body>
