@@ -29,7 +29,7 @@ class ProductsController extends BaseAdministrationController {
             $products = Product::reversed()->with(['category']);
             $datatables = Datatables::of($products)
                 ->editColumn('price', function ($product) {
-                    return $product->getPrice();
+                    return currency($product->getPrice());
                 })
                 ->addColumn('category', function ($product) {
                     return $product->category->title;
@@ -43,6 +43,7 @@ class ProductsController extends BaseAdministrationController {
                     }
                     $actions .= Form::mediaManager($product);
                     $actions .= Form::adminOrderButton($product);
+                    $actions .= ' <a class="btn btn-sm btn-warning" target="_blank" href="' . Administration::route('products.options.index', ['shop_product' => $product->id]) . '" title="' . trans('projects::admin.options') . '"><i class="fa fa-window-restore" aria-hidden="true"></i></a>';
                     return Form::adminEditButton(trans('administration::index.edit'), Administration::route('products.edit', $product->id)) . $actions;
                 })
                 ->addColumn('visible', function ($product) {

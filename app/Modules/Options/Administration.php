@@ -4,18 +4,16 @@
  * Venelin Iliev <http://veneliniliev.com>
  */
 
-namespace App\Modules\Products;
+namespace App\Modules\Options;
 
-use App\Modules\Products\Http\Controllers\Admin\ProductsController;
-use App\Modules\Products\Http\Controllers\Admin\ProductsOptionsController;
+use App\Modules\Options\Http\Controllers\Admin\OptionsController;
 use Kris\LaravelFormBuilder\Form;
 use ProVision\Administration\Contracts\Module;
 
 class Administration implements Module {
 
     public function routes($module) {
-        \Route::resource('products', ProductsController::class);
-        \Route::resource('products.options', ProductsOptionsController::class);
+        \Route::resource('options', OptionsController::class);
     }
 
 //    public function dashboard($module) {
@@ -24,16 +22,16 @@ class Administration implements Module {
 
     public function menu($module) {
 
-        \AdministrationMenu::addModule(trans('products::admin.module_name'), [
-            'icon' => 'shopping-basket'
+        \AdministrationMenu::addModule(trans('options::admin.module_name'), [
+            'icon' => 'star'
         ], function ($menu) {
-            $menu->addItem(trans('products::admin.list'), [
-                'url' => \Administration::route('products.index'),
+            $menu->addItem(trans('options::admin.list'), [
+                'url' => \Administration::route('options.index'),
                 'icon' => 'list'
             ]);
 
-            $menu->addItem(trans('products::admin.add'), [
-                'url' => \Administration::route('products.create'),
+            $menu->addItem(trans('options::admin.add'), [
+                'url' => \Administration::route('options.create'),
                 'icon' => 'plus'
             ]);
         });

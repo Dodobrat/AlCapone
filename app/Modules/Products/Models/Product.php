@@ -3,6 +3,7 @@
 namespace App\Modules\Products\Models;
 
 use App\Modules\Categories\Models\Category;
+use App\Modules\Options\Models\Option;
 use Dimsav\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NodeTrait;
@@ -48,6 +49,7 @@ class Product extends Model {
     /**
      * Scope a query to only include active users.
      *
+     * @param $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeActive($query) {
@@ -58,7 +60,30 @@ class Product extends Model {
         return $this->hasOne(Category::class, 'id', 'category_id');
     }
 
-    public function getPrice() {
-        return currency($this->price);
+    public function options() {
+        return $this->belongsToMany(Option::class, 'products_options', 'product_id', 'option_id')->withPivot('price');
+    }
+
+    public function getPrice($id = null) {
+        $options = $this->options;
+
+        if (empty($options)) {
+            return $this->price;
+        }
+
+        if ($id) {
+            $option = $options->firstWhere('id', $id);
+            if (!empty($option)) {
+                return $option->pivot->price;
+            }
+        }
+        $smallest_price = $options->first()->pivot->price;
+
+        foreach ($options as $option) {
+            if ($option->pivot->price < $smallest_price) {
+                $smallest_price = $option->pivot->price;
+            }
+        }
+        return $smallest_price;
     }
 }
