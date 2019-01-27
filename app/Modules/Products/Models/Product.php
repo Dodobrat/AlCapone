@@ -65,9 +65,9 @@ class Product extends Model {
     }
 
     public function getPrice($id = null) {
-        $options = $this->options;
 
-        if (empty($options)) {
+        $options = $this->options;
+        if ($options->isEmpty()) {
             return $this->price;
         }
 
