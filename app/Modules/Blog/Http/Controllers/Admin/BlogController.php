@@ -24,6 +24,7 @@ class BlogController extends BaseAdministrationController
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function index(Request $request)
     {
@@ -141,16 +142,6 @@ class BlogController extends BaseAdministrationController
         return \Redirect::route(Administration::routeName('blog.index'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return void
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
