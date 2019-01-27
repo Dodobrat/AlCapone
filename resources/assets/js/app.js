@@ -47,3 +47,17 @@ function triggerBasket() {
 triggerBasket();
 
 // MENU CATEGORIES
+
+
+// MENU PAGE GET SLUG FROM CATEGORY
+let links = document.getElementsByClassName('menu-category-link' );
+
+links = Array.from(links);
+
+links.forEach(function (link) {
+    link.addEventListener('click',function () {
+        // gets slug on pressed tab
+        console.log(link.dataset.slug);
+    });
+});
+

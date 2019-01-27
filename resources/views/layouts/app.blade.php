@@ -37,7 +37,7 @@
     <div class="nav-wrapper">
         <ul>
             <li><a href="{{ route('index') }}">{{ trans('front.home') }}</a></li>
-            <li><a href="#">{{ trans('front.menu') }}</a></li>
+            <li><a href="{{ route('menu.index') }}">{{ trans('front.menu') }}</a></li>
             <li><a href="{{ route('blog.index') }}">{{ trans('front.blog') }}</a></li>
             <li><a href="{{ route('contacts.index') }}">{{ trans('front.contacts') }}</a></li>
             <li><a id="basket"><i class="fa fa-shopping-basket"><span class="badge">4</span></i></a></li>
