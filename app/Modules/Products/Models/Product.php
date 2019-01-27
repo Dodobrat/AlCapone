@@ -68,6 +68,9 @@ class Product extends Model {
 
         $options = $this->options;
         if ($options->isEmpty()) {
+            if ($this->price == 0) {
+                return 0;
+            }
             return $this->price;
         }
 
