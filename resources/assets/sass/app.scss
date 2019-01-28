@@ -176,16 +176,8 @@ body{
         }
         .asking-food-qty{
           transition: width 0.2s ease-in-out;
-          max-width: 60px;
-          min-width: 55px;
-          background-color: rgba(0,0,0,0);
-          border: 1px solid rgba(0,0,0,0.2);
-          border-radius: 5px;
-          padding: 0 0 0 5px;
           float: right;
-          &:focus{
-            outline: none;
-          }
+          margin: 0;
         }
         .asking-food-remove{
           transition: 0.2s ease-in-out;
@@ -370,52 +362,244 @@ body{
     padding: 0 0 30px 0;
   }
   .menu-category-list{
-    display: block;
-    margin-bottom: 50px;
+
     .menu-category-item{
-      float: none;
-      display: inline-block;
-      margin: 0;
+
       .menu-category-link{
-        padding: 10px 15px;
         text-transform: uppercase;
-        font-size: 16px;
+        color: #000;
         font-weight: 400;
-        letter-spacing: 2px;
-        color: rgba(0,0,0,0.5);
+        border: 2px solid transparent;
+        border-radius: 150px;
+        margin: 0 5px;
       }
       .active{
-        color: rgba(0,0,0,1);
-        font-weight: 400;
-        border-bottom: 2px solid #000000;
+        color: #000;
+        background-color: #ffffff;
+        border: 2px solid #000000;
+        border-radius: 150px;
       }
     }
   }
   .menu-list-items-container{
     .menu-list-item{
-      .menu-list-item-img-container{
-        .menu-list-item-img{
-          width: 100%;
-          max-height: 75px;
+      transition: 0.3s ease-in-out;
+      width: 100%;
+      .menu-list-item-card-img{
+        transition: 0.2s ease-in-out;
+        width: 100%;
+        max-height: 300px;
+        min-height: 250px;
+        object-fit: cover;
+        &:hover{
+          transition: 0.2s ease-in-out;
+          cursor: pointer;
+          transform: scale(1.05);
         }
       }
-      .menu-list-item-title-container{
-        .menu-list-item-title{
-          .option{
-
+      .menu-list-item-card-body{
+        padding: 10px 0 0 0;
+        .menu-list-item-card-title{
+          text-align: center;
+          text-transform: uppercase;
+          font-weight: 400;
+          font-size: 20px;
+        }
+        .menu-list-item-card-desc-container{
+          max-height: 100px;
+          overflow-y: auto;
+          overflow-x: hidden;
+          .menu-list-item-card-desc{
+            text-align: center;
+            font-weight: 300;
+            text-transform: lowercase;
+          }
+        }
+        .menu-list-item-card-add-btn-container{
+          padding: 0 16px 16px 16px;
+          .menu-list-item-card-add-btn{
+            transition: 0.2s ease-in-out;
+            width: 100%;
+            background-color: #FDB44B;
+            padding: 10px 15px;
+            color: #ffffff;
+            text-transform: uppercase;
+            &:hover{
+              transition: 0.2s ease-in-out;
+              cursor: pointer;
+              transform: scale(1.05);
+            }
+            &:active{
+              transition: 0.2s ease-in-out;
+              transform: scale(0.95);
+            }
           }
         }
       }
-      .menu-list-item-price-container{
-        .menu-list-item-price{
+      &:hover{
+        transition: 0.3s ease-in-out;
+        box-shadow: 0px 5px 10px -3px rgba(0,0,0,0.2);
+      }
+    }
+    .button {
+      background: #428bca;
+      padding: 1em 2em;
+      color: #fff;
+      border: 0;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background: #3876ac;
+    }
+
+
+  }
+}
+.menu-modal {
+  display: none;
+  position: fixed;
+  z-index: 1900;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  .menu-modal-content {
+    background-color: #ffffff;
+    margin: auto;
+    width: 75%;
+    min-height: 75vh;
+    height: auto;
+    box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.2);
+    animation-name: modalopen;
+    animation-duration: 0.5s;
+    .menu-modal-close{
+      z-index: 10000;
+      transition: 0.3s ease-in-out;
+      position: fixed;
+      top: 0;
+      right: 0;
+      padding: 10px 20px;
+      background-color: #ffffff;
+      border: none;
+      font-size: 25px;
+      &:hover{
+        cursor: pointer;
+      }
+      &:focus{
+        outline: none;
+      }
+      &:active{
+        transition: 0.3s ease-in-out;
+        transform: scale(0.9);
+      }
+    }
+    .menu-item-modal-img-container{
+      width: 100%;
+      height: 75vh;
+      overflow: hidden;
+      .menu-item-modal-img{
+        object-fit: cover;
+        height: 100%;
+      }
+    }
+    .menu-item-modal-info-container{
+      .menu-item-modal-title-container{
+        padding: 30px 20px 20px 20px;
+        .menu-item-modal-title{
+          padding-bottom: 10px;
+          font-weight: 300;
+          text-transform: uppercase;
+          border-bottom: 3px solid #fdb44b;
+        }
+      }
+      .menu-item-modal-desc-container{
+        padding: 0 20px 20px 20px;
+        .menu-item-modal-desc{
 
         }
       }
+      .menu-item-modal-allergies-container{
+        padding: 0 20px 20px 20px;
+        .menu-item-modal-allergies-title{
+          display: inline;
+        }
+        .menu-item-modal-allergies-list{
+          list-style-type: none;
+          display: inline;
+          .menu-item-modal-allergies-item{
+            display: inline;
+            .menu-item-modal-allergy{
 
+            }
+          }
+        }
+      }
+      .menu-item-modal-options-container{
+        .menu-item-modal-options{
+          width: 100%;
+          border: 1px solid #ced4da;
+          border-radius: 3px;
+          color: #495057;
+          height: 40px;
+          padding: 0 0 0 10px;
+          &:focus{
+            outline: none;
+          }
+        }
+      }
+      .menu-item-modal-qty-container{
+        .menu-item-modal-qty{
+          width: 100%;
+          border: 1px solid #ced4da;
+          border-radius: 3px;
+          color: #495057;
+          height: 40px;
+          padding: 0 0 0 10px;
+          &:focus{
+            outline: none;
+          }
+        }
+      }
+      .menu-item-modal-price-container{
+        .menu-item-modal-price{
+          color: #000000;
+          font-size: 25px;
+          font-weight: 600;
+          text-align: center;
+        }
+      }
+      .menu-item-modal-order-container{
+        .menu-item-modal-order{
+          button{
+            width: 100%;
+            background-color: #FDB44B;
+            color: #ffffff;
+            border: none;
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 10px 0;
+          }
+        }
+      }
     }
   }
 }
 
+
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 
 

@@ -78,7 +78,7 @@
                         </p>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-4 col-4">
-                        <input type="number" min="1" max="6" class="asking-food-qty" placeholder="{{ trans('front.qty') }}" value="">
+                        <p class="asking-food-qty">1 бр.</p>
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-2 col-2">
                         <button class="asking-food-remove">&#10005;</button>

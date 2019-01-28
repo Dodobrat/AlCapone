@@ -61,3 +61,47 @@ links.forEach(function (link) {
     });
 });
 
+
+
+// Get DOM Elements
+let imgTriggers = document.getElementsByClassName('card-img-top menu-list-item-card-img');
+let btnTriggers = document.getElementsByClassName('menu-list-item-card-add-btn');
+let modal = document.querySelector('#my-modal');
+let closeBtn = document.querySelector('.menu-modal-close');
+
+imgTriggers = Array.from(imgTriggers);
+btnTriggers = Array.from(btnTriggers);
+
+// Events
+
+imgTriggers.forEach(function (imgTrigger) {
+    imgTrigger.addEventListener('click',function () {
+        modal.style.display = 'flex';
+        console.log(imgTrigger.dataset.modal);
+    });
+});
+
+btnTriggers.forEach(function (btnTrigger) {
+    btnTrigger.addEventListener('click',function () {
+        modal.style.display = 'flex';
+        console.log(btnTrigger.dataset.modal);
+    });
+});
+
+closeBtn.addEventListener('click', closeModal);
+window.addEventListener('click', outsideClick);
+
+
+// Close
+function closeModal() {
+    modal.style.display = 'none';
+}
+
+// Close If Outside Click
+function outsideClick(e) {
+    if (e.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+
+

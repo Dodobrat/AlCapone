@@ -92,7 +92,154 @@
             </div>
 
 
-            @include('index::boxes.specials')
+            <div class="section specials-section-heading">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-7 text-center"  data-aos="fade-up">
+                            <h2 class="mb-4">{{ trans('index::front.specials') }}</h2>
+                            <div class="service-block">
+                                @if(!empty(Administration::getStaticBlock('specials')))
+                                    {!! Administration::getStaticBlock('specials') !!}
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{--SPECIALS SECTION HEADING--}}
+
+            <div class="section specials-section pb-5 mb-5 pt-5 px-sm-5 px-3 px-md-0 px-lg-0 px-xl-0" style="background: url('{{ asset('img/pizza_patern.png') }}')">
+                <div class="row justify-content-center align-items-center mx-0">
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
+                        <div class="special-item-img-container">
+                            <img src="{{ asset('/img/img_1.jpg') }}" alt="" class="special-item-img">
+                        </div>
+                        <div class="special-item-overlay-container">
+                            <div class="special-item-overlay">
+                                <h3 class="special-item-title">Пица с гъби и ананас</h3>
+                                <div class="special-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad architecto aut blanditiis, consequatur, eius est et facilis impedit inventore laudantium optio pariatur sed. Animi, eligendi, maiores. Architecto dolores, earum?</div>
+                                <div class="row align-items-center special-item-info">
+                                    <div class="col-8 pr-0">
+                                        <h3 class="special-item-price">15.00 лв.</h3>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <a href="#" class="special-item-link"><i class="fa fa-cart-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
+                        <div class="special-item-img-container">
+                            <img src="{{ asset('/img/img_2.jpg') }}" alt="" class="special-item-img">
+                        </div>
+                        <div class="special-item-overlay-container">
+                            <div class="special-item-overlay">
+                                <h3 class="special-item-title">Пица с гъби и ананас</h3>
+                                <div class="special-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad architecto aut blanditiis, consequatur, eius est et facilis impedit inventore laudantium optio pariatur sed. Animi, eligendi, maiores. Architecto dolores, earum?</div>
+                                <div class="row align-items-center special-item-info">
+                                    <div class="col-8 pr-0">
+                                        <h3 class="special-item-price">15.00 лв.</h3>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <a href="#" class="special-item-link"><i class="fa fa-cart-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
+                        <div class="special-item-img-container">
+                            <img src="{{ asset('/img/img_3.jpg') }}" alt="" class="special-item-img">
+                        </div>
+                        <div class="special-item-overlay-container">
+                            <div class="special-item-overlay">
+                                <h3 class="special-item-title">Пица с гъби и ананас</h3>
+                                <div class="special-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad architecto aut blanditiis, consequatur, eius est et facilis impedit inventore laudantium optio pariatur sed. Animi, eligendi, maiores. Architecto dolores, earum?</div>
+                                <div class="row align-items-center special-item-info">
+                                    <div class="col-8 pr-0">
+                                        <h3 class="special-item-price">15.00 лв.</h3>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <a href="#" class="special-item-link"><i class="fa fa-cart-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
+                        <div class="special-item-img-container">
+                            <img src="{{ asset('/img/img_4.jpg') }}" alt="" class="special-item-img">
+                        </div>
+                        <div class="special-item-overlay-container">
+                            <div class="special-item-overlay">
+                                <h3 class="special-item-title">Пица с гъби и ананас</h3>
+                                <div class="special-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad architecto aut blanditiis, consequatur, eius est et facilis impedit inventore laudantium optio pariatur sed. Animi, eligendi, maiores. Architecto dolores, earum?</div>
+                                <div class="row align-items-center special-item-info">
+                                    <div class="col-8 pr-0">
+                                        <h3 class="special-item-price">15.00 лв.</h3>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <a href="#" class="special-item-link"><i class="fa fa-cart-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
+                        <div class="special-item-img-container">
+                            <img src="{{ asset('/img/img_5.jpg') }}" alt="" class="special-item-img">
+                        </div>
+                        <div class="special-item-overlay-container">
+                            <div class="special-item-overlay">
+                                <h3 class="special-item-title">Пица с гъби и ананас</h3>
+                                <div class="special-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad architecto aut blanditiis, consequatur, eius est et facilis impedit inventore laudantium optio pariatur sed. Animi, eligendi, maiores. Architecto dolores, earum?</div>
+                                <div class="row align-items-center special-item-info">
+                                    <div class="col-8 pr-0">
+                                        <h3 class="special-item-price">15.00 лв.</h3>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <a href="#" class="special-item-link"><i class="fa fa-cart-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
+                        <div class="special-item-img-container">
+                            <img src="{{ asset('/img/img_1.jpg') }}" alt="" class="special-item-img">
+                        </div>
+                        <div class="special-item-overlay-container">
+                            <div class="special-item-overlay">
+                                <h3 class="special-item-title">Пица с гъби и ананас</h3>
+                                <div class="special-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad architecto aut blanditiis, consequatur, eius est et facilis impedit inventore laudantium optio pariatur sed. Animi, eligendi, maiores. Architecto dolores, earum?</div>
+                                <div class="row align-items-center special-item-info">
+                                    <div class="col-8 pr-0">
+                                        <h3 class="special-item-price">15.00 лв.</h3>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <a href="#" class="special-item-link"><i class="fa fa-cart-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
+                        <div class="special-item-img-container">
+                            <img src="{{ asset('/img/img_2.jpg') }}" alt="" class="special-item-img">
+                        </div>
+                        <div class="special-item-overlay-container">
+                            <div class="special-item-overlay">
+                                <h3 class="special-item-title">Пица с гъби и ананас</h3>
+                                <div class="special-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad architecto aut blanditiis, consequatur, eius est et facilis impedit inventore laudantium optio pariatur sed. Animi, eligendi, maiores. Architecto dolores, earum?</div>
+                                <div class="row align-items-center special-item-info">
+                                    <div class="col-8 pr-0">
+                                        <h3 class="special-item-price">15.00 лв.</h3>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <a href="#" class="special-item-link"><i class="fa fa-cart-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{--SPECIALS SECTION--}}
 
             <div class="menu-categories-section-heading my-5 py-5">
                 <div class="container">
@@ -145,161 +292,6 @@
                 </div>
             </div>
 
-            <div class="section">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-md-8" data-aos="fade-up">
-
-                            <h2 class="mb-5 text-center">Menu List with Price</h2>
-
-                            <ul class="nav site-tab-nav" id="pills-tab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="pills-breakfast-tab" data-toggle="pill" href="#pills-breakfast" role="tab" aria-controls="pills-breakfast" aria-selected="true">Breakfast</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="pills-lunch-tab" data-toggle="pill" href="#pills-lunch" role="tab" aria-controls="pills-lunch" aria-selected="false">Brunch</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="pills-dinner-tab" data-toggle="pill" href="#pills-dinner" role="tab" aria-controls="pills-dinner" aria-selected="false">Dinner</a>
-                                </li>
-                            </ul>
-                            <div class="tab-content" id="pills-tabContent">
-                                <div class="tab-pane fade show active" id="pills-breakfast" role="tabpanel" aria-labelledby="pills-breakfast-tab">
-                                    <div class="d-block d-md-flex menu-food-item">
-                                        <div class="text order-1 mb-3">
-                                            <h3><a href="#">Warm Spinach Dip &amp; Chips</a></h3>
-                                            <p>Spinach and artichokes in a creamy cheese dip with warm tortilla chips &amp; salsa.</p>
-                                        </div>
-                                        <div class="price order-2">
-                                            <strong>$10.49</strong>
-                                        </div>
-                                    </div> <!-- .menu-food-item -->
-
-                                    <div class="d-block d-md-flex menu-food-item">
-                                        <div class="text order-1 mb-3">
-                                            <h3><a href="#">Key Wast Machos</a></h3>
-                                            <p>Crisp tortilla and plantain chips covered with lightly spiced ground beef, melted cheese, pickled jalapeños, guacamole, sour cream and salsa.</p>
-                                        </div>
-                                        <div class="price order-2">
-                                            <strong>$11.99</strong>
-                                        </div>
-                                    </div> <!-- .menu-food-item -->
-
-                                    <div class="d-block d-md-flex menu-food-item">
-                                        <div class="text order-1 mb-3">
-                                            <h3><a href="#">Crispy Onions Rings</a></h3>
-                                            <p>A heaping mountain of rings, handmade with Panko breading and shredded coconut flakes.</p>
-                                        </div>
-                                        <div class="price order-2">
-                                            <strong>$11.99</strong>
-                                        </div>
-                                    </div> <!-- .menu-food-item -->
-
-                                    <div class="d-block d-md-flex menu-food-item">
-                                        <div class="text order-1 mb-3">
-                                            <h3><a href="#">Lobster &amp; Shrimp Quesadilla</a></h3>
-                                            <p>Lobster and tender shrimp, with onions, sweet peppers, spinach and our three cheese blend. Griddled and served with tomato salsa and sour cream.</p>
-                                        </div>
-                                        <div class="price order-2">
-                                            <strong>$13.99</strong>
-                                        </div>
-                                    </div> <!-- .menu-food-item -->
-
-
-                                </div>
-                                <div class="tab-pane fade" id="pills-lunch" role="tabpanel" aria-labelledby="pills-lunch-tab">
-
-                                    <div class="d-block d-md-flex menu-food-item">
-                                        <div class="text order-1 mb-3">
-                                            <h3><a href="#">Jumbo Lump Crab Stack</a></h3>
-                                            <p>Spinach and artichokes in a creamy cheese dip with warm tortilla chips &amp; salsa.</p>
-                                        </div>
-                                        <div class="price order-2">
-                                            <strong>$12.49</strong>
-                                        </div>
-                                    </div> <!-- .menu-food-item -->
-
-                                    <div class="d-block d-md-flex menu-food-item">
-                                        <div class="text order-1 mb-3">
-                                            <h3><a href="#">Jamaican Chicken Wings</a></h3>
-                                            <p>Crisp tortilla and plantain chips covered with lightly spiced ground beef, melted cheese, pickled jalapeños, guacamole, sour cream and salsa.</p>
-                                        </div>
-                                        <div class="price order-2">
-                                            <strong>$15.99</strong>
-                                        </div>
-                                    </div> <!-- .menu-food-item -->
-
-                                    <div class="d-block d-md-flex menu-food-item">
-                                        <div class="text order-1 mb-3">
-                                            <h3><a href="#">Bahamian Seafood Chowder</a></h3>
-                                            <p>A heaping mountain of rings, handmade with Panko breading and shredded coconut flakes.</p>
-                                        </div>
-                                        <div class="price order-2">
-                                            <strong>$10.99</strong>
-                                        </div>
-                                    </div> <!-- .menu-food-item -->
-
-                                    <div class="d-block d-md-flex menu-food-item">
-                                        <div class="text order-1 mb-3">
-                                            <h3><a href="#">Grilled Chicken &amp; Tropical Fruit on Mixed Greens</a></h3>
-                                            <p>Lobster and tender shrimp, with onions, sweet peppers, spinach and our three cheese blend. Griddled and served with tomato salsa and sour cream.</p>
-                                        </div>
-                                        <div class="price order-2">
-                                            <strong>$12.99</strong>
-                                        </div>
-                                    </div> <!-- .menu-food-item -->
-
-                                </div>
-                                <div class="tab-pane fade" id="pills-dinner" role="tabpanel" aria-labelledby="pills-dinner-tab">
-
-                                    <div class="d-block d-md-flex menu-food-item">
-                                        <div class="text order-1 mb-3">
-                                            <h3><a href="#">Grilled Top Sirlion Steak</a></h3>
-                                            <p>Spinach and artichokes in a creamy cheese dip with warm tortilla chips &amp; salsa.</p>
-                                        </div>
-                                        <div class="price order-2">
-                                            <strong>$18.99</strong>
-                                        </div>
-                                    </div> <!-- .menu-food-item -->
-
-                                    <div class="d-block d-md-flex menu-food-item">
-                                        <div class="text order-1 mb-3">
-                                            <h3><a href="#">Steak Oscar</a></h3>
-                                            <p>Crisp tortilla and plantain chips covered with lightly spiced ground beef, melted cheese, pickled jalapeños, guacamole, sour cream and salsa.</p>
-                                        </div>
-                                        <div class="price order-2">
-                                            <strong>$23.99</strong>
-                                        </div>
-                                    </div> <!-- .menu-food-item -->
-
-                                    <div class="d-block d-md-flex menu-food-item">
-                                        <div class="text order-1 mb-3">
-                                            <h3><a href="#">Skirt Steak Churrasco</a></h3>
-                                            <p>A heaping mountain of rings, handmade with Panko breading and shredded coconut flakes.</p>
-                                        </div>
-                                        <div class="price order-2">
-                                            <strong>$20.99</strong>
-                                        </div>
-                                    </div> <!-- .menu-food-item -->
-
-                                    <div class="d-block d-md-flex menu-food-item">
-                                        <div class="text order-1 mb-3">
-                                            <h3><a href="#">Grilled Beef Steak</a></h3>
-                                            <p>Lobster and tender shrimp, with onions, sweet peppers, spinach and our three cheese blend. Griddled and served with tomato salsa and sour cream.</p>
-                                        </div>
-                                        <div class="price order-2">
-                                            <strong>$20.99</strong>
-                                        </div>
-                                    </div> <!-- .menu-food-item -->
-
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div class="section bg-light">
                 <div class="container">

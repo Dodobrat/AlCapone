@@ -173,6 +173,39 @@
     }
   }
 
+  .menu-modal {
+    background-color: rgba(0,0,0,0.7);
+    padding-bottom: 50px;
+    .menu-modal-content {
+      margin: 50px auto auto auto;
+      width: 95%;
+      min-height: 75vh;
+      height: auto;
+      .menu-item-modal-img-container{
+        width: 100%;
+        height: 20vh;
+        overflow: hidden;
+        .menu-item-modal-img{
+          object-fit: cover;
+          height: auto;
+          width: 100%;
+        }
+      }
+      .menu-item-modal-info-container {
+        padding-bottom: 20px;
+        .menu-item-modal-desc-container {
+          padding: 0 20px 20px 20px;
+          max-height: 100px;
+          overflow-y: auto;
+          overflow-x: hidden;
+        }
+        .menu-item-modal-allergies-container{
+          padding: 20px;
+        }
+      }
+    }
+  }
+
 
 }
 

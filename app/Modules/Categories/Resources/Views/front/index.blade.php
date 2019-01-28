@@ -10,8 +10,11 @@
                 <div class="container">
                     <div class="row align-items-center justify-content-center">
                         <div class="col-md-7" data-aos="fade-up">
-                            <h2 class="heading">Restaurant's Menu</h2>
-                            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo saepe dolorum dolorem, iste officia voluptates! Sint repudiandae, soluta voluptatem delectus iure, eaque, harum expedita, nisi aliquam magni odio perferendis ipsum!</p>
+                            <h2 class="heading">{{ trans('index::front.menu') }}</h2>
+                            <p class="lead">
+                                @if(!empty(Administration::getStaticBlock('menu')))
+                                    {!! Administration::getStaticBlock('menu') !!}
+                                @endif</p>
                         </div>
                     </div>
                 </div>
@@ -23,208 +26,108 @@
                 {{ trans('categories::front.menu-with-prices') }}
             </h2>
             <div class="container">
-                <div class="row justify-content-center">
-                    <ul class="nav menu-category-list" role="tablist">
-                        <li class="menu-category-item">
-                            <a class="menu-category-link active" id="category-" data-toggle="pill" data-slug="slug brat" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Пици</a>
-                        </li>
-                        <li class="menu-category-item">
-                            <a class="menu-category-link" id="category-2" data-toggle="pill" data-slug="slug brat1" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Салати</a>
-                        </li>
-                        <li class="menu-category-item">
-                            <a class="menu-category-link" id="category-3" data-toggle="pill" data-slug="slug brat2" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Барбекю</a>
-                        </li>
-                    </ul>
 
-                </div>
-                <div class="tab-content menu-list-items-container">
-                    <div class="tab-pane fade show active menu-list-item" id="pills-home" role="tabpanel">
-                        <div class="row justify-content-center align-items-center">
-                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-12 col-12 menu-list-item-img-container">
-                                <img src="{{ asset('img/slider-1.jpg') }}" alt="" class="menu-list-item-img">
-                            </div>
-                            <div class="col-xl-8 col-lg-7 col-md-5 col-sm-9 col-9 menu-list-item-title-container">
-                                <h3 class="menu-list-item-title">
-                                    Шопска супа
-                                    <span class="option">
-(голяма)
-                                    </span>
+                <ul class="nav nav-pills mb-3 menu-category-list justify-content-center" id="pills-tab" role="tablist">
+                    <li class="nav-item menu-category-item">
+                        <a class="nav-link menu-category-link active" id="pills-home-tab" data-toggle="pill" data-slug="slug brat" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+                    </li>
+                    <li class="nav-item menu-category-item">
+                        <a class="nav-link menu-category-link" id="pills-profile-tab" data-toggle="pill" data-slug="slug brat1" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+                    </li>
+                    <li class="nav-item menu-category-item">
+                        <a class="nav-link menu-category-link" id="pills-contact-tab" data-toggle="pill" data-slug="slug bra2" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+                    </li>
+                </ul>
 
-                                </h3>
-                            </div>
-                            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-3 menu-list-item-price-container">
-                                <span class="menu-list-item-price">
-5.60 лв.
-                                </span>
+                <div class="tab-content mt-5">
+                    <div class="tab-pane menu-list-items-container fade show active" id="pills-home" role="tabpanel">
+
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-12 px-2 my-2">
+
+                                <div class="card menu-list-item">
+                                    <img src="{{ asset('img/slider-1.jpg') }}" class="card-img-top menu-list-item-card-img" alt="" data-modal="modal brat">
+                                    <div class="card-body menu-list-item-card-body">
+                                        <h5 class="card-title menu-list-item-card-title">Маргарита</h5>
+                                        <div class="menu-list-item-card-desc-container">
+                                            <p class="card-text menu-list-item-card-desc">доматен сос, моцарела, допълнително моцарела</p>
+                                        </div>
+                                        <hr>
+                                        <div class="menu-list-item-card-add-btn-container">
+                                            <a href="#" class="btn menu-list-item-card-add-btn" data-modal="modal buton">добави</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
+
+
+
                     </div>
                     <div class="tab-pane fade menu-list-item" id="pills-profile" role="tabpanel">CATEGORY 2</div>
                     <div class="tab-pane fade menu-list-item" id="pills-contact" role="tabpanel">CATEGORY 3</div>
                 </div>
+
             </div>
         </div>
 
-        <div class="section">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-8" data-aos="fade-up">
-
-                        <h2 class="mb-5 text-center">Menu List with Price</h2>
-
-                        <ul class="nav site-tab-nav" id="pills-tab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="pills-breakfast-tab" data-toggle="pill" href="#pills-breakfast" role="tab" aria-controls="pills-breakfast" aria-selected="true">Breakfast</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="pills-lunch-tab" data-toggle="pill" href="#pills-lunch" role="tab" aria-controls="pills-lunch" aria-selected="false">Brunch</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="pills-dinner-tab" data-toggle="pill" href="#pills-dinner" role="tab" aria-controls="pills-dinner" aria-selected="false">Dinner</a>
-                            </li>
-                        </ul>
-                        <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="pills-breakfast" role="tabpanel" aria-labelledby="pills-breakfast-tab">
-                                <div class="d-block d-md-flex menu-food-item">
-                                    <div class="text order-1 mb-3">
-                                        <h3><a href="#">Warm Spinach Dip &amp; Chips</a></h3>
-                                        <p>Spinach and artichokes in a creamy cheese dip with warm tortilla chips &amp; salsa.</p>
-                                    </div>
-                                    <div class="price order-2">
-                                        <strong>$10.49</strong>
-                                    </div>
-                                </div> <!-- .menu-food-item -->
-
-                                <div class="d-block d-md-flex menu-food-item">
-                                    <div class="text order-1 mb-3">
-                                        <h3><a href="#">Key Wast Machos</a></h3>
-                                        <p>Crisp tortilla and plantain chips covered with lightly spiced ground beef, melted cheese, pickled jalapeños, guacamole, sour cream and salsa.</p>
-                                    </div>
-                                    <div class="price order-2">
-                                        <strong>$11.99</strong>
-                                    </div>
-                                </div> <!-- .menu-food-item -->
-
-                                <div class="d-block d-md-flex menu-food-item">
-                                    <div class="text order-1 mb-3">
-                                        <h3><a href="#">Crispy Onions Rings</a></h3>
-                                        <p>A heaping mountain of rings, handmade with Panko breading and shredded coconut flakes.</p>
-                                    </div>
-                                    <div class="price order-2">
-                                        <strong>$11.99</strong>
-                                    </div>
-                                </div> <!-- .menu-food-item -->
-
-                                <div class="d-block d-md-flex menu-food-item">
-                                    <div class="text order-1 mb-3">
-                                        <h3><a href="#">Lobster &amp; Shrimp Quesadilla</a></h3>
-                                        <p>Lobster and tender shrimp, with onions, sweet peppers, spinach and our three cheese blend. Griddled and served with tomato salsa and sour cream.</p>
-                                    </div>
-                                    <div class="price order-2">
-                                        <strong>$13.99</strong>
-                                    </div>
-                                </div> <!-- .menu-food-item -->
-
-
+        <div id="my-modal" class="menu-modal">
+            <div class="menu-modal-content">
+                <button class="menu-modal-close">
+                    &#10005;
+                </button>
+                <div class="row justify-content-center mx-0">
+                    <div class="col-lg-5 col-md-6 col-sm-12 col-12 menu-item-modal-img-container px-0">
+                        <img src="{{ asset('img/slider-1.jpg') }}" alt="" class="menu-item-modal-img">
+                    </div>
+                    <div class="col-lg-7 col-md-6 col-sm-12 col-12 menu-item-modal-info-container">
+                        <div class="row">
+                            <div class="col-12 menu-item-modal-title-container">
+                                <h2 class="menu-item-modal-title">Pizza Margarita</h2>
                             </div>
-                            <div class="tab-pane fade" id="pills-lunch" role="tabpanel" aria-labelledby="pills-lunch-tab">
-
-                                <div class="d-block d-md-flex menu-food-item">
-                                    <div class="text order-1 mb-3">
-                                        <h3><a href="#">Jumbo Lump Crab Stack</a></h3>
-                                        <p>Spinach and artichokes in a creamy cheese dip with warm tortilla chips &amp; salsa.</p>
-                                    </div>
-                                    <div class="price order-2">
-                                        <strong>$12.49</strong>
-                                    </div>
-                                </div> <!-- .menu-food-item -->
-
-                                <div class="d-block d-md-flex menu-food-item">
-                                    <div class="text order-1 mb-3">
-                                        <h3><a href="#">Jamaican Chicken Wings</a></h3>
-                                        <p>Crisp tortilla and plantain chips covered with lightly spiced ground beef, melted cheese, pickled jalapeños, guacamole, sour cream and salsa.</p>
-                                    </div>
-                                    <div class="price order-2">
-                                        <strong>$15.99</strong>
-                                    </div>
-                                </div> <!-- .menu-food-item -->
-
-                                <div class="d-block d-md-flex menu-food-item">
-                                    <div class="text order-1 mb-3">
-                                        <h3><a href="#">Bahamian Seafood Chowder</a></h3>
-                                        <p>A heaping mountain of rings, handmade with Panko breading and shredded coconut flakes.</p>
-                                    </div>
-                                    <div class="price order-2">
-                                        <strong>$10.99</strong>
-                                    </div>
-                                </div> <!-- .menu-food-item -->
-
-                                <div class="d-block d-md-flex menu-food-item">
-                                    <div class="text order-1 mb-3">
-                                        <h3><a href="#">Grilled Chicken &amp; Tropical Fruit on Mixed Greens</a></h3>
-                                        <p>Lobster and tender shrimp, with onions, sweet peppers, spinach and our three cheese blend. Griddled and served with tomato salsa and sour cream.</p>
-                                    </div>
-                                    <div class="price order-2">
-                                        <strong>$12.99</strong>
-                                    </div>
-                                </div> <!-- .menu-food-item -->
-
+                            <div class="col-12 menu-item-modal-desc-container">
+                                <div class="menu-item-modal-desc">Уникално италианско тесто по избор, гарнирано с доматен сос, моцарела, гъби и щипка риган. МОЛЯ,ИЗБЕРЕТЕ ВАШЕТО ТЕСТО: ИТАЛИАНСКО КЛАСИЧЕСКО ТЕСТО; ПЪЛНОЗЪРНЕСТО ТЕСТО С ЛИМЕЦ; ИТАЛИАНСКО ПУХКАВО ТЕСТО MR.PIZZA; И ГО НАПИШЕТЕ В "КОМЕНТАР КЪМ ПОРЪЧКАТА".</div>
                             </div>
-                            <div class="tab-pane fade" id="pills-dinner" role="tabpanel" aria-labelledby="pills-dinner-tab">
-
-                                <div class="d-block d-md-flex menu-food-item">
-                                    <div class="text order-1 mb-3">
-                                        <h3><a href="#">Grilled Top Sirlion Steak</a></h3>
-                                        <p>Spinach and artichokes in a creamy cheese dip with warm tortilla chips &amp; salsa.</p>
-                                    </div>
-                                    <div class="price order-2">
-                                        <strong>$18.99</strong>
-                                    </div>
-                                </div> <!-- .menu-food-item -->
-
-                                <div class="d-block d-md-flex menu-food-item">
-                                    <div class="text order-1 mb-3">
-                                        <h3><a href="#">Steak Oscar</a></h3>
-                                        <p>Crisp tortilla and plantain chips covered with lightly spiced ground beef, melted cheese, pickled jalapeños, guacamole, sour cream and salsa.</p>
-                                    </div>
-                                    <div class="price order-2">
-                                        <strong>$23.99</strong>
-                                    </div>
-                                </div> <!-- .menu-food-item -->
-
-                                <div class="d-block d-md-flex menu-food-item">
-                                    <div class="text order-1 mb-3">
-                                        <h3><a href="#">Skirt Steak Churrasco</a></h3>
-                                        <p>A heaping mountain of rings, handmade with Panko breading and shredded coconut flakes.</p>
-                                    </div>
-                                    <div class="price order-2">
-                                        <strong>$20.99</strong>
-                                    </div>
-                                </div> <!-- .menu-food-item -->
-
-                                <div class="d-block d-md-flex menu-food-item">
-                                    <div class="text order-1 mb-3">
-                                        <h3><a href="#">Grilled Beef Steak</a></h3>
-                                        <p>Lobster and tender shrimp, with onions, sweet peppers, spinach and our three cheese blend. Griddled and served with tomato salsa and sour cream.</p>
-                                    </div>
-                                    <div class="price order-2">
-                                        <strong>$20.99</strong>
-                                    </div>
-                                </div> <!-- .menu-food-item -->
-
+                            <div class="col-12 menu-item-modal-allergies-container">
+                                <h5 class="menu-item-modal-allergies-title">Alergeni: </h5>
+                                <ul class="menu-item-modal-allergies-list">
+                                    <li class="menu-item-modal-allergies-item">
+                                        <span class="menu-item-modal-allergy">
+hello
+                                        </span>
+                                    </li><li class="menu-item-modal-allergies-item">
+                                        <span class="menu-item-modal-allergy">
+hello2
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-5 col-md-6 col-sm-12 col-12 menu-item-modal-options-container mb-3">
+                                <select class="menu-item-modal-options" name="options">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 menu-item-modal-qty-container mb-3">
+                                <input class="menu-item-modal-qty" type="number" min="0" max="10" placeholder="Kol.">
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 col-6 menu-item-modal-price-container mb-3">
+                                <p class="menu-item-modal-price">20.00 lv.</p>
+                            </div>
+                            <div class="col-lg-12 col-md-6 col-sm-12 col-12 menu-item-modal-order-container mb-3">
+                                <a href="#" class="menu-item-modal-order">
+                                    <button>DOBAVI <i class="fa fa-cart-plus"></i></button>
+                                </a>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
-        </div> <!-- .section -->
-
-
-        @include('index::boxes.specials')
-
-
+        </div>
 
     </div> <!-- .main-wrap -->
 
