@@ -88,7 +88,10 @@ btnTriggers.forEach(function (btnTrigger) {
     });
 });
 
-closeBtn.addEventListener('click', closeModal);
+if (document.body.contains(closeBtn)){
+    closeBtn.addEventListener('click', closeModal);
+}
+
 window.addEventListener('click', outsideClick);
 
 
