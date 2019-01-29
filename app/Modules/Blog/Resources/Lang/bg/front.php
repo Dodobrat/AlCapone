@@ -11,6 +11,7 @@ return [
     'page_heading' => 'БЛОГ',
     'category_menu_heading' => 'Категории',
     'category_menu_general_category' => 'Всички',
+    'read-more' => 'Прочети',
 
     // VIEW
 

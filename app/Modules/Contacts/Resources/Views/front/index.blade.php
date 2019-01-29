@@ -1,9 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="site-wrap">
-
-    <div class="main-wrap">
         <div class="cover_1 cover_sm">
             <div class="img_bg" style="background-image: url('{{ asset('img/slider-1.jpg') }}');">
                 <div class="container">
@@ -128,10 +125,5 @@
             </div>
         </div> <!-- .section -->
 
-
-
-    </div> <!-- .main-wrap -->
-
-</div>
 
     @endsection

@@ -1,7 +1,9 @@
 //Imports
 @import "variables.scss";
 
-//SCROLLBAR STYLE
+//----------------------------------------------------
+//                    SCROLLBAR
+//----------------------------------------------------
 
 ::-webkit-scrollbar {
   width: 7px;
@@ -16,7 +18,9 @@
   }
 }
 
-//OVERWRITING STYLES
+//----------------------------------------------------
+//                    GENERALS
+//----------------------------------------------------
 .services-section{
   background: none;
 }
@@ -32,7 +36,30 @@ body{
   display: none;
 }
 
-//NAVBAR STYLE
+.page-cover{
+  .page-cover-img{
+    width: 100%;
+    min-height: 40vh;
+    max-height: 60vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    .page-title{
+      margin: 15vh auto 0 auto;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .page-lead{
+      padding: 20px 0 0 0;
+      color: #ffffff;
+    }
+  }
+}
+
+//----------------------------------------------------
+//                    NAVBAR
+//----------------------------------------------------
 
 .navigation {
   transition: box-shadow 0.3s ease-in-out;
@@ -81,7 +108,7 @@ body{
             font-size: 16px;
             .badge{
               color: #ffffff;
-              background-color: #FDB44B;
+              background-color: $orange;
               border: 1px solid #f1f1f1;
               padding: 3px 5px;
               font-size: 16px;
@@ -103,7 +130,9 @@ body{
   box-shadow: 0 3px 5px -1px rgba(0,0,0,0.2);
 }
 
-//SHOPPING BASKET STYLE
+//----------------------------------------------------
+//                    SHOPPING BASKET
+//----------------------------------------------------
 .shopping-cart-wrapper{
   transition: all 0.2s ease-in-out, right 0.3s ease-in-out;
   z-index: 10000;
@@ -161,7 +190,7 @@ body{
         .asking-food-desc{
           color: #000000;
           &:hover{
-            color: #FDB44B;
+            color: $orange;
           }
         }
         .asking-food-price{
@@ -216,7 +245,7 @@ body{
           border: none;
           border-radius: 5px;
           width: 100%;
-          background-color: #FDB44B;
+          background-color: $orange;
           padding: 5px 10px;
           color: #ffffff;
           &:hover{
@@ -242,15 +271,19 @@ body{
   right: 0;
 }
 
-//HOME PAGE STYLE
+//----------------------------------------------------
+//                   HOME PAGE
+//----------------------------------------------------
 
-//SPECIALS SECTION
+//----------------------------------------------------
+//                    SPECIALS SECTION
+//----------------------------------------------------
 
 .specials-section{
   background-repeat: repeat;
   background-color: #ffffff;
-  border-top: 3px solid #FDB44B;
-  border-bottom: 3px solid #FDB44B;
+  border-top: 3px solid $orange;
+  border-bottom: 3px solid $orange;
   .special-item{
     background-color: rgba(255,255,255,0.5);
     .special-item-img-container{
@@ -350,11 +383,13 @@ body{
 }
 
 
-//----------------------------------------------//
+//----------------------------------------------------
+//                    MENU PAGE
+//----------------------------------------------------
 
-//MENU PAGE
-
-//MENU LIST
+//----------------------------------------------------
+//                    MENU LIST
+//----------------------------------------------------
 
 .menu-list-section{
   padding: 100px 0 80px 0;
@@ -421,7 +456,7 @@ body{
           .menu-list-item-card-add-btn{
             transition: 0.2s ease-in-out;
             width: 100%;
-            background-color: #FDB44B;
+            background-color: $orange;
             padding: 10px 15px;
             color: #ffffff;
             font-weight: 800;
@@ -459,6 +494,9 @@ body{
 
   }
 }
+//----------------------------------------------------
+//                    MENU MODAL
+//----------------------------------------------------
 .menu-modal {
   display: none;
   position: fixed;
@@ -472,15 +510,15 @@ body{
   .menu-modal-content {
     background-color: #ffffff;
     margin: auto;
-    width: 80%;
-    min-height: 75vh;
+    width: 50%;
+    min-height: 60vh;
     height: auto;
     box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.2);
     animation-name: modalopen;
     animation-duration: 0.5s;
     .menu-item-modal-img-container{
       width: 100%;
-      height: 75vh;
+      height: 60vh;
       overflow: hidden;
       .menu-item-modal-img{
         object-fit: cover;
@@ -517,7 +555,7 @@ body{
           padding-bottom: 10px;
           font-weight: 300;
           text-transform: uppercase;
-          border-bottom: 3px solid #fdb44b;
+          border-bottom: 3px solid $orange;
         }
         .menu-modal-close{
           z-index: 10000;
@@ -545,12 +583,15 @@ body{
       }
       .menu-item-modal-desc-container{
         padding: 0 20px 20px 20px;
+        max-height: 300px;
+        overflow-y: auto;
+        overflow-x: hidden;
         .menu-item-modal-desc{
 
         }
       }
       .menu-item-modal-allergies-container{
-        padding: 0 20px 20px 20px;
+        padding: 20px;
         .menu-item-modal-allergies-title{
           display: inline;
         }
@@ -603,22 +644,25 @@ body{
         .menu-item-modal-order{
           button{
             width: 100%;
-            background-color: #FDB44B;
+            background-color: $orange;
             color: #ffffff;
             border: none;
             border-radius: 3px;
             text-transform: uppercase;
             letter-spacing: 2px;
             padding: 10px 0;
+            &:hover{
+              cursor: pointer;
+            }
+            &:focus{
+              outline: none;
+            }
           }
         }
       }
     }
   }
 }
-
-
-
 @keyframes modalopen {
   from {
     opacity: 0;
@@ -627,6 +671,84 @@ body{
     opacity: 1;
   }
 }
+
+
+//----------------------------------------------------
+//                    BLOG VIEW PAGE
+//----------------------------------------------------
+
+
+//----------------------------------------------------
+//                    BLOG VIEW ITEMS
+//----------------------------------------------------
+.blog-view-section{
+  .blog-item{
+    background-color: #ffffff;
+    box-shadow: 0px 5px 10px -3px rgba(0,0,0,0.2);
+    overflow: hidden;
+    .blog-item-link{
+      .blog-item-link-img{
+        transition: 0.3s ease-in-out;
+        width: 110%;
+        height: 300px;
+        object-fit: cover;
+        &:hover{
+          transition: 0.3s ease-in-out;
+          width: 100%;
+        }
+      }
+    }
+    .blog-item-body{
+      padding: 20px;
+      .blog-item-body-title{
+        font-weight: 300;
+        .blog-item-body-title-link{
+          &:hover{
+
+          }
+        }
+      }
+      .blog-item-body-date{
+        .fa-calendar{
+          padding: 0;
+        }
+        .blog-item-body-date-span{
+          padding: 0 0 0 10px;
+        }
+      }
+      .blog-item-body-description{
+
+      }
+      .blog-item-body-read-link{
+        .blog-item-body-read{
+          transition: 0.2s ease-in-out;
+          width: 100%;
+          background-color: $orange;
+          border: none;
+          border-radius: 3px;
+          padding: 5px 0;
+          color: #ffffff;
+          text-transform: uppercase;
+          &:hover{
+            cursor: pointer;
+          }
+          &:focus{
+            outline: none;
+          }
+          &:active{
+            transition: 0.2s ease-in-out;
+            transform: scale(0.95);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//----------------------------------------------------
+//                    BASKET PAGE
+//----------------------------------------------------
 
 
 

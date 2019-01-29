@@ -2,11 +2,8 @@
 @section('content')
 
 
-<div class="site-wrap">
-
-    <div class="main-wrap">
         <div class="cover_1 cover_sm">
-            <div class="img_bg" style="background-image: url('{{ asset('img/slider-1.jpg') }}');" data-stellar-background-ratio="0.5">
+            <div class="img_bg" style="background-image: url('{{ asset('img/slider-1.jpg') }}');">
                 <div class="container">
                     <div class="row align-items-center justify-content-center">
                         <div class="col-md-7" data-aos="fade-up">
@@ -91,7 +88,7 @@
                                 </button>
                             </div>
                             <div class="col-12 menu-item-modal-desc-container">
-                                <div class="menu-item-modal-desc">Уникално италианско тесто по избор, гарнирано с доматен сос, моцарела, гъби и щипка риган. МОЛЯ,ИЗБЕРЕТЕ ВАШЕТО ТЕСТО: ИТАЛИАНСКО КЛАСИЧЕСКО ТЕСТО; ПЪЛНОЗЪРНЕСТО ТЕСТО С ЛИМЕЦ; ИТАЛИАНСКО ПУХКАВО ТЕСТО MR.PIZZA; И ГО НАПИШЕТЕ В "КОМЕНТАР КЪМ ПОРЪЧКАТА".</div>
+                                <div class="menu-item-modal-desc">Уникално италианско тесто по избор, гарнирано с доматен сос, моцарела, гъби и щипка риган. МОЛЯ,ИЗБЕРЕТЕ ВАШЕТО ТЕСТО: ИТАЛИАНСКО КЛАСИЧЕСКО ТЕСТО; ПЪЛНОЗЪРНЕСТО ТЕСТО С ЛИМЕЦ; ИТАЛИАНСКО </div>
                             </div>
                             <div class="col-12 menu-item-modal-allergies-container">
                                 <h5 class="menu-item-modal-allergies-title">Alergeni: </h5>
@@ -131,10 +128,6 @@ hello2
                 </div>
             </div>
         </div>
-
-    </div> <!-- .main-wrap -->
-
-</div>
 
 
 @endsection

@@ -1,3 +1,26 @@
+@media screen and (max-width: 1400px){
+  .menu-modal {
+    .menu-modal-content {
+      width: 65%;
+      min-height: 60vh;
+      .menu-item-modal-img-container{
+        height: 60vh;
+      }
+    }
+  }
+}
+@media screen and (max-width: 992px){
+  .menu-modal {
+    .menu-modal-content {
+      width: 75%;
+      min-height: 70vh;
+      .menu-item-modal-img-container{
+        height: 70vh;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 767px) {
   .navigation{
     background-color: #ffffff;
@@ -218,6 +241,4 @@
 
 }
 
-//@media screen and (max-width: 768px){
-//
-//}
+

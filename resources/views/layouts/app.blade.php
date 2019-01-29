@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="{{ asset('fonts/fontawesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('fonts/flaticon/font/flaticon.css') }}">
 
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
 
     <link href="{{ mix('css/theme.css') }}" rel="stylesheet">
@@ -95,7 +94,7 @@
                     <span class="total-txt">Общо: </span><span class="total-price">123.53 lv.</span>
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-5 col-6">
-                    <a href="#" class="go-to-checkout">
+                    <a href="{{ route('basket.index') }}" class="go-to-checkout">
                         <button>{{ trans('front.checkout') }}</button>
                     </a>
                 </div>
