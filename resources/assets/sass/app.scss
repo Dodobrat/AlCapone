@@ -394,7 +394,7 @@ body{
         &:hover{
           transition: 0.2s ease-in-out;
           cursor: pointer;
-          transform: scale(1.05);
+          transform: scale(1.02);
         }
       }
       .menu-list-item-card-body{
@@ -409,6 +409,7 @@ body{
           max-height: 100px;
           overflow-y: auto;
           overflow-x: hidden;
+          padding: 0 15px;
           .menu-list-item-card-desc{
             text-align: center;
             font-weight: 300;
@@ -423,11 +424,12 @@ body{
             background-color: #FDB44B;
             padding: 10px 15px;
             color: #ffffff;
+            font-weight: 800;
             text-transform: uppercase;
             &:hover{
               transition: 0.2s ease-in-out;
               cursor: pointer;
-              transform: scale(1.05);
+              background-color: #CA8227;
             }
             &:active{
               transition: 0.2s ease-in-out;
@@ -466,37 +468,16 @@ body{
   height: 100%;
   width: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   .menu-modal-content {
     background-color: #ffffff;
     margin: auto;
-    width: 75%;
+    width: 80%;
     min-height: 75vh;
     height: auto;
     box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.2);
     animation-name: modalopen;
     animation-duration: 0.5s;
-    .menu-modal-close{
-      z-index: 10000;
-      transition: 0.3s ease-in-out;
-      position: fixed;
-      top: 0;
-      right: 0;
-      padding: 10px 20px;
-      background-color: #ffffff;
-      border: none;
-      font-size: 25px;
-      &:hover{
-        cursor: pointer;
-      }
-      &:focus{
-        outline: none;
-      }
-      &:active{
-        transition: 0.3s ease-in-out;
-        transform: scale(0.9);
-      }
-    }
     .menu-item-modal-img-container{
       width: 100%;
       height: 75vh;
@@ -504,6 +485,29 @@ body{
       .menu-item-modal-img{
         object-fit: cover;
         height: 100%;
+      }
+      .menu-modal-close{
+        z-index: 10000;
+        transition: 0.3s ease-in-out;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #ffffff;
+        color: #000000;
+        padding: 0 10px;
+        font-size: 20px;
+        border-radius: 0;
+        border: none;
+        &:hover{
+          cursor: pointer;
+        }
+        &:focus{
+          outline: none;
+        }
+        &:active{
+          transition: 0.3s ease-in-out;
+          transform: scale(0.9);
+        }
       }
     }
     .menu-item-modal-info-container{
@@ -514,6 +518,29 @@ body{
           font-weight: 300;
           text-transform: uppercase;
           border-bottom: 3px solid #fdb44b;
+        }
+        .menu-modal-close{
+          z-index: 10000;
+          transition: 0.3s ease-in-out;
+          position: absolute;
+          top: 0;
+          right: 0;
+          background-color: #ffffff;
+          color: #000000;
+          padding: 0 10px;
+          font-size: 20px;
+          border-radius: 0;
+          border: none;
+          &:hover{
+            cursor: pointer;
+          }
+          &:focus{
+            outline: none;
+          }
+          &:active{
+            transition: 0.3s ease-in-out;
+            transform: scale(0.9);
+          }
         }
       }
       .menu-item-modal-desc-container{

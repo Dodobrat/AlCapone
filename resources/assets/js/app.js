@@ -67,10 +67,11 @@ links.forEach(function (link) {
 let imgTriggers = document.getElementsByClassName('card-img-top menu-list-item-card-img');
 let btnTriggers = document.getElementsByClassName('menu-list-item-card-add-btn');
 let modal = document.querySelector('#my-modal');
-let closeBtn = document.querySelector('.menu-modal-close');
+let closeBtns = document.getElementsByClassName('menu-modal-close');
 
 imgTriggers = Array.from(imgTriggers);
 btnTriggers = Array.from(btnTriggers);
+closeBtns = Array.from(closeBtns);
 
 // Events
 
@@ -88,17 +89,13 @@ btnTriggers.forEach(function (btnTrigger) {
     });
 });
 
-if (document.body.contains(closeBtn)){
-    closeBtn.addEventListener('click', closeModal);
-}
+closeBtns.forEach(function (closeBtn) {
+    closeBtn.addEventListener('click',function () {
+        modal.style.display = 'none';
+    });
+});
 
 window.addEventListener('click', outsideClick);
-
-
-// Close
-function closeModal() {
-    modal.style.display = 'none';
-}
 
 // Close If Outside Click
 function outsideClick(e) {

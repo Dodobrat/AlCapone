@@ -54,7 +54,7 @@
                                         </div>
                                         <hr>
                                         <div class="menu-list-item-card-add-btn-container">
-                                            <a href="#" class="btn menu-list-item-card-add-btn" data-modal="modal buton">добави</a>
+                                            <a href="#" class="btn menu-list-item-card-add-btn" data-modal="modal buton">разгледай</a>
                                         </div>
 
                                     </div>
@@ -75,17 +75,20 @@
 
         <div id="my-modal" class="menu-modal">
             <div class="menu-modal-content">
-                <button class="menu-modal-close">
-                    &#10005;
-                </button>
                 <div class="row justify-content-center mx-0">
                     <div class="col-lg-5 col-md-6 col-sm-12 col-12 menu-item-modal-img-container px-0">
                         <img src="{{ asset('img/slider-1.jpg') }}" alt="" class="menu-item-modal-img">
+                        <button class="menu-modal-close d-block d-md-none">
+                            &#10005;
+                        </button>
                     </div>
                     <div class="col-lg-7 col-md-6 col-sm-12 col-12 menu-item-modal-info-container">
                         <div class="row">
                             <div class="col-12 menu-item-modal-title-container">
                                 <h2 class="menu-item-modal-title">Pizza Margarita</h2>
+                                <button class="menu-modal-close d-none d-md-block">
+                                    &#10005;
+                                </button>
                             </div>
                             <div class="col-12 menu-item-modal-desc-container">
                                 <div class="menu-item-modal-desc">Уникално италианско тесто по избор, гарнирано с доматен сос, моцарела, гъби и щипка риган. МОЛЯ,ИЗБЕРЕТЕ ВАШЕТО ТЕСТО: ИТАЛИАНСКО КЛАСИЧЕСКО ТЕСТО; ПЪЛНОЗЪРНЕСТО ТЕСТО С ЛИМЕЦ; ИТАЛИАНСКО ПУХКАВО ТЕСТО MR.PIZZA; И ГО НАПИШЕТЕ В "КОМЕНТАР КЪМ ПОРЪЧКАТА".</div>
