@@ -1,18 +1,27 @@
 @extends('layouts.app')
 @section('content')
 
-        <div class="cover_1 cover_sm">
-            <div class="img_bg" style="background-image: url('{{ asset('img/slider-1.jpg') }}');">
-                <div class="container">
-                    <div class="row align-items-center justify-content-center">
-                        <div class="col-md-7">
-                            <h2 class="heading">Contact Us</h2>
-                            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo saepe dolorum dolorem, iste officia voluptates! Sint repudiandae, soluta voluptatem delectus iure, eaque, harum expedita, nisi aliquam magni odio perferendis ipsum!</p>
+    <div class="page-cover">
+        <div class="page-cover-img"
+             @if(!empty(Settings::getFile('_cover')))
+             style="background-image: url('{{ Settings::getFile('_cover') }}')"
+             @else
+             style="background-image: url('{{ asset('img/slider-1.jpg') }}');"
+                @endif>
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-8 col-md-10 col-sm-12 col-12" data-aos="fade-up">
+                        <h2 class="page-title">{{ trans('contacts::front.contacts') }}</h2>
+                        <div class="page-lead">
+                            @if(!empty(Administration::getStaticBlock('contacts')))
+                                {!! Administration::getStaticBlock('contacts') !!}
+                            @endif
                         </div>
                     </div>
                 </div>
             </div>
-        </div> <!-- .cover_1 -->
+        </div>
+    </div>
 
         <div class="section" data-aos="fade-up">
             <div class="container">

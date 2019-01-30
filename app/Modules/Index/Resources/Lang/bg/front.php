@@ -1,6 +1,8 @@
 <?php
 
 return [
+
+    'index' => 'Пицария Ал Капоне',
     'quality-cuisine' => 'Качествена храна',
     'fresh-food' => 'Свежи продукти',
     'friendly-staff' => 'Дружелюбен състав',

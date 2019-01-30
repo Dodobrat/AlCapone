@@ -7,7 +7,7 @@
 return [
 
     // INDEX
-
+    'blog' => 'блог',
     'page_heading' => 'БЛОГ',
     'category_menu_heading' => 'Категории',
     'category_menu_general_category' => 'Всички',

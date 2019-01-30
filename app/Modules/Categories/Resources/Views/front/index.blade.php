@@ -2,21 +2,27 @@
 @section('content')
 
 
-        <div class="cover_1 cover_sm">
-            <div class="img_bg" style="background-image: url('{{ asset('img/slider-1.jpg') }}');">
-                <div class="container">
-                    <div class="row align-items-center justify-content-center">
-                        <div class="col-md-7" data-aos="fade-up">
-                            <h2 class="heading">{{ trans('index::front.menu') }}</h2>
-                            <p class="lead">
-                                @if(!empty(Administration::getStaticBlock('menu')))
-                                    {!! Administration::getStaticBlock('menu') !!}
-                                @endif</p>
+    <div class="page-cover">
+        <div class="page-cover-img"
+             @if(!empty(Settings::getFile('_cover')))
+             style="background-image: url('{{ Settings::getFile('_cover') }}')"
+             @else
+             style="background-image: url('{{ asset('img/slider-1.jpg') }}');"
+                @endif>
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-8 col-md-10 col-sm-12 col-12" data-aos="fade-up">
+                        <h2 class="page-title">{{ trans('categories::front.menu') }}</h2>
+                        <div class="page-lead">
+                            @if(!empty(Administration::getStaticBlock('menu')))
+                                {!! Administration::getStaticBlock('menu') !!}
+                            @endif
                         </div>
                     </div>
                 </div>
             </div>
-        </div> <!-- .cover_1 -->
+        </div>
+    </div>
 
         <div class="menu-list-section" data-aos="fade-down">
             <h2 class="menu-list-section-title text-center">

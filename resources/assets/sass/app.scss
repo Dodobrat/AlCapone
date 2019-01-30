@@ -40,7 +40,6 @@ body{
   .page-cover-img{
     width: 100%;
     min-height: 40vh;
-    max-height: 60vh;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -51,7 +50,7 @@ body{
       letter-spacing: 2px;
     }
     .page-lead{
-      padding: 20px 0 0 0;
+      padding: 20px 0 20px 0;
       color: #ffffff;
     }
   }
@@ -288,10 +287,10 @@ body{
     background-color: rgba(255,255,255,0.5);
     .special-item-img-container{
       transition: transform 0.2s ease-in-out;
-      transform: scale(0.9);
+      transform: scale(0.95);
       .special-item-img{
         width: 100%;
-        max-height: 300px;
+        height: 320px;
         object-fit: cover;
       }
     }

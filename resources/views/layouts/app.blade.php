@@ -95,7 +95,7 @@
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-5 col-6">
                     <a href="{{ route('basket.index') }}" class="go-to-checkout">
-                        <button>{{ trans('front.checkout') }}</button>
+                        <button>{{ trans('front.basket') }} &#10132;</button>
                     </a>
                 </div>
             </div>

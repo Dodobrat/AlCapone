@@ -1,19 +1,27 @@
 @extends('layouts.app')
 @section('content')
 
-            <div class="cover_1">
-                <div class="img_bg" style="background-image: url('{{ asset('img/slider-1.jpg') }}');">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-md-12">
-                                <h2 class="heading">
-
-                                </h2>
-                            </div>
+    <div class="page-cover">
+        <div class="page-cover-img"
+             @if(!empty(Settings::getFile('_cover')))
+             style="background-image: url('{{ Settings::getFile('_cover') }}')"
+             @else
+             style="background-image: url('{{ asset('img/slider-1.jpg') }}');"
+                @endif>
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-8 col-md-10 col-sm-12 col-12" data-aos="fade-up">
+                        <h2 class="page-title">{{ trans('index::front.index') }}</h2>
+                        <div class="page-lead">
+                            @if(!empty(Administration::getStaticBlock('index')))
+                                {!! Administration::getStaticBlock('index') !!}
+                            @endif
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
             <div class="section services-section py-5">
                 <div class="container">
@@ -105,7 +113,7 @@
             </div>
             {{--SPECIALS SECTION HEADING--}}
 
-            <div class="section specials-section pb-5 mb-5 pt-5 px-sm-5 px-3 px-md-0 px-lg-0 px-xl-0" style="background: url('{{ asset('img/pizza_patern.png') }}')">
+            <div class="section specials-section pb-5 mb-5 pt-5 px-2 px-sm-4 px-md-5" style="background: url('{{ asset('img/pizza_patern.png') }}')">
                 <div class="row justify-content-center align-items-center mx-0">
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
                         <div class="special-item-img-container">
