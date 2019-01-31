@@ -11,13 +11,15 @@
 
         <div class="address-section">
             <div class="container a-s">
-                <input type="text" class="address-input" placeholder="Търси локация &#10146;">
+                <label class="address-label" for="location">{{ trans('basket::front.choose-loc') }}  <i class="fa fa-map-marker"></i></label>
+                <input type="text" class="address-input" name="location">
                 <div class="address-map-container">
-
+                    {{--TUK SHTE E KARTATA--}}
                 </div>
                 <hr class="address-hr">
-                <div class="address-saved-locations">
-                    <h2 class="address-title">Запазени адреси</h2>
+                <div class="address-selected-location">
+                    <h2 class="address-title">{{ trans('basket::front.address-for-delivery') }}:</h2>
+                    <span>{{ trans('basket::front.address-not-selected') }}</span>
                 </div>
             </div>
 
@@ -25,7 +27,7 @@
 
         <div class="basket-section">
             <div class="container b-s">
-                <h2 class="basket-title">Количка <span>(4)</span></h2>
+                <h2 class="basket-title">{{ trans('basket::front.basket') }} <span>(4)</span></h2>
                 <div class="row justify-content-center">
                     <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 basket-cart-container">
                         <ul class="basket-cart-item-list">
@@ -192,16 +194,16 @@
                             <hr class="checkout-hr">
                             <div class="row justify-content-center align-items-center">
                                 <div class="col-12 py-4 px-3 checkout-delivery-container">
-                                    <span class="checkout-delivery">Доставка:</span>
-                                    <span class="checkout-delivery-value">Безплатна</span>
+                                    <span class="checkout-delivery">{{ trans('basket::front.delivery') }}:</span>
+                                    <span class="checkout-delivery-value">{{ trans('basket::front.free') }}</span>
                                 </div>
                                 <div class="col-12 pb-4 px-3 checkout-dds-container">
-                                    <span class="checkout-dds">Цена с ДДС:</span>
+                                    <span class="checkout-dds">{{ trans('basket::front.price-with-vat') }}:</span>
                                     <span class="checkout-dds-value">999.99 лв.</span>
                                 </div>
                             </div>
                             <div class="checkout-order-container">
-                                <button class="checkout-order">Поръчай</button>
+                                <button class="checkout-order">{{ trans('basket::front.order') }}</button>
                             </div>
                         </div>
                     </div>

@@ -58,6 +58,7 @@ body{
 
 .full-cover{
   .full-cover-img{
+    padding: 50px 0;
     width: 100%;
     min-height: 100vh;
     background-repeat: no-repeat;
@@ -776,6 +777,13 @@ body{
     background-color: #ffffff;
     padding: 15px;
     border-radius: 5px;
+    .address-label{
+      color: #0b0b0b;
+      font-size: 18px;
+      i{
+        padding: 0 10px;
+      }
+    }
     .address-input{
       width: 100%;
       border: 1px solid #ced4da;
@@ -797,8 +805,15 @@ body{
     .address-hr{
 
     }
-    .address-saved-locations{
-
+    .address-selected-location{
+      .address-title{
+        font-size: 1.5rem;
+        font-weight: 300;
+      }
+      span{
+        font-weight: 400;
+        color: #d9534f;
+      }
     }
   }
 }
@@ -882,7 +897,7 @@ body{
       }
     }
     .basket-checkout-container{
-      padding: 10px 15px;
+      padding: 20px 15px;
       .checkout-box{
         background-color: rgba(0, 0, 0, 0);
         border: 1px solid rgba(0,0,0,0.1);

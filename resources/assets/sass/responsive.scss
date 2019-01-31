@@ -22,6 +22,11 @@
 }
 
 @media screen and (max-width: 767px) {
+  .full-cover{
+    .full-cover-img{
+      background-attachment: scroll;
+    }
+  }
   .navigation{
     background-color: #ffffff;
     .logo {
