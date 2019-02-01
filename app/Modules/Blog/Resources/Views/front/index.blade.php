@@ -36,12 +36,12 @@
                         <div class="col-lg-4 col-md-6 col-sm-10 col-12">
                             <div class="blog-item" data-aos="fade-up">
                                 <a href="{{ route('blog.view', $blog->slug) }}" class="blog-item-link">
-                                    {{--@if(!empty($article->thumbnail_media->first()))--}}
-                                        {{--<img class="blog-item-link-img" src="{{$article->thumbnail_media->first()->getPublicPath()}}">--}}
-                                    {{--@else--}}
-                                        {{--<img class="blog-item-link-img" src="{{asset('img/news_2.jpg')}}">--}}
-                                    {{--@endif--}}
+                                    @if(!empty($blog->header_media->first()))
+                                        <img class="blog-item-link-img" src="{{$blog->header_media->first()->getPublicPath()}}">
+                                    @else
                                         <img class="blog-item-link-img" src="{{asset('img/news_2.jpg')}}">
+                                    @endif
+                                        {{--<img class="blog-item-link-img" src="{{asset('img/news_2.jpg')}}">--}}
                                 </a>
                                 <div class="blog-item-body">
                                     <h3 class="blog-item-body-title"><a href="{{ route('blog.view', $blog->slug) }}" class="blog-item-body-title-link">{{ $blog->title }}</a></h3>

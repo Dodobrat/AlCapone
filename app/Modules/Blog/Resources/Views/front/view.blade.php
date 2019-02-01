@@ -2,33 +2,47 @@
 @section('content')
 
 
-        <div class="cover_1 cover_sm">
-            <div class="img_bg" style="background-image: url('{{ asset('img/slider-1.jpg') }}');">
-                <div class="container">
-                    <div class="row align-items-center justify-content-center">
-                        <div class="col-11 text-center" data-aos="fade-up">
-                            <h4 class="heading mb-4">{{ $blog->title }}</h4>
 
-                            <div class="post-info">
-                                <div class="date-info">{{ $blog->created_at->format('M-d-Y') }}</div>
-                                <div class="author-info"><span class="seperator">|</span>By <a>Charles Clark</a></div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
+    <div class="full-cover">
+        <div class="full-cover-img"
+             @if(!empty($blog->media->first()))
+             style="background-image: url('{{ $blog->media->first()->getPublicPath() }}')"
+             @else
+             style="background-image: url('{{ asset('img/slider-1.jpg') }}');"
+                @endif>
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-11">
-                        {!! $blog->description !!}
+
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-12" data-aos="fade-up">
+                        <h2 class="page-title-blog">{{ $blog->title }}</h2>
+
+                        <div class="post-info">
+                            <div class="date-info">{{ $blog->created_at->format('M-d-Y') }}</div>
+                            <div class="author-info">
+                                <span class="separator">|</span> By <a>{{ $blog->author }}</a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
+
+
+            <div class="blog-post-section">
+                <div class="container b-p">
+                    <div class="post-header">
+                        @if(!empty($blog->header_media->first()))
+                            <img src="{{$blog->header_media->first()->getPublicPath()}}">
+                        @else
+                            <img src="{{asset('img/news_2.jpg')}}">
+                        @endif
+                    </div>
+                    {!! $blog->description !!}
+                </div>
+            </div>
+
+
         </div>
+    </div>
 
-
-    @endsection
+@endsection

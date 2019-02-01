@@ -23,6 +23,14 @@
 //----------------------------------------------------
 .services-section{
   background: none;
+  .feature-icon{
+    .icon{
+      background: $accent-purple;
+      & > span{
+        color: $light;
+      }
+    }
+  }
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -71,9 +79,32 @@ body{
       text-transform: uppercase;
       letter-spacing: 2px;
     }
+    .page-title-blog{
+      text-align: center;
+      margin-top: 10vh;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
     .page-lead{
       padding: 20px 0 20px 0;
       color: #ffffff;
+    }
+    .post-info{
+      padding: 20px 0 40px 0;
+      text-align: center;
+      .date-info{
+        font-size: 18px;
+      }
+      .author-info{
+        font-size: 18px;
+        .separator{
+          font-size: 20px;
+        }
+        a{
+          color: $accent-purple;
+        }
+      }
     }
   }
 }
@@ -129,8 +160,8 @@ body{
             font-size: 16px;
             .badge{
               color: #ffffff;
-              background-color: $orange;
-              border: 1px solid #f1f1f1;
+              background-color: $accent-purple;
+              border: 1px solid $accent-purple-darker;
               padding: 3px 5px;
               font-size: 16px;
               font-weight: 100;
@@ -211,7 +242,7 @@ body{
         .asking-food-desc{
           color: #000000;
           &:hover{
-            color: $orange;
+            color: $accent-purple;
           }
         }
         .asking-food-price{
@@ -257,7 +288,7 @@ body{
          color: #333333;
        }
       .total-price{
-        color: rgba(223,150,45,1);;
+        color: $accent-purple;
         font-weight: 900;
       }
       .go-to-checkout{
@@ -266,12 +297,12 @@ body{
           border: none;
           border-radius: 5px;
           width: 100%;
-          background-color: $orange;
+          background-color: $accent-purple;
           padding: 5px 10px;
           color: #ffffff;
           &:hover{
             transition: 0.2s ease-in-out;
-            background-color: rgba(223,150,45,1);
+            background-color: $accent-purple-darker;
             cursor: pointer;
           }
           &:focus{
@@ -293,6 +324,65 @@ body{
 }
 
 //----------------------------------------------------
+//                   FOOTER
+//----------------------------------------------------
+
+footer{
+  background-color: $light-dark;
+  padding: 20px;
+  .site-map{
+    list-style-type: none;
+    padding: 0 0 20px 0;
+    margin: 0;
+    color: $light;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    li{
+      display: inline;
+      a{
+        padding: 20px;
+        text-transform: uppercase;
+        color: $accent-purple;
+        font-weight: 600;
+        letter-spacing: 2px;
+        &:hover{
+          color: $accent-purple-darker;
+        }
+      }
+    }
+  }
+  .footer-address{
+    padding: 10px 0;
+    p{
+      text-align: center;
+      color: #ffffff;
+      font-weight: 400;
+      margin: 0;
+    }
+  }
+  .footer-phone{
+    padding: 10px 0;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 400;
+    .footer-phone-text{
+
+    }
+    .footer-p{
+      letter-spacing: 2px;
+      color: $accent-purple;
+    }
+  }
+  .footer-text{
+    padding: 20px 10px;
+    text-align: center;
+  }
+}
+
+//----------------------------------------------------
 //                   HOME PAGE
 //----------------------------------------------------
 
@@ -301,12 +391,14 @@ body{
 //----------------------------------------------------
 
 .specials-section{
-  background-repeat: repeat;
-  background-color: #ffffff;
-  border-top: 3px solid $orange;
-  border-bottom: 3px solid $orange;
+  background-image:
+          linear-gradient( 350deg, $mid-dark 20%, transparent 0 ),
+          linear-gradient( 125deg, transparent 30%, $accent-purple 70% ),
+          linear-gradient( 125deg, $full-dark 55%, transparent 0 ),
+          linear-gradient( 125deg, $accent-purple-darker 70%, transparent 0 );
+  //border-top: 5px solid $accent-purple-darker;
+  //border-bottom: 5px solid $accent-purple-darker;
   .special-item{
-    background-color: rgba(255,255,255,0.5);
     .special-item-img-container{
       transition: transform 0.2s ease-in-out;
       transform: scale(0.95);
@@ -324,13 +416,13 @@ body{
       left: 0;
       width: 0;
       height: 100%;
-      background-color: rgba(0,0,0,0.6);
-      color: #ffffff;
+      background-color: rgba(47,47,54,0.6);
+      color: $light;
       .special-item-overlay{
         opacity: 0;
         padding: 10px 20px 0 20px;
         .special-item-title{
-          color: #ffffff;
+          color: $light;
           text-align: center;
           font-weight: 600;
           padding: 10px 0;
@@ -351,7 +443,7 @@ body{
           }
         }
         .special-item-info{
-          background-color: #000000;
+          background-color: $high-dark;
           display: none;
           position: absolute;
           bottom: 0;
@@ -366,17 +458,18 @@ body{
           }
           .special-item-link{
             transition: 0.2s ease-in-out;
-            background-color: rgba(223,150,45,1);
-            color: #ffffff;
+            background-color: $accent-purple;
+            color: $light;
             padding: 10px 15px;
             border-radius: 5px;
             margin: 0 0 5px 0;
+            transform: scale(1);
             i{
               font-size: 20px;
             }
             &:hover{
               transition: 0.2s ease-in-out;
-              background-color: rgba(203,130,25,1);
+              background-color: $accent-purple-darker;
             }
           }
         }
@@ -386,6 +479,7 @@ body{
       .special-item-img-container{
         transition: transform 0.2s ease-in-out;
         transform: scale(1);
+        box-shadow: 0px 5px 15px -3px rgba(0,0,0,0.4);
       }
       .special-item-overlay-container{
         transition: 0.2s ease-in-out;
@@ -477,7 +571,7 @@ body{
           .menu-list-item-card-add-btn{
             transition: 0.2s ease-in-out;
             width: 100%;
-            background-color: $orange;
+            background-color: $accent-purple;
             padding: 10px 15px;
             color: #ffffff;
             font-weight: 800;
@@ -485,7 +579,10 @@ body{
             &:hover{
               transition: 0.2s ease-in-out;
               cursor: pointer;
-              background-color: #CA8227;
+              background-color: $accent-purple-darker;
+            }
+            &:focus{
+              outline: none;
             }
             &:active{
               transition: 0.2s ease-in-out;
@@ -576,7 +673,7 @@ body{
           padding-bottom: 10px;
           font-weight: 300;
           text-transform: uppercase;
-          border-bottom: 3px solid $orange;
+          border-bottom: 3px solid $accent-purple;
         }
         .menu-modal-close{
           z-index: 10000;
@@ -665,7 +762,7 @@ body{
         .menu-item-modal-order{
           button{
             width: 100%;
-            background-color: $orange;
+            background-color: $accent-purple;
             color: #ffffff;
             border: none;
             border-radius: 3px;
@@ -673,7 +770,9 @@ body{
             letter-spacing: 2px;
             padding: 10px 0;
             &:hover{
+              transition: 0.2s ease-in-out;
               cursor: pointer;
+              background-color: $accent-purple-darker;
             }
             &:focus{
               outline: none;
@@ -744,14 +843,16 @@ body{
         .blog-item-body-read{
           transition: 0.2s ease-in-out;
           width: 100%;
-          background-color: $orange;
+          background-color: $accent-purple;
           border: none;
           border-radius: 3px;
           padding: 5px 0;
           color: #ffffff;
           text-transform: uppercase;
           &:hover{
+            transition: 0.2s ease-in-out;
             cursor: pointer;
+            background-color: $accent-purple-darker;
           }
           &:focus{
             outline: none;
@@ -766,6 +867,25 @@ body{
   }
 }
 
+.blog-post-section{
+  .b-p{
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0px 5px 10px -3px rgba(0,0,0,0.2);
+    .post-header{
+      img{
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    p{
+      padding: 20px 0 0 0;
+      color: #0b0b0b;
+    }
+  }
+}
 
 //----------------------------------------------------
 //                    BASKET PAGE
@@ -943,7 +1063,7 @@ body{
           .checkout-order{
             transition: 0.2s ease-in-out;
             width: 100%;
-            background-color: $orange;
+            background-color: $accent-purple;
             border: none;
             border-radius: 5px;
             padding: 5px;
@@ -953,7 +1073,7 @@ body{
             &:hover{
               transition: 0.2s ease-in-out;
               cursor: pointer;
-              background-color: $orange;
+              background-color: $accent-purple-darker;
             }
             &:focus{
               outline: none;

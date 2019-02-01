@@ -107,18 +107,33 @@
 
 <footer>
     <div class="container">
-
-    </div>
-</footer>
-
-<div class="site-footer-copyright">
-    <div class="container">
-        <div class="row">
-
-            <p class="footer-text col-md-12">{{ trans('front.copyright') }} &copy;</p>
+        <div class="row justify-content-center align-items-center">
+            <div class="col-12">
+                <ul class="site-map">
+                    <li><a href="{{ route('index') }}">{{ trans('front.home') }}</a></li>|
+                    <li><a href="{{ route('menu.index') }}">{{ trans('front.menu') }}</a></li>|
+                    <li><a href="{{ route('blog.index') }}">{{ trans('front.blog') }}</a></li>|
+                    <li><a href="{{ route('contacts.index') }}">{{ trans('front.contacts') }}</a></li>|
+                    <li><a href="{{ route('basket.index') }}">{{ trans('front.basket') }}</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="footer-address">
+                    <p>80, ulitsa "Tsar Boris III", 1532 Kazichene</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="footer-phone">
+                    <span class="footer-phone-text">{{ trans('front.phone-for-delivery') }}</span>:
+                    <span class="footer-p">0885855379</span>
+                </div>
+            </div>
+            <div class="col-12">
+                <p class="footer-text">{{ trans('front.copyright') }} &copy;</p>
+            </div>
         </div>
     </div>
-</div>
+</footer>
 
 <!-- loader -->
 <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
