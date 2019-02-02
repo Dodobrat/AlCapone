@@ -42,6 +42,8 @@
                     </li>
                 </ul>
 
+                <div class="hr"></div>
+
                 <div class="tab-content mt-5">
                     <div class="tab-pane menu-list-items-container fade show active" id="pills-home" role="tabpanel">
 
@@ -101,18 +103,37 @@
                                 <ul class="menu-item-modal-allergies-list">
                                     <li class="menu-item-modal-allergies-item">
                                         <span class="menu-item-modal-allergy">
-hello
+                                            hello,
+                                        </span>
+                                    </li>
+                                    <li class="menu-item-modal-allergies-item">
+                                        <span class="menu-item-modal-allergy">
+                                            hello2,
                                         </span>
                                     </li><li class="menu-item-modal-allergies-item">
                                         <span class="menu-item-modal-allergy">
-hello2
+                                            hello,
+                                        </span>
+                                    </li>
+                                    <li class="menu-item-modal-allergies-item">
+                                        <span class="menu-item-modal-allergy">
+                                            hello2,
+                                        </span>
+                                    </li><li class="menu-item-modal-allergies-item">
+                                        <span class="menu-item-modal-allergy">
+                                            hello,
+                                        </span>
+                                    </li>
+                                    <li class="menu-item-modal-allergies-item">
+                                        <span class="menu-item-modal-allergy">
+                                            hello2
                                         </span>
                                     </li>
                                 </ul>
                             </div>
                             <div class="col-lg-5 col-md-6 col-sm-12 col-12 menu-item-modal-options-container mb-3">
                                 <select class="menu-item-modal-options" name="options">
-                                    <option selected>Open this select menu</option>
+                                    <option selected>{{ trans('categories::front.select-option') }}</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
                                     <option value="3">Three</option>

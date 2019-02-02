@@ -9,7 +9,6 @@
 
     <title>{{ config('app.name', 'AlCapone') }}</title>
 
-    <link rel="stylesheet" href="{{ asset('fonts/ionicons/css/ionicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('fonts/fontawesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('fonts/flaticon/font/flaticon.css') }}">
 
@@ -31,7 +30,7 @@
         <i></i>
     </label>
     <div class="logo">
-        <a href="{{ route('index') }}">BRAND</a>
+        <a href="{{ route('index') }}">{{ config('app.name', 'AlCapone') }}</a>
     </div>
     <div class="nav-wrapper">
         <ul>
@@ -76,10 +75,10 @@
                             <span>20.00 лв.</span>
                         </p>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-4 col-4">
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-3">
                         <p class="asking-food-qty">1 бр.</p>
                     </div>
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-2">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-3">
                         <button class="asking-food-remove">&#10005;</button>
                     </div>
                 </div>
@@ -106,6 +105,7 @@
 @yield('content')
 
 <footer>
+    <button class="back-to-top">&#10092;</button>
     <div class="container">
         <div class="row justify-content-center align-items-center">
             <div class="col-12">
@@ -136,7 +136,7 @@
 </footer>
 
 <!-- loader -->
-<div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
+<div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#9C4B65"/></svg></div>
 
 <script src="{{ mix('js/theme.js') }}"></script>
 </body>

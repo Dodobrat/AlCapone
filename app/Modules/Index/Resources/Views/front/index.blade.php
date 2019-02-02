@@ -7,11 +7,11 @@
              style="background-image: url('{{ Settings::getFile('_cover') }}')"
              @else
              style="background-image: url('{{ asset('img/slider-1.jpg') }}');"
-                @endif>
+                @endif id="home-img">
             <div class="container">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-lg-8 col-md-10 col-sm-12 col-12" data-aos="fade-up">
-                        <h2 class="page-title">{{ trans('index::front.index') }}</h2>
+                        <h1 class="page-title">{{ trans('index::front.index') }}</h1>
                         <div class="page-lead">
                             @if(!empty(Administration::getStaticBlock('index')))
                                 {!! Administration::getStaticBlock('index') !!}
@@ -93,7 +93,7 @@
             {{--SERVICE SECTION--}}
 
             <div class="container">
-                <hr>
+                <div class="hr"></div>
             </div>
 
 
@@ -264,56 +264,29 @@
             </div>
             {{--SPECIALS SECTION--}}
 
-            <div class="menu-categories-section-heading my-5 py-5">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-md-7 text-center"  data-aos="fade-down">
-                            <h2 class="mb-4">{{ trans('index::front.browse-menu-categories') }}</h2>
-                            <div class="service-block">
-                                @if(!empty(Administration::getStaticBlock('categories')))
-                                    {!! Administration::getStaticBlock('categories') !!}
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {{--<div class="menu-categories-section-heading my-5 py-5">--}}
+                {{--<div class="container">--}}
+                    {{--<div class="row justify-content-center">--}}
+                        {{--<div class="col-md-7 text-center"  data-aos="fade-down">--}}
+                            {{--<h2 class="mb-4">{{ trans('index::front.browse-menu-categories') }}</h2>--}}
+                            {{--<div class="service-block">--}}
+                                {{--@if(!empty(Administration::getStaticBlock('categories')))--}}
+                                    {{--{!! Administration::getStaticBlock('categories') !!}--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
-            <div class="menu-categories-section mb-5">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            {{--<div class="menu-categories-section mb-5">--}}
+                {{--<div class="container menu-category-home-item-container">--}}
+                    {{--<div class="menu-category-home-item">--}}
+                        {{--<h3><img src="{{ asset('img/slider-1.jpg') }}" alt="">САЛАТИ</h3>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="site-half-wrap d-block d-lg-flex">
-                <div class="block-half" data-aos="fade">
-                    <div class="image-bg-fullwidth" style="background-image: url({{ asset('/img/img_1.jpg') }});"></div>
-                    <div class="half d-block d-lg-flex">
-                        <div class="text">
-                            <h2 class="mb-4">Feature Menu</h2>
-                            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet eos quasi, necessitatibus dicta. Temporibus odit sed quisquam commodi, in aut, repellendus porro saepe minus, enim obcaecati fugiat optio eaque odio?</p>
-                            <p><a href="#" class="btn btn-primary btn-outline-primary">View All Menu</a></p>
-                        </div>
-                        <div class="image" style="background-image: url({{ asset('/img/img_2.jpg') }});"></div>
-                    </div>
-                </div>
-                <div class="block-half"  data-aos="fade">
-                    <div class="half d-block d-lg-flex">
-                        <div class="text">
-                            <h2 class="mb-4">Master Chef</h2>
-                            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet eos quasi, necessitatibus dicta. Temporibus odit sed quisquam commodi, in aut, repellendus porro saepe minus, enim obcaecati fugiat optio eaque odio?</p><p><a href="#" class="btn btn-primary btn-outline-primary">Meet Our chef</a></p>
-                        </div>
-                        <div class="image" style="background-image: url({{ asset('/img/chef_1.jpg') }});"></div>
-                    </div>
-                    <div class="image-bg-fullwidth" style="background-image: url({{ asset('/img/chef_2.jpg') }});"></div>
-                </div>
-            </div>
 
 
             <div class="section bg-light">
@@ -377,59 +350,6 @@
                                     <p><a href="#" class="btn btn-primary btn-outline-primary btn-sm">Read More</a></p>
                                 </div>
                             </div> <!-- .media -->
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- .section -->
-
-            <div class="section">
-                <div class="container">
-                    <div class="row justify-content-center mb-5" data-aos="fade-up">
-                        <div class="col-md-8  text-center">
-                            <h2 class="mb-3">Why Choose Us</h2>
-                            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum fuga, alias distinctio voluptatum magni voluptatibus.</p>
-                        </div>
-                    </div>
-                    <div class="row large-gutters">
-                        <div class="col-md-6"  data-aos="fade-up" data-aos-delay="200">
-                            <img src="{{ asset('/img/img_2.jpg') }}" alt="Image placeholder" class="img-fluid rounded">
-                        </div>
-                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                            <div class="accordion" id="accordion">
-                                <div class="accordion-item">
-                                    <h3 class="mb-0">
-                                        <a class="btn-block p-3" data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne">Quality Cuisine <span class="icon"></span></a>
-                                    </h3>
-                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                                        <div class="p-3">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur quae cumque perspiciatis aperiam accusantium facilis provident aspernatur nisi optio debitis dolorum, est eum eligendi vero aut ad necessitatibus nulla sit labore doloremque magnam! Ex molestiae, dolor tempora, ad fuga minima enim mollitia consequuntur, necessitatibus praesentium eligendi officia recusandae culpa tempore eaque quasi ullam magnam modi quidem in amet. Quod debitis error placeat, tempore quasi aliquid eaque vel facilis culpa voluptate.</p>
-                                        </div>
-                                    </div>
-                                </div> <!-- .accordion-item -->
-
-                                <div class="accordion-item">
-                                    <h3 class="mb-0">
-                                        <a class="btn-block p-3" data-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo">Fresh Food <span class="icon"></span></a>
-                                    </h3>
-                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                                        <div class="p-3">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel ad laborum expedita. Nostrum iure atque enim quisquam minima distinctio omnis, consequatur aliquam suscipit, quidem, esse aspernatur! Libero, excepturi animi repellendus porro impedit nihil in doloremque a quaerat enim voluptatum, perspiciatis, quas dignissimos maxime ut cum reiciendis eius dolorum voluptatem aliquam!</p>
-                                        </div>
-                                    </div>
-                                </div> <!-- .accordion-item -->
-
-                                <div class="accordion-item">
-                                    <h3 class="mb-0">
-                                        <a class="btn-block p-3" data-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">Friendly Staff  <span class="icon"></span></a>
-                                    </h3>
-                                    <div id="collapseThree" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                                        <div class="p-3">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel ad laborum expedita. Nostrum iure atque enim quisquam minima distinctio omnis, consequatur aliquam suscipit, quidem, esse aspernatur! Libero, excepturi animi repellendus porro impedit nihil in doloremque a quaerat enim voluptatum, perspiciatis, quas dignissimos maxime ut cum reiciendis eius dolorum voluptatem aliquam!</p>
-                                        </div>
-                                    </div>
-                                </div> <!-- .accordion-item -->
-
-                            </div>
                         </div>
                     </div>
                 </div>

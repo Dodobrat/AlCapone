@@ -41,7 +41,9 @@
                                     @else
                                         <img class="blog-item-link-img" src="{{asset('img/news_2.jpg')}}">
                                     @endif
-                                        {{--<img class="blog-item-link-img" src="{{asset('img/news_2.jpg')}}">--}}
+                                    <div class="blog-item-link-overlay">
+                                        <i class="fa fa-expand"></i>
+                                    </div>
                                 </a>
                                 <div class="blog-item-body">
                                     <h3 class="blog-item-body-title"><a href="{{ route('blog.view', $blog->slug) }}" class="blog-item-body-title-link">{{ $blog->title }}</a></h3>

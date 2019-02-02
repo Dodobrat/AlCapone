@@ -191,7 +191,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 basket-checkout-container">
                         <div class="checkout-box">
                             <h1 class="checkout-price">999.99 <span>лв.</span></h1>
-                            <hr class="checkout-hr">
+                            <div class="hr"></div>
                             <div class="row justify-content-center align-items-center">
                                 <div class="col-12 py-4 px-3 checkout-delivery-container">
                                     <span class="checkout-delivery">{{ trans('basket::front.delivery') }}:</span>

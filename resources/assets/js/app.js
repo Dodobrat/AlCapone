@@ -104,4 +104,12 @@ function outsideClick(e) {
     }
 }
 
-
+// BACK TO TOP
+$(document).ready(function(){
+    // scroll body to 0px on click
+    $('.back-to-top').click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 800);
+    });
+});
