@@ -56,6 +56,10 @@ class Product extends Model {
         return $query->where($this->table . '.visible', 1);
     }
 
+    public function scopeSpecial($query) {
+        return $query->where($this->table . '.special', 1);
+    }
+
     public function category() {
         return $this->hasOne(Category::class, 'id', 'category_id');
     }

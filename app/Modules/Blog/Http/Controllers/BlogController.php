@@ -42,7 +42,7 @@ class BlogController extends Controller {
 
 
 
-        $news = Blog::active()->reversed()->with(['media'])->paginate();
+        $news = Blog::active()->reversed()->with(['media'])->paginate(6);
 
 
         \Breadcrumbs::register('index', function ($breadcrumbs) {
