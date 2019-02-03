@@ -32,10 +32,10 @@
 
                 <ul class="nav nav-pills mb-3 menu-category-list justify-content-center" id="pills-tab" role="tablist">
                     <li class="nav-item menu-category-item">
-                        <a class="nav-link menu-category-link active" id="pills-home-tab" data-toggle="pill" data-slug="slug brat" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+                        <a class="nav-link menu-category-link active" id="pills-home-tab" data-toggle="pill" data-slug="slug brat" data-url="{{ route('menu.getProducts') }}" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
                     </li>
                     <li class="nav-item menu-category-item">
-                        <a class="nav-link menu-category-link" id="pills-profile-tab" data-toggle="pill" data-slug="slug brat1" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+                        <a class="nav-link menu-category-link" id="pills-profile-tab" data-toggle="pill" data-slug="slug brat1" data-url="{{ route('menu.getProducts') }}" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
                     </li>
                     <li class="nav-item menu-category-item">
                         <a class="nav-link menu-category-link" id="pills-contact-tab" data-toggle="pill" data-slug="slug bra2" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
@@ -47,26 +47,7 @@
                 <div class="tab-content mt-5">
                     <div class="tab-pane menu-list-items-container fade show active" id="pills-home" role="tabpanel">
 
-                        <div class="row">
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-12 px-2 my-2">
-
-                                <div class="card menu-list-item">
-                                    <img src="{{ asset('img/slider-1.jpg') }}" class="card-img-top menu-list-item-card-img" alt="" data-modal="modal brat">
-                                    <div class="card-body menu-list-item-card-body">
-                                        <h5 class="card-title menu-list-item-card-title">Маргарита</h5>
-                                        <div class="menu-list-item-card-desc-container">
-                                            <p class="card-text menu-list-item-card-desc">доматен сос, моцарела, допълнително моцарела</p>
-                                        </div>
-                                        <hr>
-                                        <div class="menu-list-item-card-add-btn-container">
-                                            <a href="#" class="btn menu-list-item-card-add-btn" data-modal="modal buton">разгледай</a>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
+                        @include('categories::front.boxes.products')
 
 
 

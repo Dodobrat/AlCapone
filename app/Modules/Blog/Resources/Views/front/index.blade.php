@@ -29,11 +29,11 @@
         <div class="section blog-view-section">
             <div class="container">
 
-                <div class="row justify-content-center mb-5">
+                <div class="row align-items-center">
 
                     @foreach($news as $blog)
 
-                        <div class="col-lg-4 col-md-6 col-sm-10 col-12">
+                        <div class="col-lg-4 col-md-6 col-sm-10 col-12 mb-5">
                             <div class="blog-item" data-aos="fade-up">
                                 <a href="{{ route('blog.view', $blog->slug) }}" class="blog-item-link">
                                     @if(!empty($blog->header_media->first()))
@@ -46,13 +46,15 @@
                                     </div>
                                 </a>
                                 <div class="blog-item-body">
-                                    <h3 class="blog-item-body-title"><a href="{{ route('blog.view', $blog->slug) }}" class="blog-item-body-title-link">{{ $blog->title }}</a></h3>
+                                    <h3 class="blog-item-body-title">
+                                        <a href="{{ route('blog.view', $blog->slug) }}" class="blog-item-body-title-link">
+                                            {{ $blog->title }}
+                                        </a>
+                                    </h3>
                                     <p class="blog-item-body-date"><span class="fa fa-calendar"></span><span class="blog-item-body-date-span">{{ $blog->created_at->format('d-M-Y') }}</span></p>
                                     <p class="blog-item-body-description">
-                                        @if(strlen($blog->description) >= 150)
-                                            {!! substr($blog->description,0,150)." ..." !!}
-                                        @else
-                                            {!! $blog->description !!}
+                                        @if(!empty($blog->description))
+                                            {!! substr(strip_tags($blog->description),0,50)." ..." !!}
                                         @endif
                                     </p>
                                     <a href="{{ route('blog.view', $blog->slug) }}" class="blog-item-body-read-link"><button class="blog-item-body-read">{{ trans('blog::front.read-more') }}</button></a>

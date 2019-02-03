@@ -113,7 +113,7 @@
             </div>
             {{--SPECIALS SECTION HEADING--}}
 
-            <div class="section specials-section pb-5 mb-5 pt-5 px-2 px-sm-4 px-md-5">
+            <div class="section specials-section pb-5 pt-5 px-2 px-sm-4 px-md-5">
                 <div class="row justify-content-center align-items-center mx-0">
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
                         <div class="special-item-img-container">
@@ -290,7 +290,18 @@
     @if($articles->count() > 0)
 
         <div class="blog-home-title-section">
-
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-7 text-center"  data-aos="fade-up">
+                        <h2 class="mb-4">{{ trans('index::front.blog') }}</h2>
+                        <div class="service-block">
+                            @if(!empty(Administration::getStaticBlock('blog')))
+                                {!! Administration::getStaticBlock('blog') !!}
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
@@ -304,7 +315,7 @@
                                     @if ($loop->last && $articles->count() >= 3)
                                         @php continue; @endphp
                                     @endif
-                                    <li class="blog-home-item">
+                                    <li class="blog-home-item" data-aos="fade-right">
                                         <div class="row align-items-center">
                                             <div class="col-lg-5 col-md-12 col-sm-12 col-12">
                                                 <a href="{{ route('blog.view', $blog->slug) }}" class="blog-home-item-link">
@@ -334,7 +345,7 @@
                         </div>
                     @if ($articles->count() >= 3)
                             <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-                                <div class="blog-home-main-item">
+                                <div class="blog-home-main-item" data-aos="fade-left">
                                     <div class="row align-items-center">
                                         <div class="col-12">
                                             <a href="{{ route('blog.view', $blog->slug) }}" class="blog-home-main-item-link">

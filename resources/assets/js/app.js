@@ -56,8 +56,36 @@ links = Array.from(links);
 
 links.forEach(function (link) {
     link.addEventListener('click',function () {
-        // gets slug on pressed tab
-        console.log(link.dataset.slug);
+
+        let catSlug = link.dataset.slug;
+        let catRoute = link.dataset.url;
+
+            $.ajaxSetup({
+                cache: false,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: catRoute,
+                method: 'post',
+                data: {
+                    category_slug: catSlug,
+                },
+
+                success: function(result) {
+                    console.log(result);
+                    if (result.errors) {
+                        $('.alert-danger').html('');
+
+                        $.each(result.errors, function (key, value) {
+
+                        });
+                    } else {
+
+                    }
+                }});
+
     });
 });
 

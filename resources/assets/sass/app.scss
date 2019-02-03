@@ -441,8 +441,6 @@ footer{
           linear-gradient( 125deg, transparent 30%, $accent-purple 70% ),
           linear-gradient( 125deg, $full-dark 55%, transparent 0 ),
           linear-gradient( 125deg, $accent-purple-darker 70%, transparent 0 );
-  //border-top: 5px solid $accent-purple-darker;
-  //border-bottom: 5px solid $accent-purple-darker;
   .special-item{
     .special-item-img-container{
       transition: transform 0.2s ease-in-out;
@@ -590,6 +588,7 @@ footer{
 
 .blog-home-title-section{
   background-color: $light;
+  padding: 50px 0;
 }
 
 .blog-home-section{
@@ -1021,7 +1020,8 @@ footer{
   .blog-item{
     background-color: #ffffff;
     box-shadow: 0 2px 20px -6px $light-dark-rgba;
-    overflow: hidden;
+    overflow-x: hidden;
+    height: auto;
     .blog-item-link{
       &:hover{
         .blog-item-link-img{
