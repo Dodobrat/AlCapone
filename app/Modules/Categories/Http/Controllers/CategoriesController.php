@@ -24,12 +24,22 @@ class CategoriesController extends Controller {
     public function getProducts(Request $request) {
         $errors = [];
 
-        if (empty($request->get('category_id'))) {
-            $errors[] = 'problem';
+        if (empty($request->get('category_slug'))) {
+            $errors[] = 'nqma slug';
         }
 
-        $products = Product::active()->where('category_id', $request->get('category_id'))->paginate(20);
-        return response()->json(['haha' => 'stiga we bachka']);
+        $category = Category::whereTranlsation('slug', $request->get('category_slug'))->first();
+
+        if (empty($category)) {
+            $errors[] = 'nqma categoriq';
+        }
+
+        if (empty($errors)) {
+            $products = Product::active()->where('category_id', $category->id)->paginate(20);
+        }
+
+        $new_products = view('categories.front.boxes.products', compact('products'))->render();
+        return response()->json(['errors' => $errors, 'new_blade' => $new_products]);
     }
 
 }
