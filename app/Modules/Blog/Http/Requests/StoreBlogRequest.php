@@ -34,7 +34,7 @@ class StoreBlogRequest extends FormRequest
 
         foreach ($locales as $locale) {
             $trans[$locale . '.title'] = 'required|string';
-//            $trans[$locale . '.author'] = 'required|string';
+            $trans[$locale . '.author'] = 'required|string';
             $trans[$locale . '.meta_title'] = 'nullable|string';
             $trans[$locale . '.meta_description'] = 'nullable|string';
             $trans[$locale . '.meta_keywords'] = 'nullable|string';

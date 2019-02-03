@@ -23,10 +23,10 @@ class BlogForm extends AdminForm {
         ]);
 
 
-//        $this->add('author', 'text', [
-//            'label' => trans('blog::admin.author'),
-//            'translate' => true,
-//        ]);
+        $this->add('author', 'text', [
+            'label' => trans('blog::admin.author'),
+            'translate' => true,
+        ]);
 
         $this->add('description', 'editor', [
             'label' => trans('blog::admin.description'),
