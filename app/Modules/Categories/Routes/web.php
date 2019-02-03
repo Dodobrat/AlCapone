@@ -16,7 +16,7 @@ Route::group([
         'as' => 'menu.'
     ], function () {
 
-        Route::get('/', [
+        Route::get('/{slug?}', [
             'as' => 'index',
             'uses' => 'CategoriesController@index'
         ]);

@@ -8,6 +8,7 @@ namespace App\Modules\Index\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Modules\Blog\Models\Blog;
+use App\Modules\Categories\Models\Category;
 use App\Modules\Products\Models\Product;
 use ProVision\Administration\Facades\Settings;
 use SEO;
@@ -29,8 +30,9 @@ class IndexController extends Controller {
 
         $meals = Product::active()->special()->reversed()->with(['media'])->limit(8)->get();
         $articles = Blog::active()->reversed()->with(['media'])->limit(4)->get();
+        $categories = Category::has('products')->with(['media'])->get();
 
-        return view('index::front.index', compact('meals', 'articles'));
+        return view('index::front.index', compact('meals', 'articles', 'categories'));
     }
 
 }
