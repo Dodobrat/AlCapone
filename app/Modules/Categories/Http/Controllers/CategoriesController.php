@@ -14,11 +14,20 @@ use Illuminate\Http\Request;
 use SEO;
 
 class CategoriesController extends Controller {
-    public function index() {
-        $categories = Category::has('products')->active()->get();
-        $products = Product::active()->paginate(20);
+    public function index($slug = null) {
 
-        return view('categories::front.index', compact('products', 'categories'));
+
+        $categories = Category::has('products')->active()->get();
+
+        $current_category = $categories->first();
+        if (!empty($slug)) {
+            $current_category = Category::whereTranslation('slug', $slug)->first();
+        }
+
+
+        $products = Product::active()->where('category_id', $current_category->id)->paginate(20);
+
+        return view('categories::front.index', compact('products', 'categories', 'current_category'));
     }
 
 

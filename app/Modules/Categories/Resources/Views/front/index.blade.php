@@ -34,7 +34,7 @@
 
                     @foreach($categories as $category)
                         <li class="nav-item menu-category-item">
-                            <a class="nav-link menu-category-link @if ($loop->first) active @endif"
+                            <a class="nav-link menu-category-link @if ($current_category->slug == $category->slug) active @endif"
                                id="{{ $category->slug }}"
                                data-toggle="pill"
                                data-slug="{{ $category->slug }}"
@@ -54,7 +54,7 @@
 
                 <div class="tab-content mt-5" id="products-container">
 
-                        @include('categories::front.boxes.products', ['category' => $categories->first()])
+                        @include('categories::front.boxes.products', ['category' => $current_category])
 
                 </div>
 
