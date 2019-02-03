@@ -7,17 +7,25 @@
 namespace App\Modules\Categories\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Modules\Products\Models\Product;
 use Illuminate\Support\Facades\Request;
 use SEO;
 
 class CategoriesController extends Controller {
     public function index() {
-
-        return view('categories::front.index');
+        $products = Product::active()->paginate(20);
+        return view('categories::front.index', compact('products'));
     }
 
 
     public function getProducts(Request $request) {
+        $errors = [];
+
+        if (empty($request->get('category_id'))) {
+            $errors[] = 'problem';
+        }
+
+        $products = Product::active()->where('category_id', $request->get('category_id'))->paginate(20);
         return response()->json(['haha' => 'stiga we bachka']);
     }
 
