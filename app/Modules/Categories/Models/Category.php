@@ -2,6 +2,7 @@
 
 namespace App\Modules\Categories\Models;
 
+use App\Modules\Products\Models\Product;
 use Dimsav\Translatable\Translatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Kalnoy\Nestedset\NodeTrait;
@@ -52,6 +53,10 @@ class Category extends AdminModel {
     public function scopeActive($query)
     {
         return $query->where($this->table . '.visible', 1);
+    }
+
+    public function products() {
+        return $this->hasMany(Product::class, 'category_id', 'id');
     }
 
     public function header_media()
