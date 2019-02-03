@@ -4,19 +4,15 @@
  * Venelin Iliev <http://veneliniliev.com>
  */
 
-namespace App\Modules\Index;
-
-use App\Modules\Index\Dashboard\GraphBox;
-use App\Modules\Offers\Models\Offers;
+namespace App\Modules\Basket;
 
 use Kris\LaravelFormBuilder\Form;
 use ProVision\Administration\Contracts\Module;
 
-
 class Administration implements Module {
 
     public function routes($module) {
-
+//        \Route::resource('contacts', 'App\Modules\Contacts\Http\Controllers\Admin\ContactsController');
     }
 
 //    public function dashboard($module) {
@@ -31,6 +27,19 @@ class Administration implements Module {
 
     public function menu($module) {
 
+//        \AdministrationMenu::addModule(trans('contacts::admin.module_name'), [
+//            'icon' => 'paper-plane-o'
+//        ], function ($menu) {
+//            $menu->addItem(trans('contacts::admin.list'), [
+//                'url'=> \Administration::route('contacts.index'),
+//                'icon' => 'list'
+//            ]);
+//
+//            $menu->addItem(trans('contacts::admin.add'), [
+//                'url'=> \Administration::route('contacts.create'),
+//                'icon' => 'plus'
+//            ]);
+//        });
     }
 
 
@@ -42,7 +51,7 @@ class Administration implements Module {
      */
     public function dashboard($module)
     {
-
+        // TODO: Implement dashboard() method.
     }
 
     /**
@@ -53,10 +62,34 @@ class Administration implements Module {
      */
     public function settings($module, Form $form)
     {
-//        $form->add($module['slug'] . '_page_title', 'text', [
-//            'label' => trans($module['slug'] . '::admin.page_title'),
+//        $form->add($module['slug'] . '_title', 'text', [
+//            'label' => trans($module['slug'] . '::admin.title'),
 //            'translate' => true
 //        ]);
+//
+//        $form->add($module['slug'].'_meta_title', 'text', [
+//            'label' => trans('administration::index.meta_title'),
+//            'translate' => true,
+//            'attr' => [
+//                'data-maxlength' => 70,
+//                'data-minlength' => 35,
+//            ]
+//        ]);
+//
+//        $form->add($module['slug'].'_meta_keywords', 'text', [
+//            'label' => trans('administration::index.meta_keywords'),
+//            'translate' => true,
+//        ]);
+//
+//        $form->add($module['slug'].'_meta_description', 'text', [
+//            'label' => trans('administration::index.meta_description'),
+//            'translate' => true,
+//            'attr' => [
+//                'data-maxlength' => 160,
+//                'data-minlength' => 80,
+//            ]
+//        ]);
+
 
         $form->add($module['slug'].'_header_image', 'file', [
             'label' => trans($module['slug'].'::admin.header_image'),
