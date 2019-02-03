@@ -7,6 +7,7 @@
 namespace App\Modules\Index\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Modules\Products\Models\Product;
 use ProVision\Administration\Facades\Settings;
 use SEO;
 
@@ -25,7 +26,9 @@ class IndexController extends Controller {
         SEO::opengraph()->addImage(asset('assets/images/facebook_share.jpg'), ['height' => 1200, 'width' => 630]);
 
 
-        return view('index::front.index');
+        $meals = Product::active()->with(['media'])->limit(8)->get();
+
+        return view('index::front.index', compact('meals'));
     }
 
 }
