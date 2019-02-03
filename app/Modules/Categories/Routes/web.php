@@ -20,6 +20,11 @@ Route::group([
             'as' => 'index',
             'uses' => 'CategoriesController@index'
         ]);
+
+        Route::get('/getProducts', [
+            'as' => 'getProducts',
+            'uses' => 'CategoriesController@getProducts'
+        ]);
     });
 });
 
