@@ -9,7 +9,8 @@ namespace App\Modules\Categories\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Modules\Categories\Models\Category;
 use App\Modules\Products\Models\Product;
-use Illuminate\Support\Facades\Request;
+
+use Illuminate\Http\Request;
 use SEO;
 
 class CategoriesController extends Controller {
@@ -28,7 +29,7 @@ class CategoriesController extends Controller {
             $errors[] = 'nqma slug';
         }
 
-        $category = Category::whereTranlsation('slug', $request->get('category_slug'))->first();
+        $category = Category::whereTranslation('slug', $request->get('category_slug'))->first();
 
         if (empty($category)) {
             $errors[] = 'nqma categoriq';
@@ -38,7 +39,7 @@ class CategoriesController extends Controller {
             $products = Product::active()->where('category_id', $category->id)->paginate(20);
         }
 
-        $new_products = view('categories.front.boxes.products', compact('products'))->render();
+        $new_products = view('categories::front.boxes.products', compact('products', 'category'))->render();
         return response()->json(['errors' => $errors, 'new_blade' => $new_products]);
     }
 

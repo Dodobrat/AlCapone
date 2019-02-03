@@ -264,28 +264,30 @@
             </div>
             {{--SPECIALS SECTION--}}
 
-            {{--<div class="menu-categories-section-heading my-5 py-5">--}}
-                {{--<div class="container">--}}
-                    {{--<div class="row justify-content-center">--}}
-                        {{--<div class="col-md-7 text-center"  data-aos="fade-down">--}}
-                            {{--<h2 class="mb-4">{{ trans('index::front.browse-menu-categories') }}</h2>--}}
-                            {{--<div class="service-block">--}}
-                                {{--@if(!empty(Administration::getStaticBlock('categories')))--}}
-                                    {{--{!! Administration::getStaticBlock('categories') !!}--}}
-                                {{--@endif--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
+            <div class="menu-categories-section-heading my-5 py-5">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-7 text-center"  data-aos="fade-down">
+                            <h2 class="mb-4">{{ trans('index::front.browse-menu-categories') }}</h2>
+                            <div class="service-block">
+                                @if(!empty(Administration::getStaticBlock('categories')))
+                                    {!! Administration::getStaticBlock('categories') !!}
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            {{--<div class="menu-categories-section mb-5">--}}
-                {{--<div class="container menu-category-home-item-container">--}}
-                    {{--<div class="menu-category-home-item">--}}
-                        {{--<h3><img src="{{ asset('img/slider-1.jpg') }}" alt="">САЛАТИ</h3>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
+            <div class="menu-categories-section mb-5">
+                <div class="container menu-category-home-item-container">
+                    @foreach($categories as $category)
+                    <div class="menu-category-home-item">
+                        <a href="{{ route('menu.index', ['slug' => $category->slug]) }}"><img src="{{ asset('img/slider-1.jpg') }}" alt="">САЛАТИ</a>
+                    </div>
+                        @endforeach
+                </div>
+            </div>
 
     @if($articles->count() > 0)
 
@@ -378,54 +380,5 @@
             </div>
         </div>
     @endif
-
-
-    {{--<div class="section bg-light">--}}
-        {{--<div class="container">--}}
-            {{--<div class="row justify-content-center mb-5" data-aos="fade-up">--}}
-                {{--<div class="col-md-8  text-center">--}}
-                    {{--<h2 class="mb-3">Events &amp; News</h2>--}}
-                    {{--<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum fuga, alias distinctio voluptatum magni voluptatibus.</p>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="row">--}}
-                {{--<div class="@if($articles->count() < 3) col-lg-12 @else col-lg-6 @endif">--}}
-
-                    {{--@foreach($articles as $article)--}}
-                        {{--@if ($loop->last && $articles->count() >= 3)--}}
-                            {{--@php continue; @endphp--}}
-                            {{--@endif--}}
-                    {{--<div class="media d-block d-lg-flex mb-5"  data-aos="fade-up" data-aos-delay="100">--}}
-                        {{--<figure class="mr-4 horizontal">--}}
-                            {{--<img src="img/news_1.jpg" alt="Image placeholder" class="img-fluid">--}}
-                        {{--</figure>--}}
-                        {{--<div class="media-body">--}}
-                            {{--<h3><a href="#">{{ $article->title }}</a></h3>--}}
-                            {{--<p class="post-meta"><span><span class="fa fa-calendar"></span> April 22, 2018</span></p>--}}
-                            {{--<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus</p>--}}
-                            {{--<p><a href="#" class="btn btn-primary btn-outline-primary btn-sm">Read More</a></p>--}}
-                        {{--</div>--}}
-                    {{--</div> <!-- .media -->--}}
-                    {{--@endforeach--}}
-
-                {{--</div> <!-- .col-md-6 -->--}}
-                {{--@if ($articles->count() >= 3)--}}
-                {{--<div class="col-lg-6">--}}
-                    {{--<div class="media d-block mb-5" data-aos="fade-up"  data-aos-delay="400">--}}
-                        {{--<figure>--}}
-                            {{--<a href="#"><img src="img/news_1_large.jpg" alt="Image placeholder" class="img-fluid"></a>--}}
-                        {{--</figure>--}}
-                        {{--<div class="media-body">--}}
-                            {{--<h3><a href="#">{{ $articles->last()->title }}</a></h3>--}}
-                            {{--<p class="post-meta"><span><span class="fa fa-calendar"></span> April 22, 2018</span></p>--}}
-                            {{--<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus</p>--}}
-                            {{--<p><a href="#" class="btn btn-primary btn-outline-primary btn-sm">Read More</a></p>--}}
-                        {{--</div>--}}
-                    {{--</div> <!-- .media -->--}}
-                {{--</div>--}}
-                {{--@endif--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div> <!-- .section -->--}}
 
 @endsection

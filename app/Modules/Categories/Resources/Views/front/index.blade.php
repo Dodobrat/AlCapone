@@ -31,29 +31,31 @@
             <div class="container">
 
                 <ul class="nav nav-pills mb-3 menu-category-list justify-content-center" id="pills-tab" role="tablist">
-                    <li class="nav-item menu-category-item">
-                        <a class="nav-link menu-category-link active" id="pills-home-tab" data-toggle="pill" data-slug="slug brat" data-url="{{ route('menu.getProducts') }}" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
-                    </li>
-                    <li class="nav-item menu-category-item">
-                        <a class="nav-link menu-category-link" id="pills-profile-tab" data-toggle="pill" data-slug="slug brat1" data-url="{{ route('menu.getProducts') }}" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
-                    </li>
-                    <li class="nav-item menu-category-item">
-                        <a class="nav-link menu-category-link" id="pills-contact-tab" data-toggle="pill" data-slug="slug bra2" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
-                    </li>
+
+                    @foreach($categories as $category)
+                        <li class="nav-item menu-category-item">
+                            <a class="nav-link menu-category-link @if ($loop->first) active @endif"
+                               id="{{ $category->slug }}"
+                               data-toggle="pill"
+                               data-slug="{{ $category->slug }}"
+                               data-url="{{ route('menu.getProducts') }}"
+                               href="#menu_category_{{ $category->slug }}"
+                               role="tab"
+                               aria-controls="menu_category_{{ $category->slug }}"
+                               aria-selected="true">
+                                {{ $category->title }}
+                            </a>
+                        </li>
+                    @endforeach
+
                 </ul>
 
                 <div class="hr"></div>
 
-                <div class="tab-content mt-5">
-                    <div class="tab-pane menu-list-items-container fade show active" id="pills-home" role="tabpanel">
+                <div class="tab-content mt-5" id="products-container">
 
-                        @include('categories::front.boxes.products')
+                        @include('categories::front.boxes.products', ['category' => $categories->first()])
 
-
-
-                    </div>
-                    <div class="tab-pane fade menu-list-item" id="pills-profile" role="tabpanel">CATEGORY 2</div>
-                    <div class="tab-pane fade menu-list-item" id="pills-contact" role="tabpanel">CATEGORY 3</div>
                 </div>
 
             </div>

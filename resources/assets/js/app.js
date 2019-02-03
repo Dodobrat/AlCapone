@@ -51,6 +51,7 @@ triggerBasket();
 
 // MENU PAGE GET SLUG FROM CATEGORY
 let links = document.getElementsByClassName('menu-category-link' );
+let productsContainer = document.getElementById('products-container');
 
 links = Array.from(links);
 
@@ -74,15 +75,14 @@ links.forEach(function (link) {
                 },
 
                 success: function(result) {
-                    console.log(result);
-                    if (result.errors) {
+                    if (result.errors.length != 0) {
                         $('.alert-danger').html('');
 
                         $.each(result.errors, function (key, value) {
 
                         });
                     } else {
-
+                        productsContainer.innerHTML = result.new_blade;
                     }
                 }});
 
@@ -103,19 +103,24 @@ closeBtns = Array.from(closeBtns);
 
 // Events
 
+function openedModal(){
+    modal.style.display = 'flex';
+}
+
 imgTriggers.forEach(function (imgTrigger) {
     imgTrigger.addEventListener('click',function () {
-        modal.style.display = 'flex';
+        openedModal();
         console.log(imgTrigger.dataset.modal);
     });
 });
 
 btnTriggers.forEach(function (btnTrigger) {
     btnTrigger.addEventListener('click',function () {
-        modal.style.display = 'flex';
+        openedModal();
         console.log(btnTrigger.dataset.modal);
     });
 });
+
 
 closeBtns.forEach(function (closeBtn) {
     closeBtn.addEventListener('click',function () {
