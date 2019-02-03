@@ -583,6 +583,121 @@ footer{
 //  }
 //}
 
+
+//----------------------------------------------------
+//                    HOME BLOG
+//----------------------------------------------------
+
+.blog-home-title-section{
+  background-color: $light;
+}
+
+.blog-home-section{
+  background-color: $light;
+  padding: 50px 0;
+  .blog-home-list{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    .blog-home-item{
+      padding: 10px;
+      margin: 10px 0;
+      background-color: $light;
+      .blog-home-item-link{
+        .blog-home-item-link-img{
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+        }
+      }
+      .blog-home-item-title{
+        .blog-item-title-link{
+          color: $light-dark;
+          &:hover{
+            transition: 0.2s ease-in-out;
+            cursor: pointer;
+            color: $accent-purple;
+          }
+        }
+      }
+      .blog-home-item-date{
+        span{
+
+        }
+        .blog-home-item-date-span{
+          padding: 0 10px;
+        }
+      }
+      .blog-home-item-description{
+        padding: 0 0 10px 0;
+        color: $light-dark;
+      }
+      .blog-home-item-read-link{
+        .blog-home-item-read{
+          transition: 0.2s ease-in-out;
+          width: 100%;
+          background-color: $accent-purple;
+          border: none;
+          border-radius: 5px;
+          color: $light;
+          padding: 5px;
+          &:hover{
+            transition: 0.2s ease-in-out;
+            cursor: pointer;
+            background-color: $accent-purple-darker;
+          }
+        }
+      }
+    }
+  }
+  .blog-home-main-item{
+    background-color: $light;
+    padding: 20px;
+    .blog-home-main-item-link{
+      .blog-home-main-item-link-img{
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+      }
+    }
+    .blog-home-main-item-title{
+      padding: 10px 0;
+      .blog-main-item-title-link{
+        color: $light-dark;
+      }
+    }
+    .blog-home-main-item-date{
+      font-size: 20px;
+      span{
+
+      }
+      .blog-home-main-item-date-span{
+        padding: 0 10px;
+      }
+    }
+    .blog-home-main-item-description{
+      color: $light-dark;
+      padding: 0 0 20px 0;
+    }
+    .blog-home-main-item-read-link{
+      .blog-home-main-item-read{
+        transition: 0.2s ease-in-out;
+        width: 100%;
+        background-color: $accent-purple;
+        border: none;
+        border-radius: 5px;
+        color: $light;
+        padding: 10px;
+        &:hover{
+          transition: 0.2s ease-in-out;
+          cursor: pointer;
+          background-color: $accent-purple-darker;
+        }
+      }
+    }
+  }
+}
+
 //----------------------------------------------------
 //                    MENU PAGE
 //----------------------------------------------------

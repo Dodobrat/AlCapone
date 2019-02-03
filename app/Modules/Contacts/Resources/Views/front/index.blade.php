@@ -3,8 +3,8 @@
 
     <div class="page-cover">
         <div class="page-cover-img"
-             @if(!empty(Settings::getFile('_cover')))
-             style="background-image: url('{{ Settings::getFile('_cover') }}')"
+             @if(!empty(Settings::getFile('contacts_header_image')))
+             style="background-image: url('{{ Settings::getFile('contacts_header_image') }}')"
              @else
              style="background-image: url('{{ asset('img/slider-1.jpg') }}');"
                 @endif>
