@@ -34,4 +34,10 @@ return [
     'price' => 'Цена',
     'save' => 'Промени',
     'option' => 'Опция',
+    'order_id' => 'Поръчка #',
+    'first_name' => 'Име',
+    'last_name' => 'Фамилия',
+    'new' => 'Нова',
+    'finished' => 'Завършена',
+    'canceled' => 'Отказана',
 ];
