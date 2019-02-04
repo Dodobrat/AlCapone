@@ -61,36 +61,36 @@ links.forEach(function (link) {
         let catSlug = link.dataset.slug;
         let catRoute = link.dataset.url;
 
-            $.ajaxSetup({
-                cache: false,
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        $.ajaxSetup({
+            cache: false,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url: catRoute,
+            method: 'post',
+            data: {
+                category_slug: catSlug,
+            },
+            beforeSend: function() {
+                $(".load-container").show();
+            },
+
+            success: function(result) {
+                if (result.errors.length != 0) {
+                    $('.alert-danger').html('');
+
+                    $.each(result.errors, function (key, value) {
+
+                    });
+                } else {
+                    window.history.pushState('obj', 'newtitle', catSlug);
+                    $(".load-container").hide();
+                    productsContainer.innerHTML = result.new_blade;
                 }
-            });
-            $.ajax({
-                url: catRoute,
-                method: 'post',
-                data: {
-                    category_slug: catSlug,
-                },
-                beforeSend: function() {
-                    $(".load-container").show();
-                },
-
-                success: function(result) {
-                    if (result.errors.length != 0) {
-                        $('.alert-danger').html('');
-
-                        $.each(result.errors, function (key, value) {
-
-                        });
-                    } else {
-                        window.history.pushState('obj', 'newtitle', catSlug);
-                        $(".load-container").hide();
-                        productsContainer.innerHTML = result.new_blade;
-                    }
-                }});
-
+            }
+        });
     });
 });
 
@@ -114,8 +114,36 @@ function openedModal(){
 
 imgTriggers.forEach(function (imgTrigger) {
     imgTrigger.addEventListener('click',function () {
-        openedModal();
-        console.log(imgTrigger.dataset.modal);
+
+        let productId = link.dataset.modal;
+        let productUrl = link.dataset.murl;
+
+        $.ajaxSetup({
+            cache: false,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url: productUrl,
+            method: 'post',
+            data: {
+                product_id: productId,
+            },
+
+            success: function(result) {
+                if (result.errors.length != 0) {
+                    $('.alert-danger').html('');
+
+                    $.each(result.errors, function (key, value) {
+
+                    });
+                } else {
+                    // window.history.pushState('obj', 'newtitle', catSlug);
+                    window.innerHTML = result.new_blade;
+                }
+            }
+        });
     });
 });
 
