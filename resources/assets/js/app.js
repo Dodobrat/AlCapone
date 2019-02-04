@@ -115,8 +115,8 @@ function openedModal(){
 imgTriggers.forEach(function (imgTrigger) {
     imgTrigger.addEventListener('click',function () {
 
-        let productId = link.dataset.modal;
-        let productUrl = link.dataset.murl;
+        let productId = imgTrigger.dataset.modal;
+        let productUrl = imgTrigger.dataset.murl;
 
         $.ajaxSetup({
             cache: false,
@@ -149,8 +149,37 @@ imgTriggers.forEach(function (imgTrigger) {
 
 btnTriggers.forEach(function (btnTrigger) {
     btnTrigger.addEventListener('click',function () {
-        openedModal();
-        console.log(btnTrigger.dataset.modal);
+
+        let productId = btnTrigger.dataset.modal;
+        let productUrl = btnTrigger.dataset.murl;
+
+        $.ajaxSetup({
+            cache: false,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url: productUrl,
+            method: 'post',
+            data: {
+                product_id: productId,
+            },
+
+            success: function(result) {
+                if (result.errors.length != 0) {
+                    $('.alert-danger').html('');
+
+                    $.each(result.errors, function (key, value) {
+
+                    });
+                } else {
+                    // window.history.pushState('obj', 'newtitle', catSlug);
+                    window.innerHTML = result.new_blade;
+                }
+            }
+        });
+
     });
 });
 

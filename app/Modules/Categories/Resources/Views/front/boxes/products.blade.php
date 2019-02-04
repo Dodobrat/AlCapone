@@ -24,7 +24,8 @@
                         <div class="menu-list-item-card-add-btn-container">
                             <a
                                class="btn menu-list-item-card-add-btn"
-                               data-modal="modal buton">
+                               data-modal="{{ $product->id }}"
+                               data-murl="{{ route('products.getProduct') }}">
                                 {{ trans('products::front.check') }}
                             </a>
                         </div>
