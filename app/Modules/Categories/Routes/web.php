@@ -21,7 +21,7 @@ Route::group([
             'uses' => 'CategoriesController@index'
         ]);
 
-        Route::post('/getProducts', [
+        Route::post('/ajax/getProducts', [
             'as' => 'getProducts',
             'uses' => 'CategoriesController@getProducts'
         ]);
