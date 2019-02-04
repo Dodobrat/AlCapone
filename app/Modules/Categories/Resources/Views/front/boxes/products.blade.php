@@ -18,7 +18,7 @@
                         </h5>
                         <div class="menu-list-item-card-desc-container">
                             <p class="card-text menu-list-item-card-desc">
-                                {!! $product->description !!}
+                                {!! mb_substr(strip_tags($product->description),0,50)." ..." !!}
                             </p>
                         </div>
                         <hr>
@@ -43,8 +43,6 @@
 @section('js')
     <script>
         let modal = document.querySelector('#my-modal');
-
-        // let closeBtn = document.querySelector('.menu-modal-close');
 
         function closeModal() {
             modal.style.display = 'none';

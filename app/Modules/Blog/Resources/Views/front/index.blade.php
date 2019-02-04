@@ -54,7 +54,7 @@
                                     <p class="blog-item-body-date"><span class="fa fa-calendar"></span><span class="blog-item-body-date-span">{{ $blog->created_at->format('d-M-Y') }}</span></p>
                                     <p class="blog-item-body-description">
                                         @if(!empty($blog->description))
-                                            {!! substr(strip_tags($blog->description),0,50)." ..." !!}
+                                            {!! mb_substr(strip_tags($blog->description),0,100)." ..." !!}
                                         @endif
                                     </p>
                                     <a href="{{ route('blog.view', $blog->slug) }}" class="blog-item-body-read-link"><button class="blog-item-body-read">{{ trans('blog::front.read-more') }}</button></a>

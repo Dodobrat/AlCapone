@@ -2,7 +2,13 @@
     <div class="menu-modal-content">
         <div class="row justify-content-center mx-0">
             <div class="col-lg-5 col-md-6 col-sm-12 col-12 menu-item-modal-img-container px-0">
-                <img src="{{ asset('img/slider-1.jpg') }}" alt="" class="menu-item-modal-img">
+                <div class="menu-item-modal-img"
+                    @if(!empty($product) && $product->media->isNotEmpty())
+                        style="background-image: url('{{ $product->media->first()->getPublicPath() }}')"
+                    @else
+                        style="background-image: url('{{ asset('img/slider-1.jpg') }}')"
+                    @endif>
+                </div>
                 <button class="menu-modal-close d-block d-md-none" onclick="closeModal()">
                     &#10005;
                 </button>

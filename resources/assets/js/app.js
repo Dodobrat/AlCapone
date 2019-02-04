@@ -95,15 +95,21 @@ links.forEach(function (link) {
     });
 });
 
+let modal = document.querySelector('#my-modal');
 
-window.addEventListener('click', outsideClick);
+if (document.body.contains(modal)){
+    window.addEventListener('click', outsideClick);
 
-// Close If Outside Click
-function outsideClick(e) {
-    if (e.target == modal) {
-        modal.style.display = 'none';
+    // Close If Outside Click
+    function outsideClick(e) {
+        if (e.target == modal) {
+            modal.style.display = 'none';
+        }
     }
 }
+
+
+
 
 // BACK TO TOP
 $(document).ready(function(){
