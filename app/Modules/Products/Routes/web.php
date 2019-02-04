@@ -11,8 +11,19 @@
 |
 */
 
-Route::group(['prefix' => 'products'], function () {
-    Route::get('/', function () {
-        dd('This is the Products module index page. Build something great!');
+Route::group([
+    'prefix' => \Mcamara\LaravelLocalization\Facades\LaravelLocalization::setLocale(),
+    //'middleware' => \Administration::routeMiddleware()
+], function () {
+    Route::group([
+        'prefix' => 'products',
+        'as' => 'products.'
+    ], function () {
+
+        Route::post('/ajax/getProduct', [
+            'as' => 'getProduct',
+            'uses' => 'ProductsController@getProduct'
+        ]);
     });
 });
+
