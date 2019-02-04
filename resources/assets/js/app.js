@@ -85,6 +85,7 @@ links.forEach(function (link) {
 
                         });
                     } else {
+                        window.history.pushState('obj', 'newtitle', catSlug);
                         $(".load-container").hide();
                         productsContainer.innerHTML = result.new_blade;
                     }

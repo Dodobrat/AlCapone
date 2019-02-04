@@ -53,6 +53,7 @@
                 <div class="hr"></div>
 
                 <div class="tab-content mt-5" id="products-container">
+
                     <div class="load-container">
                         <div id="loading-image" class="loader">Loading...</div>
                     </div>
