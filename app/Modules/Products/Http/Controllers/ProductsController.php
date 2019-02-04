@@ -24,8 +24,8 @@ class ProductsController extends Controller
         }
 
         return response()->json([
-            'product_modal' => view('shop::boxes.small-basket', compact('basket'))->render(),
-            'total_quantity' => $basket->getTotalQuantity()
+            'errors' => $errors,
+            'product_modal' => view('categories::front.boxes.product-view', compact('product'))->render(),
         ]);
     }
 }
