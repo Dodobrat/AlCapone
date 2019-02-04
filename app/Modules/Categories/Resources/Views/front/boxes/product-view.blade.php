@@ -1,22 +1,30 @@
-<div id="my-modal" class="menu-modal">
+
     <div class="menu-modal-content">
         <div class="row justify-content-center mx-0">
             <div class="col-lg-5 col-md-6 col-sm-12 col-12 menu-item-modal-img-container px-0">
                 <img src="{{ asset('img/slider-1.jpg') }}" alt="" class="menu-item-modal-img">
-                <button class="menu-modal-close d-block d-md-none">
+                <button class="menu-modal-close d-block d-md-none" onclick="closeModal()">
                     &#10005;
                 </button>
             </div>
             <div class="col-lg-7 col-md-6 col-sm-12 col-12 menu-item-modal-info-container">
                 <div class="row">
                     <div class="col-12 menu-item-modal-title-container">
-                        <h2 class="menu-item-modal-title">Pizza Margarita</h2>
-                        <button class="menu-modal-close d-none d-md-block">
+                        <h2 class="menu-item-modal-title">
+                            @if(!empty($product->title))
+                                {{ $product->title }}
+                            @endif
+                        </h2>
+                        <button class="menu-modal-close d-none d-md-block" onclick="closeModal()">
                             &#10005;
                         </button>
                     </div>
                     <div class="col-12 menu-item-modal-desc-container">
-                        <div class="menu-item-modal-desc">Уникално италианско тесто по избор, гарнирано с доматен сос, моцарела, гъби и щипка риган. МОЛЯ,ИЗБЕРЕТЕ ВАШЕТО ТЕСТО: ИТАЛИАНСКО КЛАСИЧЕСКО ТЕСТО; ПЪЛНОЗЪРНЕСТО ТЕСТО С ЛИМЕЦ; ИТАЛИАНСКО </div>
+                        <div class="menu-item-modal-desc">
+                            @if(!empty($product->description))
+                                {!! $product->description !!}
+                            @endif
+                        </div>
                     </div>
                     <div class="col-12 menu-item-modal-allergies-container">
                         <h5 class="menu-item-modal-allergies-title">Alergeni: </h5>
@@ -63,15 +71,18 @@
                         <input class="menu-item-modal-qty" type="number" min="0" max="10" placeholder="Kol.">
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-6 col-6 menu-item-modal-price-container mb-3">
-                        <p class="menu-item-modal-price">20.00 lv.</p>
+                        <p class="menu-item-modal-price">
+                            @if(!empty($product->price))
+                                {{ currency($product->price) }}
+                            @endif
+                        </p>
                     </div>
                     <div class="col-lg-12 col-md-6 col-sm-12 col-12 menu-item-modal-order-container mb-3">
                         <a href="#" class="menu-item-modal-order">
-                            <button>DOBAVI <i class="fa fa-cart-plus"></i></button>
+                            <button>{{ trans('categories::front.add') }} <i class="fa fa-cart-plus"></i></button>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>

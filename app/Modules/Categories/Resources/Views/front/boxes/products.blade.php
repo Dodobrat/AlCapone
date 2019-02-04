@@ -10,7 +10,8 @@
                          class="card-img-top menu-list-item-card-img"
                          alt="{{ $product->slug }}"
                          data-modal="{{ $product->id }}"
-                         data-murl="{{ route('products.getProduct') }}">
+                         data-murl="{{ route('products.getProduct') }}"
+                         onclick="openModal( '{{ $product->id }}','{{ route('products.getProduct') }}')">
                     <div class="card-body menu-list-item-card-body">
                         <h5 class="card-title menu-list-item-card-title">
                             {{ $product->title }}
@@ -25,7 +26,8 @@
                             <a
                                class="btn menu-list-item-card-add-btn"
                                data-modal="{{ $product->id }}"
-                               data-murl="{{ route('products.getProduct') }}">
+                               data-murl="{{ route('products.getProduct') }}"
+                               onclick="openModal( '{{ $product->id }}','{{ route('products.getProduct') }}')">
                                 {{ trans('products::front.check') }}
                             </a>
                         </div>
@@ -37,3 +39,47 @@
         @endforeach
     </div>
 </div>
+
+@section('js')
+    <script>
+        let modal = document.querySelector('#my-modal');
+
+        // let closeBtn = document.querySelector('.menu-modal-close');
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        function openModal(id, url) {
+            let productId = id;
+            let productUrl = url;
+
+            $.ajaxSetup({
+                cache: false,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: productUrl,
+                method: 'post',
+                data: {
+                    product_id: productId,
+                },
+
+                success: function(result) {
+                    if (result.errors.length != 0) {
+                        $('.alert-danger').html('');
+
+                        $.each(result.errors, function (key, value) {
+
+                        });
+                    } else {
+                        modal.style.display = 'flex';
+                        modal.innerHTML = result.product_modal;
+                    }
+                }
+            });
+        }
+    </script>
+@endsection

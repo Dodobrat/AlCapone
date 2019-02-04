@@ -25,6 +25,7 @@
     </div>
 
         <div class="menu-list-section" data-aos="fade-down">
+
             <h2 class="menu-list-section-title text-center">
                 {{ trans('categories::front.menu-with-prices') }}
             </h2>
@@ -39,6 +40,7 @@
                                data-toggle="pill"
                                data-slug="{{ $category->slug }}"
                                data-url="{{ route('menu.getProducts') }}"
+                               data-menu="{{ route('menu.index') }}"
                                href="#menu_category_{{ $category->slug }}"
                                role="tab"
                                aria-controls="menu_category_{{ $category->slug }}"
@@ -55,9 +57,8 @@
                 <div class="tab-content mt-5" id="products-container">
 
                     <div class="load-container">
-                        <div id="loading-image" class="loader">Loading...</div>
+                        <div id="loading-image" class="loader"></div>
                     </div>
-
 
                         @include('categories::front.boxes.products', ['category' => $current_category])
 
@@ -66,7 +67,10 @@
             </div>
         </div>
 
+    <div id="my-modal" class="menu-modal">
         @include('categories::front.boxes.product-view')
-
+    </div>
 
 @endsection
+
+

@@ -60,6 +60,7 @@ links.forEach(function (link) {
 
         let catSlug = link.dataset.slug;
         let catRoute = link.dataset.url;
+        let menuUrl = link.dataset.menu;
 
         $.ajaxSetup({
             cache: false,
@@ -85,7 +86,7 @@ links.forEach(function (link) {
 
                     });
                 } else {
-                    window.history.pushState('obj', 'newtitle', catSlug);
+                    window.history.pushState({},"", menuUrl + '/' +catSlug);
                     $(".load-container").hide();
                     productsContainer.innerHTML = result.new_blade;
                 }
@@ -94,101 +95,6 @@ links.forEach(function (link) {
     });
 });
 
-
-
-// Get DOM Elements
-let imgTriggers = document.getElementsByClassName('card-img-top menu-list-item-card-img');
-let btnTriggers = document.getElementsByClassName('menu-list-item-card-add-btn');
-let modal = document.querySelector('#my-modal');
-let closeBtns = document.getElementsByClassName('menu-modal-close');
-
-imgTriggers = Array.from(imgTriggers);
-btnTriggers = Array.from(btnTriggers);
-closeBtns = Array.from(closeBtns);
-
-// Events
-
-function openedModal(){
-    modal.style.display = 'flex';
-}
-
-imgTriggers.forEach(function (imgTrigger) {
-    imgTrigger.addEventListener('click',function () {
-
-        let productId = imgTrigger.dataset.modal;
-        let productUrl = imgTrigger.dataset.murl;
-
-        $.ajaxSetup({
-            cache: false,
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $.ajax({
-            url: productUrl,
-            method: 'post',
-            data: {
-                product_id: productId,
-            },
-
-            success: function(result) {
-                if (result.errors.length != 0) {
-                    $('.alert-danger').html('');
-
-                    $.each(result.errors, function (key, value) {
-
-                    });
-                } else {
-                    // window.history.pushState('obj', 'newtitle', catSlug);
-                    window.innerHTML = result.new_blade;
-                }
-            }
-        });
-    });
-});
-
-btnTriggers.forEach(function (btnTrigger) {
-    btnTrigger.addEventListener('click',function () {
-
-        let productId = btnTrigger.dataset.modal;
-        let productUrl = btnTrigger.dataset.murl;
-
-        $.ajaxSetup({
-            cache: false,
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $.ajax({
-            url: productUrl,
-            method: 'post',
-            data: {
-                product_id: productId,
-            },
-
-            success: function(result) {
-                if (result.errors.length != 0) {
-                    $('.alert-danger').html('');
-
-                    $.each(result.errors, function (key, value) {
-
-                    });
-                } else {
-                    // window.history.pushState('obj', 'newtitle', catSlug);
-                    window.innerHTML = result.new_blade;
-                }
-            }
-        });
-
-    });
-});
-
-
-closeBtns.forEach(function (closeBtn) {
-    closeBtn.addEventListener('click',function () {
-        modal.style.display = 'none';
-    });
-});
 
 window.addEventListener('click', outsideClick);
 
@@ -208,3 +114,4 @@ $(document).ready(function(){
         }, 800);
     });
 });
+
