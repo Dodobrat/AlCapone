@@ -108,7 +108,7 @@
     <button class="back-to-top">&#10092;</button>
     <div class="container">
         <div class="row justify-content-center align-items-center">
-            <div class="col-12">
+            <div class="col-12 d-none d-lg-block">
                 <ul class="site-map">
                     <li><a href="{{ route('index') }}">{{ trans('front.home') }}</a></li>|
                     <li><a href="{{ route('menu.index') }}">{{ trans('front.menu') }}</a></li>|

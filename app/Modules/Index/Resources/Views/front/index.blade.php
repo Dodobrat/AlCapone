@@ -22,249 +22,136 @@
             </div>
         </div>
     </div>
+    {{--PAGE COVER--}}
 
-            <div class="section services-section py-5">
-                <div class="container">
+    <div class="section services-section py-5">
+        <div class="container">
 
-                    <div class="row">
-                        <div class="col-md-6 col-lg-3 my-5" data-aos="fade-up">
-                            <div class="media feature-icon d-block text-center">
-                                <div class="icon">
-                                    <span class="flaticon-soup"></span>
-                                </div>
-                                <div class="media-body">
-                                    <h3>{{ trans('index::front.quality-cuisine') }}</h3>
-                                    <div class="service-block">
-                                        @if(!empty(Administration::getStaticBlock('quality-cuisine')))
-                                            {!! Administration::getStaticBlock('quality-cuisine') !!}
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-3 my-5" data-aos="fade-up">
+                    <div class="media feature-icon d-block text-center">
+                        <div class="icon">
+                            <span class="flaticon-soup"></span>
                         </div>
-                        <div class="col-md-6 col-lg-3 my-5" data-aos="fade-up" data-aos-delay="100">
-                            <div class="media feature-icon d-block text-center">
-                                <div class="icon">
-                                    <span class="flaticon-vegetables"></span>
-                                </div>
-                                <div class="media-body">
-                                    <h3>{{ trans('index::front.fresh-food') }}</h3>
-                                    <div class="service-block">
-                                        @if(!empty(Administration::getStaticBlock('fresh-food')))
-                                            {!! Administration::getStaticBlock('fresh-food') !!}
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3 my-5" data-aos="fade-up" data-aos-delay="300">
-                            <div class="media feature-icon d-block text-center">
-                                <div class="icon">
-                                    <span class="flaticon-pancake"></span>
-                                </div>
-                                <div class="media-body">
-                                    <h3>{{ trans('index::front.friendly-staff') }}</h3>
-                                    <div class="service-block">
-                                        @if(!empty(Administration::getStaticBlock('friendly-staff')))
-                                            {!! Administration::getStaticBlock('friendly-staff') !!}
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3 my-5" data-aos="fade-up" data-aos-delay="500">
-                            <div class="media feature-icon d-block text-center">
-                                <div class="icon">
-                                    <span class="flaticon-tray"></span>
-                                </div>
-                                <div class="media-body">
-                                    <h3>{{ trans('index::front.easy-reservation') }}</h3>
-                                    <div class="service-block">
-                                        @if(!empty(Administration::getStaticBlock('easy-reservation')))
-                                            {!! Administration::getStaticBlock('easy-reservation') !!}
-                                        @endif
-                                    </div>
-                                </div>
+                        <div class="media-body">
+                            <h3>{{ trans('index::front.quality-cuisine') }}</h3>
+                            <div class="service-block">
+                                @if(!empty(Administration::getStaticBlock('quality-cuisine')))
+                                    {!! Administration::getStaticBlock('quality-cuisine') !!}
+                                @endif
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            {{--SERVICE SECTION--}}
-
-            <div class="container">
-                <div class="hr"></div>
-            </div>
-
-
-            <div class="section specials-section-heading">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-md-7 text-center"  data-aos="fade-up">
-                            <h2 class="mb-4">{{ trans('index::front.specials') }}</h2>
+                <div class="col-md-6 col-lg-3 my-5" data-aos="fade-up" data-aos-delay="100">
+                    <div class="media feature-icon d-block text-center">
+                        <div class="icon">
+                            <span class="flaticon-vegetables"></span>
+                        </div>
+                        <div class="media-body">
+                            <h3>{{ trans('index::front.fresh-food') }}</h3>
                             <div class="service-block">
-                                @if(!empty(Administration::getStaticBlock('specials')))
-                                    {!! Administration::getStaticBlock('specials') !!}
+                                @if(!empty(Administration::getStaticBlock('fresh-food')))
+                                    {!! Administration::getStaticBlock('fresh-food') !!}
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 my-5" data-aos="fade-up" data-aos-delay="300">
+                    <div class="media feature-icon d-block text-center">
+                        <div class="icon">
+                            <span class="flaticon-pancake"></span>
+                        </div>
+                        <div class="media-body">
+                            <h3>{{ trans('index::front.friendly-staff') }}</h3>
+                            <div class="service-block">
+                                @if(!empty(Administration::getStaticBlock('friendly-staff')))
+                                    {!! Administration::getStaticBlock('friendly-staff') !!}
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 my-5" data-aos="fade-up" data-aos-delay="500">
+                    <div class="media feature-icon d-block text-center">
+                        <div class="icon">
+                            <span class="flaticon-tray"></span>
+                        </div>
+                        <div class="media-body">
+                            <h3>{{ trans('index::front.easy-reservation') }}</h3>
+                            <div class="service-block">
+                                @if(!empty(Administration::getStaticBlock('easy-reservation')))
+                                    {!! Administration::getStaticBlock('easy-reservation') !!}
                                 @endif
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            {{--SPECIALS SECTION HEADING--}}
+        </div>
+    </div>
+    {{--SERVICE SECTION--}}
 
-            <div class="section specials-section pb-5 pt-5 px-2 px-sm-4 px-md-5">
-                <div class="row justify-content-center align-items-center mx-0">
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
-                        <div class="special-item-img-container">
+    <div class="container">
+        <div class="hr"></div>
+    </div>
+
+
+    <div class="section specials-section-heading">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-7 text-center"  data-aos="fade-up">
+                    <h2 class="mb-4">{{ trans('index::front.specials') }}</h2>
+                    <div class="service-block">
+                        @if(!empty(Administration::getStaticBlock('specials')))
+                            {!! Administration::getStaticBlock('specials') !!}
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{--SPECIALS SECTION HEADING--}}
+
+    <div class="section specials-section pb-5 pt-5 px-2 px-sm-4 px-md-5">
+        <div class="row justify-content-center align-items-center mx-0">
+
+            @foreach($meals as $meal)
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
+                    <div class="special-item-img-container">
+                        @if(!empty($meal->media->first()))
+                            <img src="{{ $meal->media->first()->getPublicPath() }}" alt="" class="special-item-img">
+                        @else
                             <img src="{{ asset('/img/img_1.jpg') }}" alt="" class="special-item-img">
-                        </div>
-                        <div class="special-item-overlay-container">
-                            <div class="special-item-overlay">
-                                <h3 class="special-item-title">Пица с гъби и ананас</h3>
-                                <div class="special-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad architecto aut blanditiis, consequatur, eius est et facilis impedit inventore laudantium optio pariatur sed. Animi, eligendi, maiores. Architecto dolores, earum?</div>
-                                <div class="row align-items-center special-item-info">
-                                    <div class="col-8 pr-0">
-                                        <h3 class="special-item-price">15.00 лв.</h3>
-                                    </div>
-                                    <div class="col-4 text-right">
-                                        <a href="#" class="special-item-link"><i class="fa fa-cart-plus"></i></a>
-                                    </div>
-                                </div>
+                        @endif
+                    </div>
+                    <div class="special-item-overlay-container">
+                        <div class="special-item-overlay">
+                            <h3 class="special-item-title">{{ $meal->title }}</h3>
+                            <div class="special-item-desc">
+                                {!! $meal->description !!}
                             </div>
-                        </div>
-                    </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
-                        <div class="special-item-img-container">
-                            <img src="{{ asset('/img/img_2.jpg') }}" alt="" class="special-item-img">
-                        </div>
-                        <div class="special-item-overlay-container">
-                            <div class="special-item-overlay">
-                                <h3 class="special-item-title">Пица с гъби и ананас</h3>
-                                <div class="special-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad architecto aut blanditiis, consequatur, eius est et facilis impedit inventore laudantium optio pariatur sed. Animi, eligendi, maiores. Architecto dolores, earum?</div>
-                                <div class="row align-items-center special-item-info">
-                                    <div class="col-8 pr-0">
-                                        <h3 class="special-item-price">15.00 лв.</h3>
-                                    </div>
-                                    <div class="col-4 text-right">
-                                        <a href="#" class="special-item-link"><i class="fa fa-cart-plus"></i></a>
-                                    </div>
+                            <div class="row align-items-center special-item-info">
+                                <div class="col-8 pr-0">
+                                    <h3 class="special-item-price">{{ currency($meal->getPrice()) }}</h3>
                                 </div>
-                            </div>
-                        </div>
-                    </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
-                        <div class="special-item-img-container">
-                            <img src="{{ asset('/img/img_3.jpg') }}" alt="" class="special-item-img">
-                        </div>
-                        <div class="special-item-overlay-container">
-                            <div class="special-item-overlay">
-                                <h3 class="special-item-title">Пица с гъби и ананас</h3>
-                                <div class="special-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad architecto aut blanditiis, consequatur, eius est et facilis impedit inventore laudantium optio pariatur sed. Animi, eligendi, maiores. Architecto dolores, earum?</div>
-                                <div class="row align-items-center special-item-info">
-                                    <div class="col-8 pr-0">
-                                        <h3 class="special-item-price">15.00 лв.</h3>
-                                    </div>
-                                    <div class="col-4 text-right">
-                                        <a href="#" class="special-item-link"><i class="fa fa-cart-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
-                        <div class="special-item-img-container">
-                            <img src="{{ asset('/img/img_4.jpg') }}" alt="" class="special-item-img">
-                        </div>
-                        <div class="special-item-overlay-container">
-                            <div class="special-item-overlay">
-                                <h3 class="special-item-title">Пица с гъби и ананас</h3>
-                                <div class="special-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad architecto aut blanditiis, consequatur, eius est et facilis impedit inventore laudantium optio pariatur sed. Animi, eligendi, maiores. Architecto dolores, earum?</div>
-                                <div class="row align-items-center special-item-info">
-                                    <div class="col-8 pr-0">
-                                        <h3 class="special-item-price">15.00 лв.</h3>
-                                    </div>
-                                    <div class="col-4 text-right">
-                                        <a href="#" class="special-item-link"><i class="fa fa-cart-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
-                        <div class="special-item-img-container">
-                            <img src="{{ asset('/img/img_5.jpg') }}" alt="" class="special-item-img">
-                        </div>
-                        <div class="special-item-overlay-container">
-                            <div class="special-item-overlay">
-                                <h3 class="special-item-title">Пица с гъби и ананас</h3>
-                                <div class="special-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad architecto aut blanditiis, consequatur, eius est et facilis impedit inventore laudantium optio pariatur sed. Animi, eligendi, maiores. Architecto dolores, earum?</div>
-                                <div class="row align-items-center special-item-info">
-                                    <div class="col-8 pr-0">
-                                        <h3 class="special-item-price">15.00 лв.</h3>
-                                    </div>
-                                    <div class="col-4 text-right">
-                                        <a href="#" class="special-item-link"><i class="fa fa-cart-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
-                        <div class="special-item-img-container">
-                            <img src="{{ asset('/img/img_1.jpg') }}" alt="" class="special-item-img">
-                        </div>
-                        <div class="special-item-overlay-container">
-                            <div class="special-item-overlay">
-                                <h3 class="special-item-title">Пица с гъби и ананас</h3>
-                                <div class="special-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad architecto aut blanditiis, consequatur, eius est et facilis impedit inventore laudantium optio pariatur sed. Animi, eligendi, maiores. Architecto dolores, earum?</div>
-                                <div class="row align-items-center special-item-info">
-                                    <div class="col-8 pr-0">
-                                        <h3 class="special-item-price">15.00 лв.</h3>
-                                    </div>
-                                    <div class="col-4 text-right">
-                                        <a href="#" class="special-item-link"><i class="fa fa-cart-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
-                        <div class="special-item-img-container">
-                            <img src="{{ asset('/img/img_1.jpg') }}" alt="" class="special-item-img">
-                        </div>
-                        <div class="special-item-overlay-container">
-                            <div class="special-item-overlay">
-                                <h3 class="special-item-title">Пица с гъби и ананас</h3>
-                                <div class="special-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad architecto aut blanditiis, consequatur, eius est et facilis impedit inventore laudantium optio pariatur sed. Animi, eligendi, maiores. Architecto dolores, earum?</div>
-                                <div class="row align-items-center special-item-info">
-                                    <div class="col-8 pr-0">
-                                        <h3 class="special-item-price">15.00 лв.</h3>
-                                    </div>
-                                    <div class="col-4 text-right">
-                                        <a href="#" class="special-item-link"><i class="fa fa-cart-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
-                        <div class="special-item-img-container">
-                            <img src="{{ asset('/img/img_2.jpg') }}" alt="" class="special-item-img">
-                        </div>
-                        <div class="special-item-overlay-container">
-                            <div class="special-item-overlay">
-                                <h3 class="special-item-title">Пица с гъби и ананас</h3>
-                                <div class="special-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad architecto aut blanditiis, consequatur, eius est et facilis impedit inventore laudantium optio pariatur sed. Animi, eligendi, maiores. Architecto dolores, earum?</div>
-                                <div class="row align-items-center special-item-info">
-                                    <div class="col-8 pr-0">
-                                        <h3 class="special-item-price">15.00 лв.</h3>
-                                    </div>
-                                    <div class="col-4 text-right">
-                                        <a href="#" class="special-item-link"><i class="fa fa-cart-plus"></i></a>
-                                    </div>
+                                <div class="col-4 text-right">
+                                    <a href="#" class="special-item-link"><i class="fa fa-cart-plus"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            {{--SPECIALS SECTION--}}
 
-            <div class="menu-categories-section-heading my-5 py-5">
+            @endforeach
+
+        </div>
+    </div>
+    {{--SPECIALS SECTION--}}
+
+    <div class="menu-categories-section-heading my-5 py-5">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-md-7 text-center"  data-aos="fade-down">
@@ -277,24 +164,33 @@
                         </div>
                     </div>
                 </div>
-            </div>
+</div>
+    {{--MENU CATEGORIES SECTION--}}
 
-            <div class="menu-categories-section mb-5">
-                <div class="container menu-category-home-item-container">
-                    @foreach($categories as $category)
-                    <div class="menu-category-home-item">
-                        <a href="{{ route('menu.index', ['slug' => $category->slug]) }}"><img src="{{ asset('img/slider-1.jpg') }}" alt="">САЛАТИ</a>
-                    </div>
-                        @endforeach
+    <div class="menu-categories-section">
+        <div class="container menu-category-home-item-container">
+            @foreach($categories as $category)
+                <div class="menu-category-home-item" data-aos="fade-up">
+                    <div class="menu-category-home-item-overlay"></div>
+                    <a href="{{ route('menu.index', ['slug' => $category->slug]) }}">
+                        @if(!empty($category->header_media->first()))
+                            <img src="{{ $category->header_media->first()->getPublicPath() }}" alt="">
+                        @else
+                            <img src="{{ asset('img/slider-1.jpg') }}" alt="">
+                        @endif
+                        <span>{{ $category->title }}</span>
+                    </a>
                 </div>
-            </div>
+            @endforeach
+        </div>
+    </div>
 
     @if($articles->count() > 0)
 
         <div class="blog-home-title-section">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-md-7 text-center"  data-aos="fade-up">
+                    <div class="col-md-7 text-center" data-aos="fade-up">
                         <h2 class="mb-4">{{ trans('index::front.blog') }}</h2>
                         <div class="service-block">
                             @if(!empty(Administration::getStaticBlock('blog')))

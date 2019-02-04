@@ -73,6 +73,9 @@ links.forEach(function (link) {
                 data: {
                     category_slug: catSlug,
                 },
+                beforeSend: function() {
+                    $(".load-container").show();
+                },
 
                 success: function(result) {
                     if (result.errors.length != 0) {
@@ -82,6 +85,7 @@ links.forEach(function (link) {
 
                         });
                     } else {
+                        $(".load-container").hide();
                         productsContainer.innerHTML = result.new_blade;
                     }
                 }});
