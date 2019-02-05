@@ -15,6 +15,13 @@
       height: auto;
     }
   }
+  .blog-view-section{
+    .card-columns{
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-count: 2;
+    }
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -245,17 +252,11 @@
       }
     }
   }
-  .blog-post-section{
-    .b-p{
-      .post-header{
-        img{
-          height: 250px;
-        }
-      }
-      p{
-        padding: 20px;
-        color: #0b0b0b;
-      }
+  .blog-view-section{
+    .card-columns{
+      -webkit-column-count: 1;
+      -moz-column-count: 1;
+      column-count: 1;
     }
   }
   .basket-section{
@@ -271,7 +272,6 @@
       }
     }
   }
-
 }
 
 

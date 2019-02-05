@@ -3,7 +3,7 @@
     <div class="row">
 
         @foreach($products as $product)
-            <div class="col-lg-3 col-md-4 col-sm-6 col-12 px-2 my-2">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 px-2 my-2" data-aos="zoom-in">
 
                 <div class="card menu-list-item">
                     <img src="{{ asset('img/slider-1.jpg') }}"

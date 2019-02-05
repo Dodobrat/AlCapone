@@ -22,13 +22,51 @@
 //----------------------------------------------------
 //                    GENERALS
 //----------------------------------------------------
-.services-section{
-  background: none;
-  .feature-icon{
-    .icon{
-      background: $accent-purple;
-      & > span{
-        color: $light;
+.pagination-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  .pagination{
+    margin: 0;
+    text-align: center;
+    li{
+      margin: 2px;
+      background-color: $light-dark-rgba;
+      color: $light;
+      padding: 5px;
+      a{
+        padding: 10px 15px;
+        color: $accent-purple-lighter;
+        font-size: 18px;
+        font-weight: 400;
+        &:hover{
+          color: $light;
+        }
+      }
+      &:hover{
+        background-color: $accent-purple-darker;
+      }
+    }
+    .disabled{
+      span{
+        padding: 10px 15px;
+        font-size: 18px;
+        font-weight: 400;
+      }
+      &:hover{
+        cursor: not-allowed;
+      }
+    }
+    .active{
+      background-color: $accent-purple-lighter;
+      span{
+        padding: 10px 15px;
+        font-size: 18px;
+        font-weight: 400;
+      }
+      &:hover{
+        cursor: not-allowed;
       }
     }
   }
@@ -46,6 +84,7 @@ h1,h2,h3,h4,h5,h6{
   font-family: $font-family-serif-r;
   color: $light-dark;
 }
+
 body{
   background-color: rgba(0,0,0,0.10);
   background-image: linear-gradient(90deg, transparent 5%, rgba(255,255,255,.3) 5%);
@@ -53,6 +92,7 @@ body{
   font-family: $font-family-serif-r;
   overflow-x: hidden;
 }
+
 .hidden {
   display: none;
 }
@@ -108,7 +148,6 @@ body{
       transform: rotate(360deg);
     }
   }
-
 }
 
 .page-cover{
@@ -141,7 +180,6 @@ body{
   .full-cover-img{
     padding: 50px 0;
     width: 100%;
-    min-height: 100vh;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -453,37 +491,55 @@ footer{
     }
   }
   .footer-address{
-    padding: 10px 0;
-    p{
-      text-align: center;
-      color: #ffffff;
-      font-weight: 400;
-      margin: 0;
-    }
+    padding: 20px 0;
+    text-align: center;
+    color: $light;
+    font-weight: 400;
+    margin: 0;
   }
   .footer-phone{
-    padding: 10px 0;
+    padding: 20px 0;
     text-align: center;
-    color: #ffffff;
+    color: $light;
     font-weight: 400;
     .footer-phone-text{
 
     }
     .footer-p{
+      padding: 0 10px;
       letter-spacing: 2px;
+      font-weight: 600;
       color: $accent-purple;
     }
   }
-  .footer-text{
-    margin: 0;
-    padding: 20px 10px 0px 10px;
-    text-align: center;
-  }
+}
+.footer-text{
+  background-color: $mid-dark;
+  margin: 0;
+  padding: 10px 5px;
+  text-align: center;
+  width: 100%;
 }
 
 //----------------------------------------------------
 //                   HOME PAGE
 //----------------------------------------------------
+
+// ----------------------------------------------------
+//                 SERVICES SECTION
+//----------------------------------------------------
+
+.services-section{
+  background: none;
+  .feature-icon{
+    .icon{
+      background: $accent-purple;
+      & > span{
+        color: $light;
+      }
+    }
+  }
+}
 
 //----------------------------------------------------
 //                    SPECIALS SECTION
@@ -803,14 +859,13 @@ footer{
     font-weight: 300;
   }
   .menu-category-list{
-
     .menu-category-item{
 
       .menu-category-link{
         text-transform: uppercase;
         color: $light-dark;
         font-weight: 600;
-        border: 2px solid transparent;
+        border: 3px solid transparent;
         border-radius: 150px;
         margin: 0 5px;
         &:hover{
@@ -1110,95 +1165,35 @@ footer{
 //                    BLOG VIEW ITEMS
 //----------------------------------------------------
 .blog-view-section{
-  .blog-item{
-    background-color: #ffffff;
-    box-shadow: 0 2px 20px -6px $light-dark-rgba;
-    overflow-x: hidden;
-    height: auto;
-    .blog-item-link{
-      &:hover{
-        .blog-item-link-img{
-          transition: 0.3s ease-in-out;
-          width: 100%;
-        }
-        .blog-item-link-overlay{
-          transition: 0.4s ease-in-out;
-          width: 100%;
-          i{
-            transition: 0.2s ease-in-out;
-            transition-delay: 0.4s;
-            opacity: 1;
-          }
+  .card-columns{
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    .card{
+      margin: 10px 0;
+      border-radius: 0;
+      border: none;
+      box-shadow: 0 2px 20px -6px $light-dark-rgba;
+      .blog-item-link {
+        .card-img-top{
+          border-radius: 0;
         }
       }
-      .blog-item-link-img{
-        transition: 0.3s ease-in-out;
-        width: 110%;
-        height: 300px;
-        object-fit: cover;
-      }
-      .blog-item-link-overlay{
-        transition: 0.4s ease-in-out;
-        position: absolute;
-        top: 0;
-        width: 0;
-        height: 300px;
-        pointer-events: none;
-        background: $light-dark-rgba;
-        i{
-          transition: 0.2s ease-in-out;
-          position: relative;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          font-size: 40px;
-          color: $accent-purple-lighter;
-          opacity: 0;
-        }
-      }
-    }
-    .blog-item-body{
-      padding: 20px;
-      .blog-item-body-title{
-        font-weight: 300;
-        .blog-item-body-title-link{
+      .card-body{
+        .card-title{
+          color: $light-dark;
+          font-size: 25px;
+          font-weight: 400;
+          line-height: 20px;
           &:hover{
             color: $accent-purple;
           }
         }
-      }
-      .blog-item-body-date{
-        .fa-calendar{
-          padding: 0;
-        }
-        .blog-item-body-date-span{
-          padding: 0 0 0 10px;
-        }
-      }
-      .blog-item-body-description{
+        .card-date{
+          padding: 20px 0 0 0;
+          .date-span{
+            padding: 0 10px;
 
-      }
-      .blog-item-body-read-link{
-        .blog-item-body-read{
-          transition: 0.2s ease-in-out;
-          width: 100%;
-          background-color: $accent-purple;
-          border: none;
-          border-radius: 3px;
-          padding: 5px 0;
-          color: #ffffff;
-          text-transform: uppercase;
-          &:hover{
-            transition: 0.2s ease-in-out;
-            cursor: pointer;
-            background-color: $accent-purple-darker;
-          }
-          &:focus{
-            outline: none;
-          }
-          &:active{
-            transition: 0.2s ease-in-out;
-            transform: scale(0.95);
           }
         }
       }
