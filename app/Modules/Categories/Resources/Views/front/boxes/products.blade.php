@@ -6,12 +6,18 @@
             <div class="col-lg-3 col-md-4 col-sm-6 col-12 px-2 my-2" data-aos="zoom-in">
 
                 <div class="card menu-list-item">
-                    <img src="{{ asset('img/slider-1.jpg') }}"
+
+                    <img @if(!empty($product) && $product->media->isNotEmpty())
+                            src="{{ $product->media->first()->getPublicPath() }}"
+                         @else
+                            src="{{ asset('img/slider-1.jpg') }}"
+                         @endif
                          class="card-img-top menu-list-item-card-img"
                          alt="{{ $product->slug }}"
                          data-modal="{{ $product->id }}"
                          data-murl="{{ route('products.getProduct') }}"
                          onclick="openModal( '{{ $product->id }}','{{ route('products.getProduct') }}')">
+
                     <div class="card-body menu-list-item-card-body">
                         <h5 class="card-title menu-list-item-card-title">
                             {{ $product->title }}

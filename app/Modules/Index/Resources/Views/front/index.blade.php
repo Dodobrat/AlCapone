@@ -215,7 +215,7 @@
         {{--BLOG HOME TITLE SECTION--}}
 
         <div class="blog-home-section">
-                <div class="container">
+                <div class="container-fluid custom-blog-container">
                     <div class="row justify-content-center align-items-center">
 
                             <div class="@if($articles->count() < 3) col-lg-12 @else col-lg-6 @endif col-md-12 col-sm-12 col-12">
