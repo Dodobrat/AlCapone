@@ -5,13 +5,13 @@
 
 
     <div class="page-cover">
-        <div class="page-cover-img"
+        <div class="page-cover-img rellax"
              @if(!empty(Settings::getFile('blog_header_image')))
              style="background-image: url('{{ Settings::getFile('blog_header_image') }}')"
              @else
              style="background-image: url('{{ asset('img/slider-1.jpg') }}');"
-                @endif>
-            <div class="container">
+                @endif data-rellax-speed="3">
+            <div class="container rellax" data-rellax-speed="-5">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-lg-8 col-md-10 col-sm-12 col-12" data-aos="fade-up">
                         <h2 class="page-title">{{ trans('blog::front.blog') }}</h2>
@@ -47,8 +47,10 @@
                                 <span class="date-span">{{ $blog->created_at->format('d-M-Y') }}</span>
                             </p>
                             <p class="card-text">
-                                @if(!empty($blog->description))
-                                    {!! mb_substr(strip_tags($blog->description),0,100)." ..." !!}
+                                @if(!empty($blog->description) && strlen($blog->description) > 100)
+                                    {!! mb_substr(strip_tags($blog->description),0,100,"utf-8")."..." !!}
+                                @elseif(!empty($blog->description))
+                                    {!! mb_substr(strip_tags($blog->description),0,100,"utf-8") !!}
                                 @endif
                             </p>
                         </div>

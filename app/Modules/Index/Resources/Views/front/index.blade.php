@@ -2,13 +2,13 @@
 @section('content')
 
         <div class="page-cover">
-            <div class="page-cover-img"
+            <div class="page-cover-img rellax"
                  @if(!empty(Settings::getFile('index_header_image')))
                  style="background-image: url('{{ Settings::getFile('index_header_image') }}')"
                  @else
                  style="background-image: url('{{ asset('img/slider-1.jpg') }}');"
-                    @endif id="home-img">
-                <div class="container">
+                    @endif id="home-img" data-rellax-speed="3">
+                <div class="container rellax" data-rellax-speed="-5">
                     <div class="row align-items-center justify-content-center">
                         <div class="col-lg-8 col-md-10 col-sm-12 col-12" data-aos="fade-up">
                             <h1 class="page-title">{{ trans('index::front.index') }}</h1>
@@ -131,8 +131,10 @@
                             <div class="special-item-overlay">
                                 <h3 class="special-item-title">{{ $meal->title }}</h3>
                                 <div class="special-item-desc">
-                                    @if(!empty($meal->description))
-                                        {!! mb_substr(strip_tags($meal->description),0,120)." ..." !!}
+                                    @if(!empty($meal->description) && strlen($meal->description) > 120)
+                                        {!! mb_substr(strip_tags($meal->description),0,120,"utf-8")."..." !!}
+                                    @elseif(!empty($meal->description))
+                                        {!! mb_substr(strip_tags($meal->description),0,120,"utf-8") !!}
                                     @endif
                                 </div>
                                 <div class="row align-items-center special-item-info">
@@ -140,7 +142,10 @@
                                         <h3 class="special-item-price">{{ currency($meal->getPrice()) }}</h3>
                                     </div>
                                     <div class="col-4 text-right">
-                                        <a href="#" class="special-item-link">
+                                        <a href="#"
+                                           class="special-item-link"
+                                           data-add="{{ $meal->slug }}"
+                                        >
                                             <i class="fa fa-cart-plus"></i>
                                         </a>
                                     </div>
@@ -215,10 +220,10 @@
         {{--BLOG HOME TITLE SECTION--}}
 
         <div class="blog-home-section">
-                <div class="container-fluid custom-blog-container">
+                <div class="container custom-blog-container">
                     <div class="row justify-content-center align-items-center">
 
-                            <div class="@if($articles->count() < 3) col-lg-12 @else col-lg-6 @endif col-md-12 col-sm-12 col-12">
+                            <div class="@if($articles->count() < 3) col-lg-10 @else col-lg-7 @endif col-md-12 col-sm-12 col-12">
                                 <ul class="blog-home-list">
                                     @foreach($articles as $blog)
                                         @if ($loop->last && $articles->count() >= 3)
@@ -239,8 +244,10 @@
                                                     <h3 class="blog-home-item-title"><a href="{{ route('blog.view', $blog->slug) }}" class="blog-item-title-link">{{ $blog->title }}</a></h3>
                                                     <p class="blog-home-item-date"><span class="fa fa-calendar"></span><span class="blog-home-item-date-span">{{ $blog->created_at->format('d-M-Y') }}</span></p>
                                                     <div class="blog-home-item-description">
-                                                        @if(!empty($blog->description))
-                                                            {!! mb_substr(strip_tags($blog->description),0,50)." ..." !!}
+                                                        @if(!empty($blog->description) && strlen($blog->description) > 50)
+                                                            {!! mb_substr(strip_tags($blog->description),0,50,"utf-8")."..." !!}
+                                                        @elseif(!empty($blog->description))
+                                                            {!! mb_substr(strip_tags($blog->description),0,50,"utf-8") !!}
                                                         @endif
                                                     </div>
                                                     <a href="{{ route('blog.view', $blog->slug) }}" class="blog-home-item-read-link"><button class="blog-home-item-read">{{ trans('blog::front.read-more') }}</button></a>
@@ -253,7 +260,7 @@
                                 </ul>
                             </div>
                         @if ($articles->count() >= 3)
-                                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                                <div class="col-lg-5 col-md-12 col-sm-12 col-12">
                                     <div class="blog-home-main-item" data-aos="fade-left">
                                         <div class="row align-items-center">
                                             <div class="col-12">
@@ -269,8 +276,10 @@
                                                 <h3 class="blog-home-main-item-title"><a href="{{ route('blog.view', $blog->slug) }}" class="blog-main-item-title-link">{{ $blog->title }}</a></h3>
                                                 <p class="blog-home-main-item-date"><span class="fa fa-calendar"></span><span class="blog-home-main-item-date-span">{{ $blog->created_at->format('d-M-Y') }}</span></p>
                                                 <div class="blog-home-main-item-description">
-                                                    @if(!empty($blog->description))
-                                                        {!! mb_substr(strip_tags($blog->description),0,150)." ..." !!}
+                                                    @if(!empty($blog->description) && strlen($blog->description) > 150)
+                                                        {!! mb_substr(strip_tags($blog->description),0,150,"utf-8")."..." !!}
+                                                    @elseif(!empty($blog->description))
+                                                        {!! mb_substr(strip_tags($blog->description),0,150,"utf-8") !!}
                                                     @endif
                                                 </div>
                                                 <a href="{{ route('blog.view', $blog->slug) }}" class="blog-home-main-item-read-link">

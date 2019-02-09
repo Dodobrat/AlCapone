@@ -1,6 +1,13 @@
 window.Popper = require('popper.js');
 global.$ = global.jQuery = require('jquery');
 global.AOS = require('aos');
+global.Rellax = require('rellax/rellax.js');
+
+// ADD PARALLAX EFFECT TO HEADER IMAGES
+if(document.body.contains(document.querySelector('.rellax'))){
+    var rellax = new Rellax('.rellax');
+}
+
 
 // ADD STYLE TO NAVBAR AFTER SCROLL
 
@@ -50,12 +57,11 @@ triggerBasket();
 
 
 // MENU PAGE GET SLUG FROM CATEGORY
-let links = document.getElementsByClassName('menu-category-link' );
+let link = document.querySelectorAll('.menu-category-link' );
 let productsContainer = document.getElementById('products-container');
 
-links = Array.from(links);
 
-links.forEach(function (link) {
+link.forEach(function (link) {
     link.addEventListener('click',function () {
 
         let catSlug = link.dataset.slug;
@@ -108,10 +114,13 @@ if (document.body.contains(modal)){
     }
 }
 
+// HOME PAGE ADD SPECIAL MEALS TO BASKET
 
+// MENU PAGE GET SELECTED OPTION
 
 
 // BACK TO TOP
+
 $(document).ready(function(){
     // scroll body to 0px on click
     $('.back-to-top').click(function () {

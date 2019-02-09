@@ -24,7 +24,11 @@
                         </h5>
                         <div class="menu-list-item-card-desc-container">
                             <p class="card-text menu-list-item-card-desc">
-                                {!! mb_substr(strip_tags($product->description),0,50)." ..." !!}
+                                @if(strlen($product->description) > 50)
+                                    {!! mb_substr(strip_tags($product->description),0,50,"utf-8")."..." !!}
+                                @else
+                                    {!! mb_substr(strip_tags($product->description),0,50,"utf-8") !!}
+                                @endif
                             </p>
                         </div>
                         <hr>

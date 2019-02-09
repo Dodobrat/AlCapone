@@ -151,9 +151,11 @@ body{
 }
 
 .page-cover{
+  max-height: 60vh;
+  overflow: hidden;
   .page-cover-img{
     width: 100%;
-    min-height: 50vh;
+    min-height: 75vh;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -172,7 +174,7 @@ body{
     }
   }
   #home-img{
-    min-height: 60vh;
+    min-height: 75vh;
   }
 }
 
@@ -900,6 +902,7 @@ footer{
       .menu-list-item-card-body{
         padding: 10px 0 0 0;
         .menu-list-item-card-title{
+          padding: 0 10px;
           text-align: center;
           text-transform: uppercase;
           font-weight: 400;
@@ -1168,7 +1171,15 @@ footer{
       box-shadow: 0 2px 20px -6px $light-dark-rgba;
       .blog-item-link {
         .card-img-top{
+          transition: 0.2s ease-in-out;
+          filter: grayscale(100%);
           border-radius: 0;
+        }
+        &:hover{
+          .card-img-top{
+            transition: 0.2s ease-in-out;
+            filter: grayscale(0);
+          }
         }
       }
       .card-body{

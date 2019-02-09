@@ -2,13 +2,13 @@
 @section('content')
 
     <div class="page-cover">
-        <div class="page-cover-img"
+        <div class="page-cover-img rellax"
              @if(!empty(Settings::getFile('contacts_header_image')))
              style="background-image: url('{{ Settings::getFile('contacts_header_image') }}')"
              @else
              style="background-image: url('{{ asset('img/slider-1.jpg') }}');"
-                @endif>
-            <div class="container">
+                @endif data-rellax-speed="3">
+            <div class="container rellax" data-rellax-speed="-5">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-lg-8 col-md-10 col-sm-12 col-12" data-aos="fade-up">
                         <h2 class="page-title">{{ trans('contacts::front.contacts') }}</h2>
