@@ -49,6 +49,8 @@ class StoreProductRequest extends FormRequest
         $trans['special'] = 'boolean';
         $trans['price'] = 'nullable|numeric';
         $trans['category_id'] = 'required';
+        $trans['ingredients'] = 'nullable|array';
+        $trans['allergens'] = 'nullable|array';
 
         return $trans;
     }

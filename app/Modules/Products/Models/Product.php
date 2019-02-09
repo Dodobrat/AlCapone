@@ -3,6 +3,7 @@
 namespace App\Modules\Products\Models;
 
 use App\Modules\Categories\Models\Category;
+use App\Modules\Ingredients\Models\Ingredient;
 use App\Modules\Options\Models\Option;
 use Dimsav\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
@@ -66,6 +67,14 @@ class Product extends Model {
 
     public function options() {
         return $this->belongsToMany(Option::class, 'products_options', 'product_id', 'option_id')->withPivot('price');
+    }
+
+    public function ingredients() {
+        return $this->belongsToMany(Ingredient::class, 'products_ingredients', 'product_id', 'ingredient_id')->active();
+    }
+
+    public function allergens() {
+        return $this->belongsToMany(Ingredient::class, 'products_allergens', 'product_id', 'ingredient_id')->active();
     }
 
     public function getPrice($id = null) {

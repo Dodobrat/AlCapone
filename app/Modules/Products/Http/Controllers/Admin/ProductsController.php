@@ -124,6 +124,14 @@ class ProductsController extends BaseAdministrationController {
         $product->fill($data);
         $product->save();
 
+        if (!empty($data['ingredients'])) {
+            $product->ingredients()->attach($data['ingredients']);
+        }
+
+        if (!empty($data['allergens'])) {
+            $product->allergens()->attach($data['allergens']);
+        }
+
         return \Redirect::route(Administration::routeName('products.index'));
     }
 
@@ -172,6 +180,16 @@ class ProductsController extends BaseAdministrationController {
         $data = $request->validated();
         $product->fill($data);
         $product->save();
+
+        $product->ingredients()->detach();
+        if (!empty($data['ingredients'])) {
+            $product->ingredients()->attach($data['ingredients']);
+        }
+
+        $product->allergens()->detach();
+        if (!empty($data['allergens'])) {
+            $product->allergens()->attach($data['allergens']);
+        }
 
         return \Redirect::route(Administration::routeName('products.index'));
     }
