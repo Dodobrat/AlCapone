@@ -78,7 +78,7 @@
                         @endif
                         @if(!empty($product) && $product->options->isNotEmpty())
                             @foreach($product->options as $option)
-                                <option value="{{ $option->id }}"
+                                <option value="{{ $option->pivot->id }}"
                                         data-price="{{ $option->pivot->price }}">{{ $option->title }}</option>
                             @endforeach
                         @endif

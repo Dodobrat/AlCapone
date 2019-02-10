@@ -66,7 +66,7 @@ class Product extends Model {
     }
 
     public function options() {
-        return $this->belongsToMany(Option::class, 'products_options', 'product_id', 'option_id')->withPivot('price');
+        return $this->belongsToMany(Option::class, 'products_options', 'product_id', 'option_id')->withPivot('price', 'id');
     }
 
     public function ingredients() {
