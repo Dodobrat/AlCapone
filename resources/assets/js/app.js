@@ -26,32 +26,29 @@ function scrollFunction() {
 // BASKET TRIGGER
 let basket = document.getElementById('basket');
 let basketM = document.getElementById('basket-m');
-let shoppingCart = document.querySelector('.shopping-cart-wrapper');
-let opened = false;
+let cartWrapper = document.querySelector('.shopping-cart-wrapper');
 
 function triggerBasket() {
     basket.addEventListener('click', function () {
-        if (opened == false){
-            shoppingCart.classList.add('shopping-cart-show');
-            opened = true;
+        if (cartWrapper.classList.contains('shopping-cart-show')){
+            cartWrapper.classList.remove('shopping-cart-show');
         }else{
-            shoppingCart.classList.remove('shopping-cart-show');
-            opened = false;
+            cartWrapper.classList.add('shopping-cart-show');
         }
 
     });
     basketM.addEventListener('click', function () {
-        if (opened == false){
-            shoppingCart.classList.add('shopping-cart-show');
-            opened = true;
+        if (cartWrapper.classList.contains('shopping-cart-show')){
+            cartWrapper.classList.remove('shopping-cart-show');
         }else{
-            shoppingCart.classList.remove('shopping-cart-show');
-            opened = false;
+            cartWrapper.classList.add('shopping-cart-show');
         }
 
     });
+
 }
 triggerBasket();
+
 
 // MENU CATEGORIES
 

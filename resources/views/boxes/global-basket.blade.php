@@ -1,7 +1,13 @@
 <div class="shopping-cart-container">
     <div class="row justify-content-center align-items-center">
         <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-            <h4 class="shopping-cart-title">{{ trans('front.order') }}:</h4>
+            <h4 class="shopping-cart-title">
+                @if (!empty($basket) && $basket->products->isNotEmpty())
+                    {{ trans('front.order') }}:
+                @else
+                    {{ trans('front.empty-basket') }}
+                @endif
+            </h4>
             <button id="basket-m">&#10230;</button>
         </div>
     </div>
@@ -9,15 +15,19 @@
 
 
         <ul class="shopping-items">
-            @foreach($basket->products as $product)
+            @foreach($basket->products as $basketProduct)
                 <li class="shopping-item">
                     <div class="row justify-content-center align-items-center">
                         <div class="col-lg-2 col-md-2 col-sm-2 col-3">
-                            <img class="asking-food-img" src="{{ asset('img/img_6.jpg') }}" alt="">
+                            @if($basketProduct->product->media->isNotEmpty())
+                                <img class="asking-food-img" src="{{ $basketProduct->product->media->first()->getPublicPath() }}" alt="">
+                            @else
+                                <img class="asking-food-img" src="{{ asset('img/img_6.jpg') }}" alt="">
+                            @endif
                         </div>
                         <div class="col-lg-10 col-md-10 col-sm-10 col-9">
-                            <a href="#" class="asking-food-desc">
-                                {{ $product->product->title }}
+                            <a class="asking-food-desc">
+                                {{ $basketProduct->product->title }}
                             </a>
                         </div>
                     </div>
@@ -26,11 +36,11 @@
                         <div class="col-lg-7 col-md-7 col-sm-6 col-6">
                             <p class="asking-food-price">
                                 {{ trans('front.price') }}
-                                <span>{{ currency($product->getPrice()) }}</span>
+                                <span>{{ currency($basketProduct->getPrice()) }}</span>
                             </p>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-4 col-3">
-                            <p class="asking-food-qty">{{ $product->getQuantity() }} бр.</p>
+                            <p class="asking-food-qty">{{ $basketProduct->getQuantity() }} бр.</p>
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-2 col-3">
                             <button class="asking-food-remove">&#10005;</button>

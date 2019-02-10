@@ -38,7 +38,18 @@
             <li><a href="{{ route('menu.index') }}">{{ trans('front.menu') }}</a></li>
             <li><a href="{{ route('blog.index') }}">{{ trans('front.blog') }}</a></li>
             <li><a href="{{ route('contacts.index') }}">{{ trans('front.contacts') }}</a></li>
-            <li><a id="basket"><i class="fa fa-shopping-basket"><span class="badge">4</span></i></a></li>
+            <li><a id="basket">
+                    <i class="fa fa-shopping-basket">
+                        <span class="badge">
+                            @if (!empty($basket))
+                                {{ $basket->getTotalQuantity() }}
+                                @else
+                                0
+                            @endif
+                        </span>
+                    </i>
+                </a>
+            </li>
         </ul>
     </div>
 </nav>
@@ -141,6 +152,8 @@
     }
 
     function addToCart() {
+        let cartIndicator = document.querySelector('.badge');
+        let cartWrapper = document.querySelector('.shopping-cart-wrapper');
         let productRoute = document.querySelector('.menu-item-modal-order').dataset.product_route;
         let productId = document.querySelector('.menu-item-modal-order').dataset.product_id;
         let productOption = $('option:selected').val();
@@ -162,22 +175,17 @@
             },
 
             success: function(result) {
+                closeModal();
+                cartWrapper.innerHTML = result.global_basket;
+                cartIndicator.innerHTML = result.total_quantity;
+                cartWrapper.classList.add('shopping-cart-show');
                 console.log(result);
-                if (result.errors.length != 0) {
-                    $('.alert-danger').html('');
 
-                    $.each(result.errors, function (key, value) {
-
-                    });
-                } else {
-                    modal.style.display = 'flex';
-                    modal.innerHTML = result.product_modal;
-                }
             }
         });
-        console.log(productId, productOption, productQty);
+        // console.log(productId, productOption, productQty);
     }
 </script>
-@yield('js')
+    @yield('js')
 </body>
 </html>
