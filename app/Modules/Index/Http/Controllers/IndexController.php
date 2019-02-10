@@ -28,7 +28,7 @@ class IndexController extends Controller {
         SEO::opengraph()->addImage(asset('assets/images/facebook_share.jpg'), ['height' => 1200, 'width' => 630]);
 
 
-        $meals = Product::active()->special()->reversed()->with(['media'])->limit(8)->get();
+        $meals = Product::active()->special()->reversed()->with(['media', 'allergies', 'ingredients'])->limit(8)->get();
         $articles = Blog::active()->reversed()->with(['media'])->limit(4)->get();
         $categories = Category::has('products')->with(['media'])->get();
 
