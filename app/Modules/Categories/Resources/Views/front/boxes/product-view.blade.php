@@ -91,10 +91,10 @@
                            min="1"
                            max="10"
                            value="1"
-                           onchange="getSelectedOption()"
-                           onmouseup="getSelectedOption()"
-                           onkeyup="getSelectedOption()"
-                           oninput="getSelectedOption()">
+                           onchange="[ getSelectedOption(), validateQty()]"
+                           onmouseup="[ getSelectedOption(), validateQty()]"
+                           onkeyup="[ getSelectedOption(), validateQty()]"
+                           oninput="[ getSelectedOption(), validateQty()]">
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 col-6 menu-item-modal-price-container mb-3">
                     <p class="menu-item-modal-price">
@@ -112,6 +112,13 @@
                     >
                         <button>{{ trans('categories::front.add') }} <i class="fa fa-cart-plus"></i></button>
                     </a>
+                </div>
+                <div class="col-12">
+                    {{--ALERT--}}
+                    <div class="cust-alert alert alert-danger alert-dismissible fade show d-none" role="alert">
+                        Quantity must be between 1 and 10
+                    </div>
+                    {{--ALERT END--}}
                 </div>
             </div>
         </div>

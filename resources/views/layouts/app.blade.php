@@ -70,8 +70,7 @@
                     <li><a href="{{ route('index') }}">{{ trans('front.home') }}</a></li>|
                     <li><a href="{{ route('menu.index') }}">{{ trans('front.menu') }}</a></li>|
                     <li><a href="{{ route('blog.index') }}">{{ trans('front.blog') }}</a></li>|
-                    <li><a href="{{ route('contacts.index') }}">{{ trans('front.contacts') }}</a></li>|
-                    <li><a href="{{ route('basket.index') }}">{{ trans('front.basket') }}</a></li>
+                    <li><a href="{{ route('contacts.index') }}">{{ trans('front.contacts') }}</a></li>
                 </ul>
             </div>
             <div class="col-md-6 col-12">
@@ -106,6 +105,7 @@
     }
 
     function openModal(id, url) {
+        let cartWrapper = document.querySelector('.shopping-cart-wrapper');
         let productId = id;
         let productUrl = url;
 
@@ -130,6 +130,9 @@
 
                     });
                 } else {
+                    if (cartWrapper.classList.contains('shopping-cart-show')) {
+                        cartWrapper.classList.remove('shopping-cart-show');
+                    }
                     modal.style.display = 'flex';
                     modal.innerHTML = result.product_modal;
                 }
@@ -149,6 +152,23 @@
             finalPrice = finalPrice + ' лв.';
         }
         finalPriceBox.innerHTML = finalPrice;
+    }
+
+    function validateQty() {
+        let productQty = document.querySelector('.menu-item-modal-qty').value;
+        let custAlert = document.querySelector('.cust-alert');
+        let addToCart = document.querySelector('.menu-item-modal-order');
+        if (productQty < 1 || productQty > 10){
+            addToCart.classList.add('disabled');
+            if (document.body.contains(custAlert)){
+                custAlert.classList.remove('d-none');
+            }
+        }else {
+            addToCart.classList.remove('disabled');
+            if (document.body.contains(custAlert)){
+                custAlert.classList.add('d-none');
+            }
+        }
     }
 
     function addToCart() {
@@ -179,8 +199,6 @@
                 cartWrapper.innerHTML = result.global_basket;
                 cartIndicator.innerHTML = result.total_quantity;
                 cartWrapper.classList.add('shopping-cart-show');
-                console.log(result);
-
             }
         });
         // console.log(productId, productOption, productQty);

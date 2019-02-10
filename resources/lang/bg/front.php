@@ -10,6 +10,7 @@ return[
     'price' => 'цена: ',
     'checkout' => 'Купи',
     'basket' => 'Количка',
+    'empty-basket' => 'Количката е празна',
     'phone-for-delivery' => 'Телефон за доставка',
     'copyright' => 'Всички права запазени',
 ];

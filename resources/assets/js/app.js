@@ -111,6 +111,19 @@ if (document.body.contains(modal)){
     }
 }
 
+let cart = document.querySelector('.shopping-cart-wrapper');
+
+if (document.body.contains(cart)){
+    window.addEventListener('click', outsideClick);
+
+    // Close If Outside Click
+    function outsideClick(e) {
+        if (e.target == cart) {
+            cart.classList.remove('shopping-cart-show');
+        }
+    }
+}
+
 // HOME PAGE ADD SPECIAL MEALS TO BASKET
 
 // MENU PAGE GET SELECTED OPTION
