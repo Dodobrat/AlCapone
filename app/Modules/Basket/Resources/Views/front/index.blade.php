@@ -11,9 +11,44 @@
 
                 <div class="address-section">
                     <div class="container a-s">
-                        <label class="address-label" for="location">{{ trans('basket::front.choose-loc') }} <i
-                                    class="fa fa-map-marker"></i></label>
-                        <input type="text" class="address-input" name="location">
+                        <div class="row justify-content-center align-items-center pb-3">
+                            <div class="col-12 text-center my-3">
+                                <h4 class="address-form-title">{{ trans('basket::front.enter-address') }}</h4>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-12 my-2">
+                                <label class="address-label" for="street">{{ trans('basket::front.street') }}</label>
+                                <input type="text" class="address-input" name="data[street]" id="street">
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-12 my-2">
+                                <label class="address-label" for="city">{{ trans('basket::front.city') }}</label>
+                                <input type="text" class="address-input" name="data[city]" id="city">
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 col-12 my-2">
+                                <label class="address-label" for="phone">{{ trans('basket::front.phone') }}</label>
+                                <input type="text" class="address-input" name="data[phone]" id="phone">
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 col-12 my-2">
+                                <label class="address-label" for="ring">{{ trans('basket::front.ring') }}</label>
+                                <input type="text" class="address-input" name="data[ring]" id="ring">
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 col-12 my-2">
+                                <label class="address-label" for="floor">{{ trans('basket::front.floor') }}</label>
+                                <input type="text" class="address-input" name="data[floor]" id="floor">
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 col-12 my-2">
+                                <label class="address-label" for="block">{{ trans('basket::front.block') }}</label>
+                                <input type="text" class="address-input" name="data[block]" id="block">
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 col-12 my-2">
+                                <label class="address-label" for="apartment">{{ trans('basket::front.apartment') }}</label>
+                                <input type="text" class="address-input" name="data[apartment]" id="apartment">
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 col-12 my-2">
+                                <label class="address-label" for="entrance">{{ trans('basket::front.entrance') }}</label>
+                                <input type="text" class="address-input" name="data[entrance]" id="entrance">
+                            </div>
+                        </div>
+
                         <div class="address-map-container">
                             {{--TUK SHTE E KARTATA--}}
                         </div>

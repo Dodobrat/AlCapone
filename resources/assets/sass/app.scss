@@ -1237,14 +1237,17 @@ footer{
     background-color: #ffffff;
     padding: 15px;
     border-radius: 0;
+    .address-form-title{
+      text-transform: uppercase;
+      color: $light-dark;
+      font-weight: 300;
+    }
     .address-label{
-      color: #0b0b0b;
-      font-size: 18px;
-      i{
-        padding: 0 5px;
-        color: $accent-purple;
-        font-size: 30px;
-      }
+      color: $accent-purple;
+      font-weight: 400;
+      font-size: 15px;
+      margin: 0;
+      padding-left: 5px;
     }
     .address-input{
       width: 100%;

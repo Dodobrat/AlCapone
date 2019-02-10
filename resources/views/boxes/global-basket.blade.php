@@ -27,6 +27,9 @@
                         </div>
                         <div class="col-lg-10 col-md-10 col-sm-10 col-9">
                             <a class="asking-food-desc">
+                                @if(!empty($basketProduct->product_option))
+                                ({{ $basketProduct->product_option->option->title }})
+                                @endif
                                 {{ $basketProduct->product->title }}
                             </a>
                         </div>

@@ -40,7 +40,7 @@ class BasketProduct extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function product_option() {
-        return $this->hasOne(ProductOption::class, 'id', 'option_id');
+        return $this->hasOne(ProductOption::class, 'id', 'product_option_id');
     }
 
     /**

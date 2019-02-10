@@ -9,5 +9,14 @@ return[
     'free' => 'Безплатна',
     'price-with-vat' => 'Цена с ДДС',
     'order' => 'Поръчай',
-    'address-not-selected' => 'Няма избран адрес!'
+    'address-not-selected' => 'Няма избран адрес!',
+    'enter-address' => 'Адрес за доставка',
+    'street' => 'Улица/Квартал',
+    'city' => 'Град',
+    'phone' => 'Телефон',
+    'ring' => 'Звънец',
+    'floor' => 'Етаж',
+    'block' => 'Блок',
+    'apartment' => 'Апартамент',
+    'entrance' => 'Вход',
 ];
