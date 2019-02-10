@@ -134,6 +134,58 @@
             }
         });
     }
+
+    function getSelectedOption() {
+        let selected = document.querySelector(".menu-item-modal-options");
+        let price = $('option:selected').data('price');
+        let qty = document.querySelector('.menu-item-modal-qty').value;
+        let finalPrice = parseFloat(price * qty).toFixed(2);
+        let finalPriceBox = document.querySelector('.menu-item-modal-price');
+        let currency = `{{ currency()->getUserCurrency() }}`;
+
+        if (currency == 'BGN') {
+            finalPrice = finalPrice + ' лв.';
+        }
+        finalPriceBox.innerHTML = finalPrice;
+    }
+
+    function addToCart() {
+        let productRoute = document.querySelector('.menu-item-modal-order').dataset.product_route;
+        let productId = document.querySelector('.menu-item-modal-order').dataset.product_id;
+        let productOption = $('option:selected').val();
+        let productQty = document.querySelector('.menu-item-modal-qty').value;
+
+        $.ajaxSetup({
+            cache: false,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url: productRoute,
+            method: 'post',
+            data: {
+                product_id: productId,
+                product_option_id: productOption,
+                quantity: productQty,
+            },
+
+            success: function(result) {
+                console.log(result);
+                if (result.errors.length != 0) {
+                    $('.alert-danger').html('');
+
+                    $.each(result.errors, function (key, value) {
+
+                    });
+                } else {
+                    modal.style.display = 'flex';
+                    modal.innerHTML = result.product_modal;
+                }
+            }
+        });
+        console.log(productId, productOption, productQty);
+    }
 </script>
 @yield('js')
 </body>

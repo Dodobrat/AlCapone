@@ -84,23 +84,6 @@
                         @endif
                     </select>
 
-                    <script>
-                        function getSelectedOption() {
-                            let selected = document.querySelector(".menu-item-modal-options");
-                            let price = $('option:selected').data('price');
-                            let qty = document.querySelector('.menu-item-modal-qty').value;
-                            let finalPrice = parseFloat(price * qty).toFixed(2);
-                            let finalPriceBox = document.querySelector('.menu-item-modal-price');
-                            let currency = `{{ currency()->getUserCurrency() }}`;
-
-                            if (currency == 'BGN') {
-                                finalPrice = finalPrice + ' лв.';
-                            }
-                            finalPriceBox.innerHTML = finalPrice;
-                        }
-                    </script>
-
-
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-6 menu-item-modal-qty-container mb-3">
                     <input class="menu-item-modal-qty"
@@ -123,12 +106,9 @@
                 <div class="col-lg-12 col-md-6 col-sm-12 col-12 menu-item-modal-order-container mb-3">
                     <a
                             class="menu-item-modal-order"
-                            data-product-id="
-                                @if(!empty($product))
-                                    {{ $product->id }}
-                                @endif"
-
-                            {{--data-product-qty=""--}}
+                            data-product_id="@if(!empty($product)) {{ $product->id }} @endif"
+                            data-product_route="{{ route('basket.add') }}"
+                            onclick="addToCart()"
                     >
                         <button>{{ trans('categories::front.add') }} <i class="fa fa-cart-plus"></i></button>
                     </a>
