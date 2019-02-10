@@ -24,7 +24,7 @@ class StoreBasketProduct extends FormRequest
     public function rules() {
         return [
             'product_id' => 'required|integer|exists:products,id',
-            'option_id' => 'integer|exists:products_options,id,product_id,' . $this->input('product_id'),
+            'product_option_id' => 'integer|exists:products_options,id,product_id,' . $this->input('product_id'),
             'quantity' => 'integer|max:10'
         ];
     }
