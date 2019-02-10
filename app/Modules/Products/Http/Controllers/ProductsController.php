@@ -17,7 +17,7 @@ class ProductsController extends Controller
             $errors[] = trans('products::front.error');
         }
 
-        $product = Product::where('id', $request->product_id)->first();
+        $product = Product::with(['options', 'ingredients', 'allergens', 'media'])->where('id', $request->product_id)->first();
 
         if (empty($product)) {
             $errors[] = trans('products::front.error');

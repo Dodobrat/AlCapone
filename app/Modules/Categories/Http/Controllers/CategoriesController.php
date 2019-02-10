@@ -11,6 +11,7 @@ use App\Modules\Categories\Models\Category;
 use App\Modules\Products\Models\Product;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use SEO;
 
 class CategoriesController extends Controller {
@@ -44,6 +45,7 @@ class CategoriesController extends Controller {
             $errors[] = 'nqma categoriq';
         }
 
+        $products = new Collection();
         if (empty($errors)) {
             $products = Product::active()->where('category_id', $category->id)->paginate(20);
         }
