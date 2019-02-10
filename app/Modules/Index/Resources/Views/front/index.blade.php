@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-
         <div class="page-cover">
             <div class="page-cover-img rellax"
                  @if(!empty(Settings::getFile('index_header_image')))
@@ -190,6 +189,7 @@
                         </div>
                     </div>
     </div>
+
         {{--MENU CATEGORIES TITLE SECTION--}}
 
         <div class="menu-categories-section">

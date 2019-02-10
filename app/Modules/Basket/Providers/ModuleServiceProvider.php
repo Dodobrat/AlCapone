@@ -2,6 +2,8 @@
 
 namespace App\Modules\Basket\Providers;
 
+use App\Modules\Basket\Models\Basket;
+use App\Modules\Basket\Observers\BasketObserver;
 use Caffeinated\Modules\Support\ServiceProvider;
 
 class ModuleServiceProvider extends ServiceProvider
@@ -17,6 +19,8 @@ class ModuleServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../Resources/Views', 'basket');
         $this->loadMigrationsFrom(__DIR__.'/../Database/Migrations', 'basket');
         $this->loadConfigsFrom(__DIR__.'/../config');
+
+        Basket::observe(BasketObserver::class);
     }
 
     /**

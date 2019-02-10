@@ -44,18 +44,9 @@
 </nav>
 
 <div class="shopping-cart-wrapper">
-    <div class="shopping-cart-container">
-        <div class="row justify-content-center align-items-center">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                <h4 class="shopping-cart-title">{{ trans('front.order') }}:</h4>
-                <button id="basket-m">&#10230;</button>
-            </div>
-        </div>
-
         @include('boxes.global-basket')
-
-    </div>
 </div>
+{{--{{ dd($basket) }}--}}
 
 @yield('content')
 
