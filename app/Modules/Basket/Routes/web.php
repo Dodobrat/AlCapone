@@ -20,6 +20,11 @@ Route::group([
             'as' => 'index',
             'uses' => 'BasketController@index'
         ]);
+
+        Route::post('/ajax/add', [
+            'as' => 'add',
+            'uses' => 'BasketController@add'
+        ]);
     });
 });
 
