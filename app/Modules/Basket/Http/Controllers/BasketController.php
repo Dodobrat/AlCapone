@@ -29,8 +29,8 @@ class BasketController extends Controller {
         $basketProductQuery = BasketProduct::where('basket_id', $basket->id)
             ->where('product_id', $request->product_id);
 
-        if ($request->has('option_id')) {
-            $basketProductQuery->where('product_option_id', $request->option_id);
+        if ($request->has('product_option_id')) {
+            $basketProductQuery->where('product_option_id', $request->product_option_id);
         } else {
             $basketProductQuery->whereNull('product_option_id');
         }
@@ -44,6 +44,7 @@ class BasketController extends Controller {
             $basketProduct->quantity += $request->quantity;
         }
 
+
         $basket->products()->save($basketProduct);
         $basket = $basket->fresh();
 
@@ -53,4 +54,35 @@ class BasketController extends Controller {
         ]);
 
     }
+//
+//    public function finished(FinishOrderRequest $request) {
+//
+//        $basket = Basket::my()->open();
+//        $basket->finish();
+//
+//
+//        if ($user) {
+//            /**
+//             * Изпраща до клиента
+//             */
+//            Mail::to($user)->send(new NewOrderMail($user, $basket));
+//
+//            /*
+//             * Изпраща до админа
+//             */
+//
+//            if (!empty(Settings::get('shop_admin_email'))) {
+//                $admin_email = Settings::get('shop_admin_email');
+//                Mail::to($admin_email)->send(new NewOrderMail($user, $basket));
+//            }
+//
+//        }
+//
+//        return view('shop::front.basket.finished', [
+//            'basket' => new Basket(),
+//            'order' => $basket
+//        ]);
+//    }
+
+
 }

@@ -21,7 +21,7 @@ class BasketProduct extends Model {
 
     protected $fillable = [
         'product_id',
-        'option_id',
+        'product_option_id',
         'quantity'
     ];
 
