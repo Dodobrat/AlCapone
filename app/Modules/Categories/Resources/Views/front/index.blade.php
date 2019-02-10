@@ -53,12 +53,12 @@
                 </ul>
 
                 <div class="hr"></div>
-
+                <div class="load-container">
+                    <div id="loading-image" class="loader"></div>
+                </div>
                 <div class="tab-content mt-5" id="products-container">
 
-                    <div class="load-container">
-                        <div id="loading-image" class="loader"></div>
-                    </div>
+
 
                         @include('categories::front.boxes.products', ['category' => $current_category])
 
