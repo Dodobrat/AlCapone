@@ -66,12 +66,23 @@
                         </ul>
                     </div>
                     <div class="col-lg-5 col-md-6 col-sm-12 col-12 menu-item-modal-options-container mb-3">
-                        {{--<select class="custom-select menu-item-modal-options">--}}
-                            {{--<option id="selected" selected>{{ trans('categories::front.select-option') }}</option>--}}
-                            {{--<option value="1">One</option>--}}
-                            {{--<option value="2">Two</option>--}}
-                            {{--<option value="3">Three</option>--}}
-                        {{--</select>--}}
+
+                        <select class="custom-select menu-item-modal-options" id="mySelect" onchange="getSelectedOption()">
+                            <option value="" disabled selected>-- Опции --</option>
+                            <option value="small" data-price="1">Малка</option>
+                            <option value="medium" data-price="2">Средна</option>
+                            <option value="big" data-price="3">Голяма</option>
+                            <option value="party" data-price="4">Парти</option>
+                        </select>
+
+                        <script>
+                            function getSelectedOption() {
+                                let selected = document.querySelector(".menu-item-modal-options");
+                                let price = $('option:selected').data('price');
+                                console.log(selected.value, price);
+                            }
+                        </script>
+
 
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6 col-6 menu-item-modal-qty-container mb-3">
@@ -93,3 +104,4 @@
             </div>
         </div>
     </div>
+
