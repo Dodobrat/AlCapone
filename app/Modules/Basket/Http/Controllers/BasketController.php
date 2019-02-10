@@ -30,9 +30,9 @@ class BasketController extends Controller {
             ->where('product_id', $request->product_id);
 
         if ($request->has('option_id')) {
-            $basketProductQuery->where('option_id', $request->option_id);
+            $basketProductQuery->where('product_option_id', $request->option_id);
         } else {
-            $basketProductQuery->whereNull('option_id');
+            $basketProductQuery->whereNull('product_option_id');
         }
 
         $basketProduct = $basketProductQuery->first();
