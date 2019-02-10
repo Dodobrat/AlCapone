@@ -48,7 +48,7 @@ class BasketController extends Controller {
         $basket = $basket->fresh();
 
         return response()->json([
-            'small_basket' => view('boxes.global-basket', compact('basket'))->render(),
+            'global_basket' => view('boxes.global-basket', compact('basket'))->render(),
             'total_quantity' => $basket->getTotalQuantity()
         ]);
 
