@@ -564,6 +564,7 @@ footer{
       }
     }
     .special-item-overlay-container{
+      pointer-events: none;
       transition: 0.2s ease-in-out;
       transition-delay: 0.2s;
       position: absolute;
@@ -625,12 +626,14 @@ footer{
             &:hover{
               transition: 0.2s ease-in-out;
               background-color: $accent-purple-darker;
+              cursor: pointer;
             }
           }
         }
       }
     }
     &:hover{
+      cursor: pointer;
       .special-item-img-container{
         transition: transform 0.2s ease-in-out;
         transform: scale(1);

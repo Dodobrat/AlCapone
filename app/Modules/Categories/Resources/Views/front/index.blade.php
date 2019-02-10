@@ -67,10 +67,6 @@
             </div>
         </div>
 
-    <div id="my-modal" class="menu-modal">
-        @include('categories::front.boxes.product-view')
-    </div>
-
 @endsection
 
 

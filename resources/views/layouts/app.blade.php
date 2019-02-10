@@ -88,10 +88,53 @@
 </footer>
 <div class="footer-text">{{ trans('front.copyright') }} &copy;</div>
 
+<div id="my-modal" class="menu-modal">
+    @include('categories::front.boxes.product-view')
+</div>
+
 <!-- loader -->
 <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#9C4B65"/></svg></div>
 
 <script src="{{ mix('js/theme.js') }}"></script>
+<script>
+    let modal = document.querySelector('#my-modal');
+
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+    function openModal(id, url) {
+        let productId = id;
+        let productUrl = url;
+
+        $.ajaxSetup({
+            cache: false,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url: productUrl,
+            method: 'post',
+            data: {
+                product_id: productId,
+            },
+
+            success: function(result) {
+                if (result.errors.length != 0) {
+                    $('.alert-danger').html('');
+
+                    $.each(result.errors, function (key, value) {
+
+                    });
+                } else {
+                    modal.style.display = 'flex';
+                    modal.innerHTML = result.product_modal;
+                }
+            }
+        });
+    }
+</script>
 @yield('js')
 </body>
 </html>

@@ -122,9 +122,19 @@
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 special-item px-0 my-3 my-sm-3 my-md-3">
                         <div class="special-item-img-container">
                             @if(!empty($meal->media->first()))
-                                <img src="{{ $meal->media->first()->getPublicPath() }}" alt="" class="special-item-img">
+                                <img src="{{ $meal->media->first()->getPublicPath() }}"
+                                     alt=""
+                                     class="special-item-img"
+                                     data-modal="{{ $meal->id }}"
+                                     data-murl="{{ route('products.getProduct') }}"
+                                     onclick="openModal( '{{ $meal->id }}','{{ route('products.getProduct') }}')">
                             @else
-                                <img src="{{ asset('/img/img_1.jpg') }}" alt="" class="special-item-img">
+                                <img src="{{ asset('/img/img_1.jpg') }}"
+                                     alt=""
+                                     class="special-item-img"
+                                     data-modal="{{ $meal->id }}"
+                                     data-murl="{{ route('products.getProduct') }}"
+                                     onclick="openModal( '{{ $meal->id }}','{{ route('products.getProduct') }}')">
                             @endif
                         </div>
                         <div class="special-item-overlay-container">
@@ -142,10 +152,11 @@
                                         <h3 class="special-item-price">{{ currency($meal->getPrice()) }}</h3>
                                     </div>
                                     <div class="col-4 text-right">
-                                        <a href="#"
+                                        <a
                                            class="special-item-link"
-                                           data-add="{{ $meal->slug }}"
-                                        >
+                                           data-modal="{{ $meal->id }}"
+                                           data-murl="{{ route('products.getProduct') }}"
+                                           onclick="openModal( '{{ $meal->id }}','{{ route('products.getProduct') }}')">
                                             <i class="fa fa-cart-plus"></i>
                                         </a>
                                     </div>
@@ -161,6 +172,7 @@
         {{--SPECIALS SECTION--}}
 
     @endif
+
 
     @if($categories->count() > 0)
 

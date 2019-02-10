@@ -51,43 +51,5 @@
 </div>
 
 @section('js')
-    <script>
-        let modal = document.querySelector('#my-modal');
 
-        function closeModal() {
-            modal.style.display = 'none';
-        }
-
-        function openModal(id, url) {
-            let productId = id;
-            let productUrl = url;
-
-            $.ajaxSetup({
-                cache: false,
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                url: productUrl,
-                method: 'post',
-                data: {
-                    product_id: productId,
-                },
-
-                success: function(result) {
-                    if (result.errors.length != 0) {
-                        $('.alert-danger').html('');
-
-                        $.each(result.errors, function (key, value) {
-
-                        });
-                    } else {
-                        modal.style.display = 'flex';
-                        modal.innerHTML = result.product_modal;
-                    }
-                }
-            });
-        }
-    </script>
 @endsection
