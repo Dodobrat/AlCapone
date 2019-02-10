@@ -90,7 +90,7 @@ link.forEach(function (link) {
                     });
                 } else {
                     window.history.pushState({},"", menuUrl + '/' +catSlug);
-                    $(".load-container").delay(500).hide();
+                    setTimeout('$(".load-container").hide()', 500);
                     productsContainer.innerHTML = result.new_blade;
                 }
             }
