@@ -49,7 +49,7 @@ class BasketProduct extends Model {
      * @return float
      */
     public function getPrice() {
-        return $this->product->getPrice($this->option_id);
+        return $this->product->getPrice($this->product_option_id);
     }
 
     /**

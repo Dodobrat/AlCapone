@@ -57,7 +57,7 @@ class BasketController extends Controller {
 //
 //    public function finished(FinishOrderRequest $request) {
 //
-//        $basket = Basket::my()->open();
+//        $basket = Basket::my()->first();
 //        $basket->finish();
 //
 //

@@ -6,13 +6,13 @@ use App\Modules\Categories\Models\Category;
 use App\Modules\Ingredients\Models\Ingredient;
 use App\Modules\Options\Models\Option;
 use Dimsav\Translatable\Translatable;
-use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NodeTrait;
+use ProVision\Administration\AdminModel;
 use ProVision\Administration\Traits\RevisionableTrait;
 use ProVision\Administration\Traits\ValidationTrait;
 use ProVision\MediaManager\Traits\MediaManagerTrait;
 
-class Product extends Model {
+class Product extends AdminModel {
     use NodeTrait, MediaManagerTrait, ValidationTrait, Translatable, RevisionableTrait;
 
     public $translationForeignKey = 'product_id';
@@ -87,12 +87,14 @@ class Product extends Model {
             return $this->price;
         }
 
+
         if ($id) {
-            $option = $options->firstWhere('id', $id);
+            $option = $options->where('pivot.id', $id)->first();
             if (!empty($option)) {
                 return $option->pivot->price;
             }
         }
+
         $smallest_price = $options->first()->pivot->price;
 
         foreach ($options as $option) {
